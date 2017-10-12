@@ -29,7 +29,7 @@ Files: /Directory
 1. Download a copy of all the files in the folder "Directory".
 2. Copy / upload the contents of the folder "Directory" (Folder "ThemeName" & File ".htaccess") to the folder that you want to enable indexing and directory listing on.
 
-### TO-DO:
+## TO-DO:
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
 * [x] Add Setup Instructions For Both Versions
@@ -40,7 +40,7 @@ Files: /Directory
 * [ ] Add More To This List
 * [ ] Replace All Instances Of "ThemeName" With Chosen Name
 
-#### Resources Used:
+## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
 * [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)
 * [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
