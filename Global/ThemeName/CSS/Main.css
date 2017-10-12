@@ -1,0 +1,461 @@
+@charset "utf-8";
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+  font-family: 'MrDeHaviland-Regular';
+  src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeFiles/lib/Fonts/MrDeHaviland-Regular.ttf);
+}
+
+* {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: medium;
+    overflow: hidden;
+}
+
+#wrapper {
+	position: absolute;
+    width: 86vw;
+    float: left;
+	top: 50px;
+	left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+	bottom: 0;
+	height: calc(100vh - 50px);
+}
+
+#icon {
+	width: 12vw;
+	height: 12vw;
+	margin: 1vw auto;
+}
+
+#text {
+	width: 12vw;
+	min-height: 3vw;
+	margin: 1vw auto;
+}
+
+#text p {
+	word-wrap: break-word;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+}
+
+#credits {
+    width: 100%;
+    height: 2vw;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2vw;
+}
+
+#qrcode {
+	width: 12vw;
+	height: 12vw;
+	margin: 1vw auto;
+    display: block;
+}
+
+#infodiv {
+	position: absolute;
+    width: 14vw;
+    float: left;
+	top: 51px;
+	right: 0;
+	overflow-y: auto;
+	bottom: 0;
+	height: calc(100vh - 51px);
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead {
+    height: 31px;
+}
+
+thead tr {
+    display: block;
+    position: relative;
+}
+
+tbody {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: calc(100vh - 50px - 33px);
+	-webkit-overflow-scrolling: touch;
+}
+
+#top {
+    width: 100vw;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#topleft {
+    width: calc(86vw - 1px);
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#settingsicon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#settingsicon button {
+    width: 100%;
+    height: 100%;
+    line-height: 50px;
+    padding: 0;
+    border: none;
+}
+
+#settingsicon button:hover {
+    cursor: pointer;
+}
+
+#settingsicon button img {
+    width: 100%;
+}
+
+#breadcrumb, .rcrumbs{
+    width: calc(86vw - 51px);
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+#topright {
+    width: 14vw;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 86vw;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#topright p {
+    font-family: MrDeHaviland-Regular;
+    margin: 0;
+    font-size: x-large;
+}
+
+#indexlist {
+    width: 100%;
+}
+
+tr.indexhead {
+    text-align: left;
+}
+
+th.indexcolicon {
+    width: 1.4vw;
+}
+
+td.indexcolicon {
+    width: 1.4vw;
+}
+
+th.indexcolname {
+    width: 62.78vw;
+}
+
+td.indexcolname {
+    width: 62.78vw;
+}
+
+th.indexcollastmod {
+    text-align: center;
+    width: 16.354vw;
+}
+
+td.indexcollastmod {
+    text-align: center;
+    width: 16.3vw;
+}
+
+th.indexcolsize {
+    text-align: center;
+    width: 5.52vw;
+}
+
+td.indexcolsize {
+    text-align: center;
+    width: 5.52vw;
+}
+
+tr.indexbreakrow hr {
+    display: none
+}
+
+/* Scrollbar Config */
+
+/* Scroll Bar Width and Height */
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+/* Above And Below Margin */
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+/* Track Behind Bar */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius:10px;
+}
+
+.rcrumbs > ul {
+  padding: 0;
+  padding-left: 10px;
+  list-style: none;
+  margin: 0;
+  line-height: 50px;
+  height: 100%;
+}
+
+.rcrumbs > ul > li {
+  overflow: hidden;
+  display: none;
+}
+
+.rcrumbs > ul > li.show {
+  display: inline-block;
+}
+
+.rcrumbs > ul > li.ellipsis {
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rcrumbs a {
+  font-size: x-large;
+}
+
+.rcrumbs .divider {
+  padding: 0 5px;
+  font-size: x-large;
+}
+
+#settings{
+    display: none;
+    position: absolute;
+    width: 86vw;
+    float: left;
+	top: 50px;
+	left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+	bottom: 0;
+	height: calc(100vh - 50px);
+}
+
+#close {
+    display: none;
+}
+
+tbody tr:hover {
+    cursor: pointer;
+}
+
+#settings h2 {
+    font-size: xx-large;
+    width: calc(100% - 30px);
+    margin: 0;
+    height: 69px;
+    line-height: 69px;
+    padding-left: 30px;
+    position: absolute;
+    overflow: hidden;
+}
+
+#settings #section {
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+#settings #section p {
+    height: 30px;
+    margin: 0;
+    margin-bottom: 13px;
+    overflow: hidden;
+}
+
+#settings #section:nth-child(odd) {
+    padding-left: 30px;
+    width: calc(25% - 30px);
+}
+
+#settings #container {
+    width: 100%;
+    position: absolute;
+    height: calc(100% - 70px);
+    top: 70px;
+    overflow: hidden;
+    overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+input {
+    width: 40%;
+    border: none;
+    height: 75%;
+    text-align: center;
+}
+
+tbody tr.odd:hover, tbody tr.odd:hover a {
+    transition: background-color .20s ease;
+}
+
+tbody tr.even:hover, tbody tr.even:hover a {
+    transition: background-color .20s ease;
+}
+
+#save {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    border: none;
+    float: right;
+}
+
+#save:hover {
+    cursor: pointer;
+}
+
+#save img {
+    width: 100%;
+}
+
+#reset {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    border: none;
+    float: right;
+    font-size: large;
+}
+
+#reset:hover {
+    cursor: pointer;
+}
+
+#reset img {
+    width: 100%;
+}
+
+#audioPlayer {
+	position: absolute;
+    width: 100vw;
+    height: 70px;
+    z-index: 999990;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+	display: none;
+}
+
+#videoPlayer {
+	position: absolute;
+    max-height: 100vh;
+	max-width: 100vw;
+    z-index: 999990;
+	top:50%;
+	left:50%;
+	margin-right:-50%;
+	transform:translate(-50%,-50%);
+    background-color: #3F3F3F;
+    display: none;
+}
+
+video {
+	max-height: 100vh;
+    max-width: 100%;
+}
+
+#videoHeader {
+	z-index: 999991;
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(31, 31, 31, 0.5);
+}
+
+#videoHeader button {
+	z-index: 999991;
+    height: 100%;
+    width: 35px;
+    float: right;
+    padding: 0;
+    border: none;
+    background-color: rgba(31, 31, 31, 0);
+}
+
+#videoHeader p {
+    z-index: 999991;
+    float: left;
+    padding: 5px 0 0 5px;
+	margin: 0;
+}
+
+#videoHUD button img {
+	height: 90%;
+    width: 90%;
+    margin: 5%;
+}
+
+#JSerror p {
+    margin: 0;
+    text-align: center;
+    color: #FF0000;
+    font-size: medium;
+}
+
+#JSerror {
+    width: calc(86vw - 1px);
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#infodivcontent {
+    min-height: calc(100% - 2vw);
+}

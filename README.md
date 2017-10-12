@@ -6,6 +6,7 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 ## TO-DO:
 * [ ] Upload Files To GitHub
 * [ ] Create htaccess Directory Version
+* [ ] Add Setup Instructions For Both Versions
 * [ ] Add Credits Screen
 * [ ] Finish Video Player
 * [ ] Audio Player
