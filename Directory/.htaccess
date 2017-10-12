@@ -1,0 +1,86 @@
+#                                     #
+# Dark Indexing Theme By Darnel Kumar #
+#                                     #
+
+#                  #
+# GENERAL SETTINGS #
+#                  #
+
+Options +Indexes
+IndexOptions +FancyIndexing
+IndexOptions +VersionSort
+IndexOptions +HTMLTable
+IndexOptions +FoldersFirst
+IndexOptions +IconsAreLinks
+IndexOptions +IgnoreCase
+IndexOptions +SuppressDescription
+IndexOptions +SuppressHTMLPreamble
+IndexOptions +XHTML
+IndexOptions +IconWidth=24
+IndexOptions +IconHeight=24
+IndexOptions +NameWidth=*
+IndexOptions +DescriptionWidth=200
+IndexOptions +ScanHTMLTitles
+IndexOptions +Charset=UTF-8
+IndexOrderDefault Ascending Name
+
+IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+IndexIgnore .htaccess /ThemeName
+
+#             #
+# THEME FILES #
+#             #
+
+HeaderName ThemeName/lib/HTML/HEADER.html
+ReadmeName ThemeName/lib/HTML/FOOTER.html
+IndexStyleSheet ThemeName/CSS/Main.css
+
+#                    #
+# ICONS BY EXTENSION #
+#                    #
+
+AddIcon ThemeName/Icons/Application.svg .exe .app .EXE .APP
+AddIcon ThemeName/Icons/Binary.svg .bin .hqx .uu .BIN .HQX .UU
+AddIcon ThemeName/Icons/Archive.svg .tar .tgz .tbz .tbz2 bundle .rar .TAR .TGZ .TBZ .TBZ2 .RAR
+AddIcon ThemeName/Icons/HTML.svg .htm .html .HTM .HTML
+AddIcon ThemeName/Icons/Code.svg .htx .htmls .dhtml .phtml .shtml .inc .ssi .c .cc .css .h .rb .js .rb .pl .py .sh .shar .csh .ksh .tcl .as
+AddIcon ThemeName/Icons/Database.svg .db .sqlite
+AddIcon ThemeName/Icons/Disk.svg .iso .image
+AddIcon ThemeName/Icons/Document.svg .ttf
+AddIcon ThemeName/Icons/Excel.svg .xlsx .xls .xlm .xlt .xla .xlb .xld .xlk .xll .xlv .xlw
+AddIcon ThemeName/Icons/Flash.svg .flv .swf .fla .as .asc .jsfl .f4v .fxg .fl3
+AddIcon ThemeName/Icons/Illustrator.svg .ai .eps .epsf .epsi .ps .ait
+AddIcon ThemeName/Icons/PDF.svg .pdf
+AddIcon ThemeName/Icons/PHP.svg .php .phps .php5 .php3 .php4 .phtm
+AddIcon ThemeName/Icons/Photoshop.svg .psd .raw .pdp .psdx .pcx
+AddIcon ThemeName/Icons/Indesign.svg .indd .indl .indt .indb .inx .idml
+AddIcon ThemeName/Icons/Lightroom.svg .dng .cmyk
+AddIcon ThemeName/Icons/Powerpoint.svg .ppt .pptx .ppz .pot .pwz .ppa .pps .pow
+AddIcon ThemeName/Icons/Text.svg .tex .dvi .json .JSON
+AddIcon ThemeName/Icons/VCF.svg .vcf .vcard
+AddIcon ThemeName/Icons/Word.svg .doc .docx
+AddIcon ThemeName/Icons/Archive.svg .Z .z .tgz .gz .zip # NEED IMAGE #
+AddIcon ThemeName/Icons/Globe.svg .wrl .wrl.gz .vrm .vrml .iv
+AddIcon ThemeName/Icons/Android.svg .apk .APK
+
+#                   #
+# ICONS BY ENCODING #
+#                   #
+
+AddIconByEncoding (CMP,ThemeName/Icons/Archive.svg) x-compress x-gzip
+
+#               #
+# GENERAL ICONS #
+#               #
+
+DefaultIcon ThemeName/Icons/DefaultIcon.svg
+
+AddIcon ThemeName/Icons/Back.svg ..
+AddIcon ThemeName/Icons/Information.svg README INSTALL
+AddIcon ThemeName/Icons/Directory.svg ^^DIRECTORY^^
+AddIcon ThemeName/Icons/Blank.png ^^BLANKICON^^
+
+AddIconByType (TXT,ThemeName/Icons/Text.svg) text/*
+AddIconByType (IMG,ThemeName/Icons/Image.svg) image/*
+AddIconByType (SND,ThemeName/Icons/Audio.svg) audio/*
+AddIconByType (VID,ThemeName/Icons/Video.svg) video/*
