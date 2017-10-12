@@ -32,7 +32,7 @@ Files: /Directory
 ### TO-DO:
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
-* [ ] Add Setup Instructions For Both Versions
+* [x] Add Setup Instructions For Both Versions
 * [ ] Add Credits Screen
 * [ ] Finish Video Player
 * [ ] Audio Player
