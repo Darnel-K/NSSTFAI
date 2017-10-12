@@ -1,6 +1,6 @@
 This theme needs a name, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
 
-### Instructions:
+## Installation Instructions:
 
 #### To Install The .htaccess version
 
