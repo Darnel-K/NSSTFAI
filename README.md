@@ -31,10 +31,12 @@ Files: /Directory
 
 ## TO-DO:
 * [ ] Add Credits Screen
-* [ ] Finish Video Player
+* [ ] Video Player
 * [ ] Audio Player
+* [ ] Image Viewer
+* [ ] Clean CSS
 * [ ] More Settings
-* [ ] Add More To This List
+* [ ] Pick A Name
 * [ ] Replace All Instances Of "ThemeName" With Chosen Name
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
