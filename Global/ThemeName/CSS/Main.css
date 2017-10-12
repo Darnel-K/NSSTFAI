@@ -2,7 +2,7 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans');
 @font-face {
   font-family: 'MrDeHaviland-Regular';
-  src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeFiles/lib/Fonts/MrDeHaviland-Regular.ttf);
+  src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeName/lib/Fonts/MrDeHaviland-Regular.ttf);
 }
 
 * {

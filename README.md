@@ -37,6 +37,8 @@ Files: /Directory
 * [ ] Clean CSS
 * [ ] More Settings
 * [ ] Pick A Name
+* [ ] Acquire Logo For Theme
+* [ ] Logo Favicon
 * [ ] Replace All Instances Of "ThemeName" With Chosen Name
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
