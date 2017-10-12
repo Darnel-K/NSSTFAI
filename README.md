@@ -7,8 +7,6 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 
 Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.
 
-Works best when configured globally
-
 #### To Install The Global Version (Requires Access To The Host System And Web Server)
 
 This version is global to every directory on the apache server.
