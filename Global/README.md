@@ -2,7 +2,7 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 
 ### Instructions:
 
-##### To Install The Global Version (Requires Access To The Host System And Web Server)
+#### To Install The Global Version (Requires Access To The Host System And Web Server)
 
 This version is global to every directory on the apache server.
 

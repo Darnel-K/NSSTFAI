@@ -2,7 +2,7 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 
 ### Instructions:
 
-##### To Install The .htaccess version
+#### To Install The .htaccess version
 
 This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
 
