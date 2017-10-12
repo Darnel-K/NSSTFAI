@@ -3,9 +3,9 @@ A Not So Simple Theme I Made For Apache's Index
 
 This theme needs a name, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
 
-### fasd
+### Instructions
 
-## TO-DO:
+### TO-DO:
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
 * [ ] Add Setup Instructions For Both Versions
