@@ -3,7 +3,7 @@ A Not So Simple Theme Made For Apache's Index
 
 This theme needs a name, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
 
-### Instructions:
+## Installation Instructions:
 
 Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files
 
