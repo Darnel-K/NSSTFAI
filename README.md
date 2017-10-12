@@ -7,7 +7,7 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 
 Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files
 
-##### To Install The Global Version (Requires Access To The Host System And Web Server)
+#### To Install The Global Version (Requires Access To The Host System And Web Server)
 
 This version is global to every directory on the apache server.
 
@@ -20,7 +20,7 @@ Files: /Global
 5. Restart the apache web server.
 6. To activate the theme create a ".htaccess" file in the folder that you want indexing and directory listing turned on and put "Options +Indexes" into that file.
 
-##### To Install The .htaccess version
+#### To Install The .htaccess version
 
 This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
 
