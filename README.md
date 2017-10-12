@@ -45,3 +45,4 @@ Files: /Directory
 * [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)
 * [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
 * [jQuery](https://jquery.com/)
+* [Icons Used From Icons8](https://icons8.com/)
