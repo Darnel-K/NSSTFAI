@@ -30,15 +30,15 @@ Files: /Directory
 2. Copy / upload the contents of the folder "Directory" (Folder "ThemeName" & File ".htaccess") to the folder that you want to enable indexing and directory listing on.
 
 ## TO-DO:
-* [x] Upload Files To GitHub
-* [x] Create htaccess Directory Version
-* [x] Add Setup Instructions For Both Versions
 * [ ] Add Credits Screen
 * [ ] Finish Video Player
 * [ ] Audio Player
 * [ ] More Settings
 * [ ] Add More To This List
 * [ ] Replace All Instances Of "ThemeName" With Chosen Name
+* [x] Upload Files To GitHub
+* [x] Create htaccess Directory Version
+* [x] Add Setup Instructions For Both Versions
 
 ## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
