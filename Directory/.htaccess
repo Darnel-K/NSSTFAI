@@ -24,7 +24,6 @@ IndexOptions +ScanHTMLTitles
 IndexOptions +Charset=UTF-8
 IndexOrderDefault Ascending Name
 
-IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
 IndexIgnore .htaccess /ThemeName
 
 #             #

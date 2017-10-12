@@ -5,7 +5,9 @@ This theme needs a name, leave your suggestions [here](https://github.com/Darnel
 
 ## Installation Instructions:
 
-Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files
+Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.
+
+Works best when configured globally
 
 #### To Install The Global Version (Requires Access To The Host System And Web Server)
 
