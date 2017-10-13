@@ -1,7 +1,7 @@
 # Apache-Index-Theme
 A Not So Simple Theme Made For Apache's Index
 
-[Demo](http://rs01.kajida.uk/GitHub/Experimental-Code) Showing A Clone Of One Of My Other Repositories, Setup Globally.
+[Demo](http://rs01.kajida.uk/GitHub/Experimental-Code) showing a clone of one of my other repositories, setup globally.
 
 This theme needs a name, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
 
