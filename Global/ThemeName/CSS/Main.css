@@ -332,11 +332,11 @@ input {
     text-align: center;
 }
 
-tbody tr.odd:hover, tbody tr.odd:hover a {
+tbody tr.odd:hover {
     transition: background-color .20s ease;
 }
 
-tbody tr.even:hover, tbody tr.even:hover a {
+tbody tr.even:hover {
     transition: background-color .20s ease;
 }
 
