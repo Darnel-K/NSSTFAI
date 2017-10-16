@@ -306,8 +306,8 @@ function setupEvents() {
             document.getElementById('THBC').jscolor.fromString(settingsObj.styles["tr.indexhead"].substr(53, 6));
             document.getElementById('TROBC').jscolor.fromString(settingsObj.styles["tr.odd"].substr(34, 6));
             document.getElementById('TREBC').jscolor.fromString(settingsObj.styles["tr.even"].substr(34, 6));
-            document.getElementById('TROHBC').jscolor.fromString(settingsObj.styles["tbody tr.odd:hover, tbody tr.odd:hover a"].substr(34, 6));
-            document.getElementById('TREHBC').jscolor.fromString(settingsObj.styles["tbody tr.even:hover, tbody tr.even:hover a"].substr(34, 6));
+            document.getElementById('TROHBC').jscolor.fromString(settingsObj.styles["tbody tr.odd:hover"].substr(34, 6));
+            document.getElementById('TREHBC').jscolor.fromString(settingsObj.styles["tbody tr.even:hover"].substr(34, 6));
             $('#WSW').val(settingsObj.styles["::-webkit-scrollbar"].substr(7, 2));
             document.getElementById('WSB').jscolor.fromString(settingsObj.styles["::-webkit-scrollbar-thumb"].substr(39, 6));
             document.getElementById('WSHBC').jscolor.fromString(settingsObj.styles["::-webkit-scrollbar-thumb:hover"].substr(12, 6));
