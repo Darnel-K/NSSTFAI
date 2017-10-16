@@ -59,8 +59,8 @@ function updateUIStyles() {
             ".rcrumbs *":"color: #" + $("#BrFC").val() + ";",
             ".rcrumbs .divider":"color: #" + $("#BDFC").val() + ";",
             "#settings":"background-color: #" + $("#SBC").val() + ";color: #" + $("#SFC").val() + ";",
-            "tbody tr.odd:hover, tbody tr.odd:hover a":"color: #" + $("#TROHFC").val() + ";background-color: #" + $("#TROHBC").val() + ";transition: background-color .20s ease;",
-            "tbody tr.even:hover, tbody tr.even:hover a":"color: #" + $("#TREHFC").val() + ";background-color: #" + $("#TREHBC").val() + ";transition: background-color .20s ease;",
+            "tbody tr.odd:hover":"color: #" + $("#TROHFC").val() + ";background-color: #" + $("#TROHBC").val() + ";transition: background-color .20s ease;",
+            "tbody tr.even:hover":"color: #" + $("#TREHFC").val() + ";background-color: #" + $("#TREHBC").val() + ";transition: background-color .20s ease;",
             ".rcrumbs a:hover":"color: #" + $("#BHFC").val() + ";background-color: #" + $("#BHBC").val() + ";",
             "#credits a:hover":"color: #" + $("#CHFC").val() + ";background-color: #" + $("#CHBC").val() + ";",
             "#settings h2":"border-bottom: 1px solid #" + $("#SHBBC").val() + "",
@@ -284,8 +284,8 @@ function setupEvents() {
             document.getElementById('THBB').jscolor.fromString(settingsObj.styles["tr.indexhead"].substr(26, 6));
             document.getElementById('TROFC').jscolor.fromString(settingsObj.styles["tr.odd"].substr(8, 6));
             document.getElementById('TREFC').jscolor.fromString(settingsObj.styles["tr.even"].substr(8, 6));
-            document.getElementById('TROHFC').jscolor.fromString(settingsObj.styles["tbody tr.odd:hover, tbody tr.odd:hover a"].substr(8, 6));
-            document.getElementById('TREHFC').jscolor.fromString(settingsObj.styles["tbody tr.even:hover, tbody tr.even:hover a"].substr(8, 6));
+            document.getElementById('TROHFC').jscolor.fromString(settingsObj.styles["tbody tr.odd:hover"].substr(8, 6));
+            document.getElementById('TREHFC').jscolor.fromString(settingsObj.styles["tbody tr.even:hover"].substr(8, 6));
             document.getElementById('WSBC').jscolor.fromString(settingsObj.styles["::-webkit-scrollbar-thumb"].substr(12, 6));
             $('#WSBR').val(settingsObj.styles["::-webkit-scrollbar-thumb"].substr(60, 2));
             document.getElementById('WSHB').jscolor.fromString(settingsObj.styles["::-webkit-scrollbar-thumb:hover"].substr(39, 6));
@@ -353,8 +353,8 @@ function setupEvents() {
                 ".rcrumbs *":"color: #" + $("#BrFC").val() + ";",
                 ".rcrumbs .divider":"color: #" + $("#BDFC").val() + ";",
                 "#settings":"background-color: #" + $("#SBC").val() + ";color: #" + $("#SFC").val() + ";",
-                "tbody tr.odd:hover, tbody tr.odd:hover a":"color: #" + $("#TROHFC").val() + ";background-color: #" + $("#TROHBC").val() + ";transition: background-color .20s ease;",
-                "tbody tr.even:hover, tbody tr.even:hover a":"color: #" + $("#TREHFC").val() + ";background-color: #" + $("#TREHBC").val() + ";transition: background-color .20s ease;",
+                "tbody tr.odd:hover":"color: #" + $("#TROHFC").val() + ";background-color: #" + $("#TROHBC").val() + ";transition: background-color .20s ease;",
+                "tbody tr.even:hover":"color: #" + $("#TREHFC").val() + ";background-color: #" + $("#TREHBC").val() + ";transition: background-color .20s ease;",
                 ".rcrumbs a:hover":"color: #" + $("#BHFC").val() + ";background-color: #" + $("#BHBC").val() + ";",
                 "#credits a:hover":"color: #" + $("#CHFC").val() + ";background-color: #" + $("#CHBC").val() + ";",
                 "#settings h2":"border-bottom: 1px solid #" + $("#SHBBC").val() + "",
@@ -397,8 +397,8 @@ function setupEvents() {
                 ".rcrumbs *":"color: #6f6f6f;",
                 ".rcrumbs .divider":"color: #cccccc;",
                 "#settings":"background-color: #1f1f1f;color: #6f6f6f;",
-                "tbody tr.odd:hover, tbody tr.odd:hover a":"color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
-                "tbody tr.even:hover, tbody tr.even:hover a":"color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
+                "tbody tr.odd:hover":"color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
+                "tbody tr.even:hover":"color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
                 ".rcrumbs a:hover":"color: #4f4f4f;background-color: #2F2F2F;",
                 "#credits a:hover":"color: #6f6f6f;background-color: #2F2F2F;",
                 "#settings h2":"border-bottom: 1px solid #2F2F2F",
