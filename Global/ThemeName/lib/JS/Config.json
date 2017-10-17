@@ -1,0 +1,47 @@
+{
+    "CSSColorStyles": {
+        "body": { "color": { "Desc": "", "Value": "#FFFFFF" }, "background-color": { "Desc": "", "Value": "#1F1F1F" } },
+        "#icon": { "color": { "Desc": "", "Value": "#FFFFFF" }, "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#text": { "color": { "Desc": "", "Value": "#FFFFFF" }, "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#credits": { "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#qrcode": { "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#credits a": { "color": { "Desc": "", "Value": "#4F4F4F" } },
+        "#infodiv": { "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#topleft": { "background-color": { "Desc": "", "Value": "#2F2F2F" }, "border-right": { "Desc": "", "Value": "1px solid #1F1F1F" } },
+        "#settingsicon button img": { "background-color": { "Desc": "", "Value": "#2F2F2F" } },
+        "#topright": { "background-color": { "Desc": "", "Value": "#2F2F2F" }, "color": { "Desc": "", "Value": "#6F6F6F" } },
+        "tr.indexhead a": { "color": { "Desc": "", "Value": "#FFFFFF" } },
+        "tr.indexhead": { "border-bottom": { "Desc": "", "Value": "1px solid #2F2F2F" }, "background-color": { "Desc": "", "Value": "#1F1F1F" } },
+        "tr.odd": { "color": { "Desc": "", "Value": "#FFFFFF" }, "background-color": { "Desc": "", "Value": "#4F4F4F" } },
+        "tr.even": { "color": { "Desc": "", "Value": "#FFFFFF" }, "background-color": { "Desc": "", "Value": "#1F1F1F" } },
+        "tr.odd a": { "color": { "Desc": "", "Value": "#FFFFFF" } },
+        "tr.even a": { "color": { "Desc": "", "Value": "#FFFFFF" } },
+        "::-webkit-scrollbar": { "width": { "Desc": "", "Value": "4px" } },
+        "::-webkit-scrollbar-thumb": { "background": { "Desc": "", "Value": "#888888" }, "border": { "Desc": "", "Value": "thin solid #808080" }, "border-radius": { "Desc": "", "Value": "10px" } },
+        "::-webkit-scrollbar-thumb:hover": { "background": { "Desc": "", "Value": "#666666" }, "border": { "Desc": "", "Value": "thin solid #666666" } },
+        ".rcrumbs *": { "color": { "Desc": "", "Value": "#6F6F6F" } }
+    },
+    "GlobalSettings": {
+        "EnableVideoPlayer": { "Desc": "", "Value": true },
+        "EnableAudioPlayer": { "Desc": "", "Value": true },
+        "EnablePhotoViewer": { "Desc": "", "Value": true }
+    }
+}
+
+".rcrumbs .divider": "color: #cccccc;",
+"#settings": "background-color: #1f1f1f;color: #6f6f6f;",
+"tbody tr.odd:hover": "color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
+"tbody tr.even:hover": "color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
+".rcrumbs a:hover": "color: #4f4f4f;background-color: #2F2F2F;",
+"#credits a:hover": "color: #6f6f6f;background-color: #2F2F2F;",
+"#settings h2": "border-bottom: 1px solid #2F2F2F",
+"#save": "background-color: #1F1F1F;",
+"#reset": "background-color: #1F1F1F;color: #FFFFFF",
+"#settingsicon button:hover img": "background-color: #3F3F3F;",
+"#save:hover": "background-color: #2F2F2F;",
+"#reset:hover": "background-color: #2F2F2F;color: #FFFFFF"
+},
+"extra": {
+"QCFC": "#FFFFFF",
+"QCBC": "#2F2F2F"
+}
