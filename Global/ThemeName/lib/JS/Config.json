@@ -3,10 +3,12 @@
         "body": {
             "Type": "CSS",
             "color": {
+                "ID": "BFC",
                 "Desc": "Body Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "BBC",
                 "Desc": "Body Back-Color",
                 "Value": "#1F1F1F"
             }
@@ -14,10 +16,12 @@
         "#icon": {
             "Type": "CSS",
             "color": {
+                "ID": "SIFC",
                 "Desc": "Sidebar Icon Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "SIBC",
                 "Desc": "Sidebar Icon Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -25,17 +29,20 @@
         "#text": {
             "Type": "CSS",
             "color": {
-                "Desc": "Sidebar Info Fore-Color",
+                "ID": "STFC",
+                "Desc": "Sidebar Text Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
-                "Desc": "Sidebar Info Back-Color",
+                "ID": "STBC",
+                "Desc": "Sidebar Text Back-Color",
                 "Value": "#2F2F2F"
             }
         },
         "#credits": {
             "Type": "CSS",
             "background-color": {
+                "ID": "CBBC",
                 "Desc": "Credits Button Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -43,6 +50,7 @@
         "#credits a": {
             "Type": "CSS",
             "color": {
+                "ID": "CBFC",
                 "Desc": "Credits Button Fore-Color",
                 "Value": "#4F4F4F"
             }
@@ -50,6 +58,7 @@
         "#infodiv": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SBC",
                 "Desc": "Sidebar Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -57,10 +66,12 @@
         "#topleft": {
             "Type": "CSS",
             "background-color": {
+                "ID": "TBLBC",
                 "Desc": "Top Bar Left Back-Color",
                 "Value": "#2F2F2F"
             },
             "border-right": {
+                "ID": "TBLRB",
                 "Desc": "Top Bar Left, Right Border",
                 "Value": "1px solid #1F1F1F"
             }
@@ -68,6 +79,7 @@
         "#settingsicon button img": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SIcBC",
                 "Desc": "Settings Icon Back Color",
                 "Value": "#2F2F2F"
             }
@@ -75,10 +87,12 @@
         "#topright": {
             "Type": "CSS",
             "background-color": {
+                "ID": "TBRBC",
                 "Desc": "Top Bar Right Back-Color",
                 "Value": "#2F2F2F"
             },
             "color": {
+                "ID": "TBRFC",
                 "Desc": "Top Bar Right Fore-Color",
                 "Value": "#6F6F6F"
             }
@@ -86,6 +100,7 @@
         "tr.indexhead a": {
             "Type": "CSS",
             "color": {
+                "ID": "THLFC",
                 "Desc": "Table Header Link Fore-Color",
                 "Value": "#FFFFFF"
             }
@@ -93,10 +108,12 @@
         "tr.indexhead": {
             "Type": "CSS",
             "border-bottom": {
+                "ID": "THBB",
                 "Desc": "Table Header Bottom Border",
                 "Value": "1px solid #2F2F2F"
             },
             "background-color": {
+                "ID": "THBC",
                 "Desc": "Table Header Back-Color",
                 "Value": "#1F1F1F"
             }
@@ -104,10 +121,12 @@
         "tr.odd": {
             "Type": "CSS",
             "color": {
+                "ID": "TROFC",
                 "Desc": "Table Row Odd Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "TROBC",
                 "Desc": "Table Row Odd Back-Color",
                 "Value": "#4F4F4F"
             }
@@ -115,10 +134,12 @@
         "tr.even": {
             "Type": "CSS",
             "color": {
+                "ID": "TREFC",
                 "Desc": "Table Row Even Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "TREBC",
                 "Desc": "Table Row Even Back-Color",
                 "Value": "#1F1F1F"
             }
@@ -126,6 +147,7 @@
         "tr.odd a": {
             "Type": "CSS",
             "color": {
+                "ID": "TROLFC",
                 "Desc": "Table Row Odd Link Fore-Color",
                 "Value": "#FFFFFF"
             }
@@ -133,6 +155,7 @@
         "tr.even a": {
             "Type": "CSS",
             "color": {
+                "ID": "TRELFC",
                 "Desc": "Table Row Even Link Fore-Color",
                 "Value": "#FFFFFF"
             }
@@ -140,6 +163,7 @@
         "::-webkit-scrollbar": {
             "Type": "CSS",
             "width": {
+                "ID": "WSW",
                 "Desc": "WebKit Scrollbar Width",
                 "Value": "4px"
             }
@@ -147,14 +171,17 @@
         "::-webkit-scrollbar-thumb": {
             "Type": "CSS",
             "background": {
+                "ID": "WSBC",
                 "Desc": "WebKit Scrollbar Back-Color",
                 "Value": "#888888"
             },
             "border": {
+                "ID": "WSB",
                 "Desc": "WebKit Scrollbar Border",
                 "Value": "thin solid #808080"
             },
             "border-radius": {
+                "ID": "WSBR",
                 "Desc": "WebKit Scrollbar Border Radius",
                 "Value": "10px"
             }
@@ -162,10 +189,12 @@
         "::-webkit-scrollbar-thumb:hover": {
             "Type": "CSS",
             "background": {
+                "ID": "WSHBC",
                 "Desc": "WebKit Scrollbar Hover Back-Color",
                 "Value": "#666666"
             },
             "border": {
+                "ID": "WSHB",
                 "Desc": "WebKit Scrollbar Hover Border",
                 "Value": "thin solid #666666"
             }
@@ -173,6 +202,7 @@
         ".rcrumbs *": {
             "Type": "CSS",
             "color": {
+                "ID": "BFC",
                 "Desc": "Breadcrumb Fore-Color",
                 "Value": "#6F6F6F"
             }
@@ -180,6 +210,7 @@
         ".rcrumbs .divider": {
             "Type": "CSS",
             "color": {
+                "ID": "BDFC",
                 "Desc": "Breadcrumb Divider Fore-Color",
                 "Value": "#CCCCCC"
             }
@@ -187,10 +218,12 @@
         "#settings": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SetBC",
                 "Desc": "Settings Back-Color",
                 "Value": "#1F1F1F"
             },
             "color": {
+                "ID": "SFC",
                 "Desc": "Settings Fore-Color",
                 "Value": "#6F6F6F"
             }
@@ -198,10 +231,12 @@
         "QRCODE": {
             "Type": "JS",
             "color": {
+                "ID": "QCFC",
                 "Desc": "QR Code Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "QCBC",
                 "Desc": "QR Code Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -209,10 +244,12 @@
         "tbody tr.odd:hover": {
             "Type": "CSS",
             "color": {
+                "ID": "TROHFC",
                 "Desc": "Table Row Odd Hover Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "TROHBC",
                 "Desc": "Table Row Odd Hover Back-Color",
                 "Value": "#3F3F3F"
             }
@@ -220,10 +257,12 @@
         "tbody tr.even:hover": {
             "Type": "CSS",
             "color": {
+                "ID": "TREHFC",
                 "Desc": "Table Row Even Hover Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "TREHBC",
                 "Desc": "Table Row Even Hover Back-Color",
                 "Value": "#3F3F3F"
             }
@@ -231,6 +270,7 @@
         ".rcrumbs a:hover": {
             "Type": "CSS",
             "color": {
+                "ID": "BHFC",
                 "Desc": "Breadcrumb Hover Fore-Color",
                 "Value": "#4F4F4F"
             }
@@ -238,6 +278,7 @@
         "#credits a:hover": {
             "Type": "CSS",
             "color": {
+                "ID": "CBHFC",
                 "Desc": "Credits Button Hover Fore-Color",
                 "Value": "#6F6F6F"
             }
@@ -245,6 +286,7 @@
         "#save": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SBBC",
                 "Desc": "Save Button Back-Color",
                 "Value": "#1F1F1F"
             }
@@ -252,10 +294,12 @@
         "#reset": {
             "Type": "CSS",
             "color": {
+                "ID": "RBFC",
                 "Desc": "Reset Button Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "RBBC",
                 "Desc": "Reset Button Back-Color",
                 "Value": "#1F1F1F"
             }
@@ -263,6 +307,7 @@
         "#settingsicon button:hover img": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SIHBC",
                 "Desc": "Settings Icon Hover Back-Color",
                 "Value": "#3F3F3F"
             }
@@ -270,6 +315,7 @@
         "#save:hover": {
             "Type": "CSS",
             "background-color": {
+                "ID": "SBHBC",
                 "Desc": "Save Button Hover Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -277,10 +323,12 @@
         "#reset:hover": {
             "Type": "CSS",
             "color": {
+                "ID": "RBHFC",
                 "Desc": "Reset Button Hover Fore-Color",
                 "Value": "#FFFFFF"
             },
             "background-color": {
+                "ID": "RBHBC",
                 "Desc": "Reset Button Hover Back-Color",
                 "Value": "#2F2F2F"
             }
@@ -288,14 +336,17 @@
     },
     "GlobalSettings": {
         "EnableVideoPlayer": {
+            "ID": "EVP",
             "Desc": "Enable Video Player?",
             "Value": true
         },
         "EnableAudioPlayer": {
+            "ID": "EAP",
             "Desc": "Enable Audio Player?",
             "Value": true
         },
         "EnablePhotoViewer": {
+            "ID": "EPV",
             "Desc": "Enable Photo Viewer?",
             "Value": true
         }
