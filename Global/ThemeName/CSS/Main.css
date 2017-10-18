@@ -1,8 +1,7 @@
 @charset "utf-8";
-@import url('//fonts.googleapis.com/css?family=Open+Sans');
 @font-face {
-  font-family: 'MrDeHaviland-Regular';
-  src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeName/lib/Fonts/MrDeHaviland-Regular.ttf);
+    font-family: 'MrDeHaviland-Regular';
+    src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeName/lib/Fonts/MrDeHaviland-Regular.ttf);
 }
 
 * {
@@ -13,31 +12,31 @@
 }
 
 #wrapper {
-	position: absolute;
+    position: absolute;
     width: 86vw;
     float: left;
-	top: 50px;
-	left: 0;
+    top: 50px;
+    left: 0;
     overflow-y: auto;
     overflow-x: hidden;
-	bottom: 0;
-	height: calc(100vh - 50px);
+    bottom: 0;
+    height: calc(100vh - 50px);
 }
 
 #icon {
-	width: 12vw;
-	height: 12vw;
-	margin: 1vw auto;
+    width: 12vw;
+    height: 12vw;
+    margin: 1vw auto;
 }
 
 #text {
-	width: 12vw;
-	min-height: 3vw;
-	margin: 1vw auto;
+    width: 12vw;
+    min-height: 3vw;
+    margin: 1vw auto;
 }
 
 #text p {
-	word-wrap: break-word;
+    word-wrap: break-word;
     text-align: center;
     vertical-align: middle;
     width: 100%;
@@ -54,21 +53,21 @@
 }
 
 #qrcode {
-	width: 12vw;
-	height: 12vw;
-	margin: 1vw auto;
+    width: 12vw;
+    height: 12vw;
+    margin: 1vw auto;
     display: block;
 }
 
 #infodiv {
-	position: absolute;
+    position: absolute;
     width: 14vw;
     float: left;
-	top: 51px;
-	right: 0;
-	overflow-y: auto;
-	bottom: 0;
-	height: calc(100vh - 51px);
+    top: 51px;
+    right: 0;
+    overflow-y: auto;
+    bottom: 0;
+    height: calc(100vh - 51px);
 }
 
 table {
@@ -90,7 +89,7 @@ tbody {
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: calc(100vh - 50px - 33px);
-	-webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 #top {
@@ -136,7 +135,8 @@ tbody {
     width: 100%;
 }
 
-#breadcrumb, .rcrumbs{
+#breadcrumb,
+.rcrumbs {
     width: calc(86vw - 51px);
     height: 50px;
     line-height: 50px;
@@ -210,69 +210,76 @@ tr.indexbreakrow hr {
     display: none
 }
 
+
 /* Scrollbar Config */
 
+
 /* Scroll Bar Width and Height */
+
 ::-webkit-scrollbar {
     height: 4px;
 }
 
+
 /* Above And Below Margin */
+
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
 
+
 /* Track Behind Bar */
+
 ::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.2);
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-.rcrumbs > ul {
-  padding: 0;
-  padding-left: 10px;
-  list-style: none;
-  margin: 0;
-  line-height: 50px;
-  height: 100%;
+.rcrumbs>ul {
+    padding: 0;
+    padding-left: 10px;
+    list-style: none;
+    margin: 0;
+    line-height: 50px;
+    height: 100%;
 }
 
-.rcrumbs > ul > li {
-  overflow: hidden;
-  display: none;
+.rcrumbs>ul>li {
+    overflow: hidden;
+    display: none;
 }
 
-.rcrumbs > ul > li.show {
-  display: inline-block;
+.rcrumbs>ul>li.show {
+    display: inline-block;
 }
 
-.rcrumbs > ul > li.ellipsis {
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  overflow: hidden;
+.rcrumbs>ul>li.ellipsis {
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .rcrumbs a {
-  font-size: x-large;
+    font-size: x-large;
 }
 
 .rcrumbs .divider {
-  padding: 0 5px;
-  font-size: x-large;
+    padding: 0 5px;
+    font-size: x-large;
 }
 
-#settings{
+#settings {
     display: none;
     position: absolute;
     width: 86vw;
     float: left;
-	top: 50px;
-	left: 0;
+    top: 50px;
+    left: 0;
     overflow-y: auto;
     overflow-x: hidden;
-	bottom: 0;
-	height: calc(100vh - 50px);
+    bottom: 0;
+    height: calc(100vh - 50px);
 }
 
 #close {
@@ -292,6 +299,7 @@ tbody tr:hover {
     padding-left: 30px;
     position: absolute;
     overflow: hidden;
+    border-bottom: 1px solid #2F2F2F;
 }
 
 #settings #section {
@@ -322,7 +330,7 @@ tbody tr:hover {
     top: 70px;
     overflow: hidden;
     overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 input {
@@ -380,36 +388,36 @@ tbody tr.even:hover {
 }
 
 #audioPlayer {
-	position: absolute;
+    position: absolute;
     width: 100vw;
     height: 70px;
     z-index: 999990;
     margin: 0;
     bottom: 0;
     left: 0;
-	display: none;
+    display: none;
 }
 
 #videoPlayer {
-	position: absolute;
+    position: absolute;
     max-height: 100vh;
-	max-width: 100vw;
+    max-width: 100vw;
     z-index: 999990;
-	top:50%;
-	left:50%;
-	margin-right:-50%;
-	transform:translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     background-color: #3F3F3F;
     display: none;
 }
 
 video {
-	max-height: 100vh;
+    max-height: 100vh;
     max-width: 100%;
 }
 
 #videoHeader {
-	z-index: 999991;
+    z-index: 999991;
     width: 100%;
     height: 35px;
     position: absolute;
@@ -418,7 +426,7 @@ video {
 }
 
 #videoHeader button {
-	z-index: 999991;
+    z-index: 999991;
     height: 100%;
     width: 35px;
     float: right;
@@ -431,11 +439,11 @@ video {
     z-index: 999991;
     float: left;
     padding: 5px 0 0 5px;
-	margin: 0;
+    margin: 0;
 }
 
 #videoHUD button img {
-	height: 90%;
+    height: 90%;
     width: 90%;
     margin: 5%;
 }
@@ -458,4 +466,12 @@ video {
 
 #infodivcontent {
     min-height: calc(100% - 2vw);
+}
+
+tbody tr.odd:hover {
+    transition: background-color .20s ease;
+}
+
+tbody tr.even:hover {
+    transition: background-color .20s ease;
 }

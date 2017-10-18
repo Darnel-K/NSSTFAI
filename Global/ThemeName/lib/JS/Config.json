@@ -205,6 +205,85 @@
                 "Desc": "QR Code Back-Color",
                 "Value": "#2F2F2F"
             }
+        },
+        "tbody tr.odd:hover": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Table Row Odd Hover Fore-Color",
+                "Value": "#FFFFFF"
+            },
+            "background-color": {
+                "Desc": "Table Row Odd Hover Back-Color",
+                "Value": "#3F3F3F"
+            }
+        },
+        "tbody tr.even:hover": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Table Row Even Hover Fore-Color",
+                "Value": "#FFFFFF"
+            },
+            "background-color": {
+                "Desc": "Table Row Even Hover Back-Color",
+                "Value": "#3F3F3F"
+            }
+        },
+        ".rcrumbs a:hover": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Breadcrumb Hover Fore-Color",
+                "Value": "#4F4F4F"
+            }
+        },
+        "#credits a:hover": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Credits Button Hover Fore-Color",
+                "Value": "#6F6F6F"
+            }
+        },
+        "#save": {
+            "Type": "CSS",
+            "background-color": {
+                "Desc": "Save Button Back-Color",
+                "Value": "#1F1F1F"
+            }
+        },
+        "#reset": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Reset Button Fore-Color",
+                "Value": "#FFFFFF"
+            },
+            "background-color": {
+                "Desc": "Reset Button Back-Color",
+                "Value": "#1F1F1F"
+            }
+        },
+        "#settingsicon button:hover img": {
+            "Type": "CSS",
+            "background-color": {
+                "Desc": "Settings Icon Hover Back-Color",
+                "Value": "#3F3F3F"
+            }
+        },
+        "#save:hover": {
+            "Type": "CSS",
+            "background-color": {
+                "Desc": "Save Button Hover Back-Color",
+                "Value": "#2F2F2F"
+            }
+        },
+        "#reset:hover": {
+            "Type": "CSS",
+            "color": {
+                "Desc": "Reset Button Hover Fore-Color",
+                "Value": "#FFFFFF"
+            },
+            "background-color": {
+                "Desc": "Reset Button Hover Back-Color",
+                "Value": "#2F2F2F"
+            }
         }
     },
     "GlobalSettings": {
@@ -222,14 +301,3 @@
         }
     }
 }
-
-// "tbody tr.odd:hover": "color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
-// "tbody tr.even:hover": "color: #FFFFFF;background-color: #3f3f3f;transition: background-color .20s ease;",
-// ".rcrumbs a:hover": "color: #4f4f4f;background-color: #2F2F2F;",
-// "#credits a:hover": "color: #6f6f6f;background-color: #2F2F2F;",
-// "#settings h2": "border-bottom: 1px solid #2F2F2F",
-// "#save": "background-color: #1F1F1F;",
-// "#reset": "background-color: #1F1F1F;color: #FFFFFF",
-// "#settingsicon button:hover img": "background-color: #3F3F3F;",
-// "#save:hover": "background-color: #2F2F2F;",
-// "#reset:hover": "background-color: #2F2F2F;color: #FFFFFF"
