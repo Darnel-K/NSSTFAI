@@ -210,26 +210,14 @@ tr.indexbreakrow hr {
     display: none
 }
 
-
-/* Scrollbar Config */
-
-
-/* Scroll Bar Width and Height */
-
 ::-webkit-scrollbar {
     height: 4px;
 }
-
-
-/* Above And Below Margin */
 
 ::-webkit-scrollbar-button {
     width: 0px;
     height: 0px;
 }
-
-
-/* Track Behind Bar */
 
 ::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.2);
@@ -303,6 +291,7 @@ tbody tr:hover {
 }
 
 #settings #section {
+    /* Remove */
     width: 25%;
     float: left;
     position: relative;
@@ -312,6 +301,7 @@ tbody tr:hover {
 }
 
 #settings #section p {
+    /* Remove */
     height: 30px;
     margin: 0;
     margin-bottom: 13px;
@@ -319,6 +309,7 @@ tbody tr:hover {
 }
 
 #settings #section:nth-child(odd) {
+    /* Remove */
     padding-left: 30px;
     width: calc(25% - 30px);
 }
@@ -334,9 +325,9 @@ tbody tr:hover {
 }
 
 input {
-    width: 40%;
+    width: 60%;
     border: none;
-    height: 75%;
+    height: 100%;
     text-align: center;
 }
 
@@ -383,9 +374,9 @@ tbody tr.even:hover {
     cursor: pointer;
 }
 
-#reset img {
+/* #reset img {
     width: 100%;
-}
+} */
 
 #audioPlayer {
     position: absolute;
@@ -466,12 +457,4 @@ video {
 
 #infodivcontent {
     min-height: calc(100% - 2vw);
-}
-
-tbody tr.odd:hover {
-    transition: background-color .20s ease;
-}
-
-tbody tr.even:hover {
-    transition: background-color .20s ease;
 }
