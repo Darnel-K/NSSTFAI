@@ -1,147 +1,215 @@
 {
     "ColorStyles": {
-        "body": {
+        "Body-FC": {
             "Type": "CSS",
-            "color": {
-                "ID": "BFC",
-                "Desc": "Body Fore-Color",
-                "Value": "#FFFFFF"
-            },
-            "background-color": {
-                "ID": "BBC",
-                "Desc": "Body Back-Color",
-                "Value": "#1F1F1F"
+            "Element": "body",
+            "Styles": {
+                "color": {
+                    "Desc": "Body Fore-Color",
+                    "Value": "#FFFFFF"
+                }
             }
         },
-        "#icon": {
+        "Body-BC": {
             "Type": "CSS",
-            "color": {
-                "ID": "SIFC",
-                "Desc": "Sidebar Icon Fore-Color",
-                "Value": "#FFFFFF"
-            },
-            "background-color": {
-                "ID": "SIBC",
-                "Desc": "Sidebar Icon Back-Color",
-                "Value": "#2F2F2F"
+            "Element": "body",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Body Back-Color",
+                    "Value": "#1F1F1F"
+                }
             }
         },
-        "#text": {
+        "SidebarIcon-FC": {
             "Type": "CSS",
-            "color": {
-                "ID": "STFC",
-                "Desc": "Sidebar Text Fore-Color",
-                "Value": "#FFFFFF"
-            },
-            "background-color": {
-                "ID": "STBC",
-                "Desc": "Sidebar Text Back-Color",
-                "Value": "#2F2F2F"
+            "Element": "#icon",
+            "Styles": {
+                "color": {
+                    "Desc": "Sidebar Icon Fore-Color",
+                    "Value": "#FFFFFF"
+                }
             }
         },
-        "#credits": {
+        "SidebarIcon-BC": {
             "Type": "CSS",
-            "background-color": {
-                "ID": "CBBC",
-                "Desc": "Credits Button Back-Color",
-                "Value": "#2F2F2F"
+            "Element": "#icon",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Sidebar Icon Back-Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "#credits a": {
+        "SidebarText-FC": {
             "Type": "CSS",
-            "color": {
-                "ID": "CBFC",
-                "Desc": "Credits Button Fore-Color",
-                "Value": "#4F4F4F"
+            "Element": "#text",
+            "Styles": {
+                "color": {
+                    "Desc": "Sidebar Text Fore-Color",
+                    "Value": "#FFFFFF"
+                }
             }
         },
-        "#infodiv": {
+        "SidebarText-BC": {
             "Type": "CSS",
-            "background-color": {
-                "ID": "SBC",
-                "Desc": "Sidebar Back-Color",
-                "Value": "#2F2F2F"
+            "Element": "#text",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Sidebar Text Back-Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "#topleft": {
+        "CreditsButton-BC": {
             "Type": "CSS",
-            "background-color": {
-                "ID": "TBLBC",
-                "Desc": "Top Bar Left Back-Color",
-                "Value": "#2F2F2F"
-            },
-            "border-right": {
-                "ID": "TBLRB",
-                "Desc": "Top Bar Left, Right Border",
-                "Value": "1px solid #1F1F1F"
+            "Element": "#credits",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Credits Button Back-Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "#settingsicon button img": {
+        "CreditsButton-FC": {
             "Type": "CSS",
-            "background-color": {
-                "ID": "SIcBC",
-                "Desc": "Settings Icon Back Color",
-                "Value": "#2F2F2F"
+            "Element": "#credits a",
+            "Styles": {
+                "color": {
+                    "Desc": "Credits Button Fore-Color",
+                    "Value": "#4F4F4F"
+                }
             }
         },
-        "#topright": {
+        "Sidebar-BC": {
             "Type": "CSS",
-            "background-color": {
-                "ID": "TBRBC",
-                "Desc": "Top Bar Right Back-Color",
-                "Value": "#2F2F2F"
-            },
-            "color": {
-                "ID": "TBRFC",
-                "Desc": "Top Bar Right Fore-Color",
-                "Value": "#6F6F6F"
+            "Element": "#infodiv",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Sidebar Back-Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "tr.indexhead a": {
+        "TopBarLeft-BC": {
             "Type": "CSS",
-            "color": {
-                "ID": "THLFC",
-                "Desc": "Table Header Link Fore-Color",
-                "Value": "#FFFFFF"
+            "Element": "#topleft",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Top Bar Left Back-Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "tr.indexhead": {
+        "TopBarLeft-RB": {
             "Type": "CSS",
-            "border-bottom": {
-                "ID": "THBB",
-                "Desc": "Table Header Bottom Border",
-                "Value": "1px solid #2F2F2F"
-            },
-            "background-color": {
-                "ID": "THBC",
-                "Desc": "Table Header Back-Color",
-                "Value": "#1F1F1F"
+            "Element": "#topleft",
+            "Styles": {
+                "border-right": {
+                    "Desc": "Top Bar Left, Right Border",
+                    "Value": "1px solid #1F1F1F"
+                }
             }
         },
-        "tr.odd": {
+        "SettingsIcon-BC": {
             "Type": "CSS",
-            "color": {
-                "ID": "TROFC",
-                "Desc": "Table Row Odd Fore-Color",
-                "Value": "#FFFFFF"
-            },
-            "background-color": {
-                "ID": "TROBC",
-                "Desc": "Table Row Odd Back-Color",
-                "Value": "#4F4F4F"
+            "Element": "#settingsicon button img",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Settings Icon Back Color",
+                    "Value": "#2F2F2F"
+                }
             }
         },
-        "tr.even": {
+        "TopBarRight-BC": {
             "Type": "CSS",
-            "color": {
-                "ID": "TREFC",
-                "Desc": "Table Row Even Fore-Color",
-                "Value": "#FFFFFF"
-            },
-            "background-color": {
-                "ID": "TREBC",
-                "Desc": "Table Row Even Back-Color",
-                "Value": "#1F1F1F"
+            "Element": "#topright",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Top Bar Right Back-Color",
+                    "Value": "#2F2F2F"
+                }
+            }
+        },
+        "TopBarRight-FC": {
+            "Type": "CSS",
+            "Element": "#topright",
+            "Styles": {
+                "color": {
+                    "Desc": "Top Bar Right Fore-Color",
+                    "Value": "#6F6F6F"
+                }
+            }
+        },
+        "TableHeaderLink-FC": {
+            "Type": "CSS",
+            "Element": "tr.indexhead a",
+            "Styles": {
+                "color": {
+                    "Desc": "Table Header Link Fore-Color",
+                    "Value": "#FFFFFF"
+                }
+            }
+        },
+        "TableHeader-BB": {
+            "Type": "CSS",
+            "Element": "tr.indexhead",
+            "Styles": {
+                "border-bottom": {
+                    "Desc": "Table Header Bottom Border",
+                    "Value": "1px solid #2F2F2F"
+                }
+            }
+        },
+        "TableHeader-BC": {
+            "Type": "CSS",
+            "Element": "tr.indexhead",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Table Header Back-Color",
+                    "Value": "#1F1F1F"
+                }
+            }
+        },
+        "TableRowOdd-FC": {
+            "Type": "CSS",
+            "Element": "tr.odd",
+            "Styles": {
+                "color": {
+                    "Desc": "Table Row Odd Fore-Color",
+                    "Value": "#FFFFFF"
+                }
+            }
+        },
+        "TableRowOdd-BC": {
+            "Type": "CSS",
+            "Element": "tr.odd",
+            "Styles": {
+                "background-color": {
+                    "Desc": "Table Row Odd Back-Color",
+                    "Value": "#4F4F4F"
+                }
+            }
+        },
+        "TableRowEven-FC": {
+            "Type": "CSS",
+            "Element": "tr.even",
+            "Styles": {
+                "color": {
+                    "ID": "TREFC",
+                    "Desc": "Table Row Even Fore-Color",
+                    "Value": "#FFFFFF"
+                }
+            }
+        },
+        "TableRowEven-BC": {
+            "Type": "CSS",
+            "Element": "tr.even",
+            "Styles": {
+                "background-color": {
+                    "ID": "TREBC",
+                    "Desc": "Table Row Even Back-Color",
+                    "Value": "#1F1F1F"
+                }
             }
         },
         "tr.odd a": {
