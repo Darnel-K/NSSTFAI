@@ -1,404 +1,457 @@
 {
-    "ColorStyles": {
-        "Body-FC": {
-            "Type": "CSS",
-            "Element": "body",
-            "Styles": {
-                "color": {
-                    "Desc": "Body Fore-Color",
-                    "Value": "#FFFFFF"
+    "ChangeableStyles": {
+        "CSS": {
+            "0": {
+                "Element": "body",
+                "Styles": {
+                    "color": {
+                        "ID": "Body-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Body Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "Body-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Body Back-Color",
+                        "Value": "#1F1F1F"
+                    }
                 }
-            }
-        },
-        "Body-BC": {
-            "Type": "CSS",
-            "Element": "body",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Body Back-Color",
-                    "Value": "#1F1F1F"
-                }
-            }
-        },
-        "SidebarIcon-FC": {
-            "Type": "CSS",
-            "Element": "#icon",
-            "Styles": {
-                "color": {
-                    "Desc": "Sidebar Icon Fore-Color",
-                    "Value": "#FFFFFF"
-                }
-            }
-        },
-        "SidebarIcon-BC": {
-            "Type": "CSS",
-            "Element": "#icon",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Sidebar Icon Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "SidebarText-FC": {
-            "Type": "CSS",
-            "Element": "#text",
-            "Styles": {
-                "color": {
-                    "Desc": "Sidebar Text Fore-Color",
-                    "Value": "#FFFFFF"
-                }
-            }
-        },
-        "SidebarText-BC": {
-            "Type": "CSS",
-            "Element": "#text",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Sidebar Text Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "CreditsButton-BC": {
-            "Type": "CSS",
-            "Element": "#credits",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Credits Button Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "CreditsButton-FC": {
-            "Type": "CSS",
-            "Element": "#credits a",
-            "Styles": {
-                "color": {
-                    "Desc": "Credits Button Fore-Color",
-                    "Value": "#4F4F4F"
-                }
-            }
-        },
-        "Sidebar-BC": {
-            "Type": "CSS",
-            "Element": "#infodiv",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Sidebar Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "TopBarLeft-BC": {
-            "Type": "CSS",
-            "Element": "#topleft",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Top Bar Left Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "TopBarLeft-RB": {
-            "Type": "CSS",
-            "Element": "#topleft",
-            "Styles": {
-                "border-right": {
-                    "Desc": "Top Bar Left, Right Border",
-                    "Value": "1px solid #1F1F1F"
-                }
-            }
-        },
-        "SettingsIcon-BC": {
-            "Type": "CSS",
-            "Element": "#settingsicon button img",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Settings Icon Back Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "TopBarRight-BC": {
-            "Type": "CSS",
-            "Element": "#topright",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Top Bar Right Back-Color",
-                    "Value": "#2F2F2F"
-                }
-            }
-        },
-        "TopBarRight-FC": {
-            "Type": "CSS",
-            "Element": "#topright",
-            "Styles": {
-                "color": {
-                    "Desc": "Top Bar Right Fore-Color",
-                    "Value": "#6F6F6F"
-                }
-            }
-        },
-        "TableHeaderLink-FC": {
-            "Type": "CSS",
-            "Element": "tr.indexhead a",
-            "Styles": {
-                "color": {
-                    "Desc": "Table Header Link Fore-Color",
-                    "Value": "#FFFFFF"
-                }
-            }
-        },
-        "TableHeader-BB": {
-            "Type": "CSS",
-            "Element": "tr.indexhead",
-            "Styles": {
-                "border-bottom": {
-                    "Desc": "Table Header Bottom Border",
-                    "Value": "1px solid #2F2F2F"
-                }
-            }
-        },
-        "TableHeader-BC": {
-            "Type": "CSS",
-            "Element": "tr.indexhead",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Table Header Back-Color",
-                    "Value": "#1F1F1F"
-                }
-            }
-        },
-        "TableRowOdd-FC": {
-            "Type": "CSS",
-            "Element": "tr.odd",
-            "Styles": {
-                "color": {
-                    "Desc": "Table Row Odd Fore-Color",
-                    "Value": "#FFFFFF"
-                }
-            }
-        },
-        "TableRowOdd-BC": {
-            "Type": "CSS",
-            "Element": "tr.odd",
-            "Styles": {
-                "background-color": {
-                    "Desc": "Table Row Odd Back-Color",
-                    "Value": "#4F4F4F"
-                }
-            }
-        },
-        "TableRowEven-FC": {
-            "Type": "CSS",
-            "Element": "tr.even",
-            "Styles": {
-                "color": {
-                    "ID": "TREFC",
-                    "Desc": "Table Row Even Fore-Color",
-                    "Value": "#FFFFFF"
-                }
-            }
-        },
-        "TableRowEven-BC": {
-            "Type": "CSS",
-            "Element": "tr.even",
-            "Styles": {
-                "background-color": {
-                    "ID": "TREBC",
-                    "Desc": "Table Row Even Back-Color",
-                    "Value": "#1F1F1F"
-                }
-            }
-        },
-        "tr.odd a": {
-            "Type": "CSS",
-            "color": {
-                "ID": "TROLFC",
-                "Desc": "Table Row Odd Link Fore-Color",
-                "Value": "#FFFFFF"
-            }
-        },
-        "tr.even a": {
-            "Type": "CSS",
-            "color": {
-                "ID": "TRELFC",
-                "Desc": "Table Row Even Link Fore-Color",
-                "Value": "#FFFFFF"
-            }
-        },
-        "::-webkit-scrollbar": {
-            "Type": "CSS",
-            "width": {
-                "ID": "WSW",
-                "Desc": "WebKit Scrollbar Width",
-                "Value": "4px"
-            }
-        },
-        "::-webkit-scrollbar-thumb": {
-            "Type": "CSS",
-            "background": {
-                "ID": "WSBC",
-                "Desc": "WebKit Scrollbar Back-Color",
-                "Value": "#888888"
             },
-            "border": {
-                "ID": "WSB",
-                "Desc": "WebKit Scrollbar Border",
-                "Value": "thin solid #808080"
+            "1": {
+                "Element": "#icon",
+                "Styles": {
+                    "color": {
+                        "ID": "SidebarIcon-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Sidebar Icon Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "SidebarIcon-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Sidebar Icon Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             },
-            "border-radius": {
-                "ID": "WSBR",
-                "Desc": "WebKit Scrollbar Border Radius",
-                "Value": "10px"
-            }
-        },
-        "::-webkit-scrollbar-thumb:hover": {
-            "Type": "CSS",
-            "background": {
-                "ID": "WSHBC",
-                "Desc": "WebKit Scrollbar Hover Back-Color",
-                "Value": "#666666"
+            "2": {
+                "Element": "#text",
+                "Styles": {
+                    "color": {
+                        "ID": "SidebarText-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Sidebar Text Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "SidebarText-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Sidebar Text Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             },
-            "border": {
-                "ID": "WSHB",
-                "Desc": "WebKit Scrollbar Hover Border",
-                "Value": "thin solid #666666"
-            }
-        },
-        ".rcrumbs *": {
-            "Type": "CSS",
-            "color": {
-                "ID": "BFC",
-                "Desc": "Breadcrumb Fore-Color",
-                "Value": "#6F6F6F"
-            }
-        },
-        ".rcrumbs .divider": {
-            "Type": "CSS",
-            "color": {
-                "ID": "BDFC",
-                "Desc": "Breadcrumb Divider Fore-Color",
-                "Value": "#CCCCCC"
-            }
-        },
-        "#settings": {
-            "Type": "CSS",
-            "background-color": {
-                "ID": "SetBC",
-                "Desc": "Settings Back-Color",
-                "Value": "#1F1F1F"
+            "3": {
+                "Element": "#credits",
+                "Styles": {
+                    "background-color": {
+                        "ID": "CreditsButton-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Credits Button Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             },
-            "color": {
-                "ID": "SFC",
-                "Desc": "Settings Fore-Color",
-                "Value": "#6F6F6F"
-            }
-        },
-        "QRCODE": {
-            "Type": "JS",
-            "color": {
-                "ID": "QCFC",
-                "Desc": "QR Code Fore-Color",
-                "Value": "#FFFFFF"
+            "4": {
+                "Element": "#credits a",
+                "Styles": {
+                    "color": {
+                        "ID": "CreditsButton-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Credits Button Fore-Color",
+                        "Value": "#4F4F4F"
+                    }
+                }
             },
-            "background-color": {
-                "ID": "QCBC",
-                "Desc": "QR Code Back-Color",
-                "Value": "#2F2F2F"
-            }
-        },
-        "tbody tr.odd:hover": {
-            "Type": "CSS",
-            "color": {
-                "ID": "TROHFC",
-                "Desc": "Table Row Odd Hover Fore-Color",
-                "Value": "#FFFFFF"
+            "5": {
+                "Element": "#infodiv",
+                "Styles": {
+                    "background-color": {
+                        "ID": "Sidebar-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Sidebar Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             },
-            "background-color": {
-                "ID": "TROHBC",
-                "Desc": "Table Row Odd Hover Back-Color",
-                "Value": "#3F3F3F"
-            }
-        },
-        "tbody tr.even:hover": {
-            "Type": "CSS",
-            "color": {
-                "ID": "TREHFC",
-                "Desc": "Table Row Even Hover Fore-Color",
-                "Value": "#FFFFFF"
+            "6": {
+                "Element": "#topleft",
+                "Styles": {
+                    "background-color": {
+                        "ID": "TopBarLeft-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Top Bar Left Back-Color",
+                        "Value": "#2F2F2F"
+                    },
+                    "border-right": {
+                        "ID": "TopBarLeft-RB",
+                        "Type": "BORDER",
+                        "Desc": "Top Bar Left, Right Border",
+                        "Width": 1,
+                        "Style": "solid",
+                        "HEX": "#1F1F1F"
+                    }
+                }
             },
-            "background-color": {
-                "ID": "TREHBC",
-                "Desc": "Table Row Even Hover Back-Color",
-                "Value": "#3F3F3F"
-            }
-        },
-        ".rcrumbs a:hover": {
-            "Type": "CSS",
-            "color": {
-                "ID": "BHFC",
-                "Desc": "Breadcrumb Hover Fore-Color",
-                "Value": "#4F4F4F"
-            }
-        },
-        "#credits a:hover": {
-            "Type": "CSS",
-            "color": {
-                "ID": "CBHFC",
-                "Desc": "Credits Button Hover Fore-Color",
-                "Value": "#6F6F6F"
-            }
-        },
-        "#save": {
-            "Type": "CSS",
-            "background-color": {
-                "ID": "SBBC",
-                "Desc": "Save Button Back-Color",
-                "Value": "#1F1F1F"
-            }
-        },
-        "#reset": {
-            "Type": "CSS",
-            "color": {
-                "ID": "RBFC",
-                "Desc": "Reset Button Fore-Color",
-                "Value": "#FFFFFF"
+            "7": {
+                "Element": "#settingsicon button img",
+                "Styles": {
+                    "background-color": {
+                        "ID": "SettingsIcon-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Settings Icon Back Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             },
-            "background-color": {
-                "ID": "RBBC",
-                "Desc": "Reset Button Back-Color",
-                "Value": "#1F1F1F"
-            }
-        },
-        "#settingsicon button:hover img": {
-            "Type": "CSS",
-            "background-color": {
-                "ID": "SIHBC",
-                "Desc": "Settings Icon Hover Back-Color",
-                "Value": "#3F3F3F"
-            }
-        },
-        "#save:hover": {
-            "Type": "CSS",
-            "background-color": {
-                "ID": "SBHBC",
-                "Desc": "Save Button Hover Back-Color",
-                "Value": "#2F2F2F"
-            }
-        },
-        "#reset:hover": {
-            "Type": "CSS",
-            "color": {
-                "ID": "RBHFC",
-                "Desc": "Reset Button Hover Fore-Color",
-                "Value": "#FFFFFF"
+            "8": {
+                "Element": "#topright",
+                "Styles": {
+                    "background-color": {
+                        "ID": "TopBarRight-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Top Bar Right Back-Color",
+                        "Value": "#2F2F2F"
+                    },
+                    "color": {
+                        "ID": "TopBarRight-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Top Bar Right Fore-Color",
+                        "Value": "#6F6F6F"
+                    }
+                }
             },
-            "background-color": {
-                "ID": "RBHBC",
-                "Desc": "Reset Button Hover Back-Color",
-                "Value": "#2F2F2F"
+            "9": {
+                "Element": "tr.indexhead a",
+                "Styles": {
+                    "color": {
+                        "ID": "TableHeaderLink-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Header Link Fore-Color",
+                        "Value": "#FFFFFF"
+                    }
+                }
+            },
+            "10": {
+                "Element": "tr.indexhead",
+                "Styles": {
+                    "border-bottom": {
+                        "ID": "TableHeader-BB",
+                        "Type": "BORDER",
+                        "Desc": "Table Header Bottom Border",
+                        "Width": 1,
+                        "Style": "solid",
+                        "HEX": "#2F2F2F"
+                    },
+                    "background-color": {
+                        "ID": "TableHeader-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Header Back-Color",
+                        "Value": "#1F1F1F"
+                    }
+                }
+            },
+            "11": {
+                "Element": "tr.odd",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowOdd-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Odd Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "TableRowOdd-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Odd Back-Color",
+                        "Value": "#4F4F4F"
+                    }
+                }
+            },
+            "12": {
+                "Element": "tr.even",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowEven-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Even Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "TableRowEven-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Even Back-Color",
+                        "Value": "#1F1F1F"
+                    }
+                }
+            },
+            "13": {
+                "Element": "tr.odd a",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowOddLink-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Odd Link Fore-Color",
+                        "Value": "#FFFFFF"
+                    }
+                }
+            },
+            "14": {
+                "Element": "tr.even a",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowEvenLink-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Even Link Fore-Color",
+                        "Value": "#FFFFFF"
+                    }
+                }
+            },
+            "15": {
+                "Element": "::-webkit-scrollbar",
+                "Styles": {
+                    "width": {
+                        "ID": "WebkitScrollbar-Width",
+                        "Type": "N-PX",
+                        "Desc": "WebKit Scrollbar Width",
+                        "Value": 4
+                    }
+                }
+            },
+            "16": {
+                "Element": "::-webkit-scrollbar-thumb",
+                "Styles": {
+                    "background": {
+                        "ID": "WebkitScrollbar-BC",
+                        "Type": "COLOUR",
+                        "Desc": "WebKit Scrollbar Back-Color",
+                        "Value": "#888888"
+                    },
+                    "border": {
+                        "ID": "WebkitScrollbar-Border",
+                        "Type": "BORDER",
+                        "Desc": "WebKit Scrollbar Border",
+                        "Width": 1,
+                        "Style": "solid",
+                        "HEX": "#808080"
+                    },
+                    "border-radius": {
+                        "ID": "WebkitScrollbar-BorderRadius",
+                        "Type": "N-PX",
+                        "Desc": "WebKit Scrollbar Border Radius",
+                        "Value": 10
+                    }
+                }
+            },
+            "17": {
+                "Element": "::-webkit-scrollbar-thumb:hover",
+                "Styles": {
+                    "background": {
+                        "ID": "WebkitScrollbarHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "WebKit Scrollbar Hover Back-Color",
+                        "Value": "#666666"
+                    },
+                    "border": {
+                        "ID": "WebkitScrollbarHover-Border",
+                        "Type": "BORDER",
+                        "Desc": "WebKit Scrollbar Hover Border",
+                        "Width": 1,
+                        "Style": "solid",
+                        "HEX": "#666666"
+                    }
+                }
+            },
+            "18": {
+                "Element": ".rcrumbs *",
+                "Styles": {
+                    "color": {
+                        "ID": "Breadcrumb-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Breadcrumb Fore-Color",
+                        "Value": "#6F6F6F"
+                    }
+                }
+            },
+            "19": {
+                "Element": ".rcrumbs .divider",
+                "Styles": {
+                    "color": {
+                        "ID": "BreadcrumbDivider-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Breadcrumb Divider Fore-Color",
+                        "Value": "#CCCCCC"
+                    }
+                }
+            },
+            "20": {
+                "Element": "#settings",
+                "Styles": {
+                    "background-color": {
+                        "ID": "Settings-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Settings Back-Color",
+                        "Value": "#1F1F1F"
+                    },
+                    "color": {
+                        "ID": "Settings-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Settings Fore-Color",
+                        "Value": "#6F6F6F"
+                    }
+                }
+            },
+            "21": {
+                "Element": "tbody tr.odd:hover",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowOddHover-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Odd Hover Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "TableRowOddHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Odd Hover Back-Color",
+                        "Value": "#3F3F3F"
+                    }
+                }
+            },
+            "22": {
+                "Element": "tbody tr.even:hover",
+                "Styles": {
+                    "color": {
+                        "ID": "TableRowEvenHover-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Even Hover Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "TableRowEvenHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Table Row Even Hover Back-Color",
+                        "Value": "#3F3F3F"
+                    }
+                }
+            },
+            "23": {
+                "Element": ".rcrumbs a:hover",
+                "Styles": {
+                    "color": {
+                        "ID": "BreadcrumbHover-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Breadcrumb Hover Fore-Color",
+                        "Value": "#4F4F4F"
+                    }
+                }
+            },
+            "24": {
+                "Element": "#credits a:hover",
+                "Styles": {
+                    "color": {
+                        "ID": "CreditsButtonHover-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Credits Button Hover Fore-Color",
+                        "Value": "#6F6F6F"
+                    }
+                }
+            },
+            "25": {
+                "Element": "#save",
+                "Styles": {
+                    "background-color": {
+                        "ID": "SaveButton-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Save Button Back-Color",
+                        "Value": "#1F1F1F"
+                    }
+                }
+            },
+            "26": {
+                "Element": "#reset",
+                "Styles": {
+                    "color": {
+                        "ID": "ResetButton-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Reset Button Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "ResetButton-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Reset Button Back-Color",
+                        "Value": "#1F1F1F"
+                    }
+                }
+            },
+            "27": {
+                "Elements": "#settingsicon button:hover img",
+                "Styles": {
+                    "background-color": {
+                        "ID": "SettingsIconHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Settings Icon Hover Back-Color",
+                        "Value": "#3F3F3F"
+                    }
+                }
+            },
+            "28": {
+                "Elements": "#save:hover",
+                "Styles": {
+                    "background-color": {
+                        "ID": "SaveButtonHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Save Button Hover Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
+            },
+            "29": {
+                "Elements": "#reset:hover",
+                "Styles": {
+                    "color": {
+                        "ID": "ResetButtonHover-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Reset Button Hover Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "ResetButtonHover-BC",
+                        "Type": "COLOUR",
+                        "Desc": "Reset Button Hover Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
+            }
+        },
+        "JS": {
+            "0": {
+                "Styles": {
+                    "color": {
+                        "ID": "QRcode-FC",
+                        "Type": "COLOUR",
+                        "Desc": "QR Code Fore-Color",
+                        "Value": "#FFFFFF"
+                    },
+                    "background-color": {
+                        "ID": "QRcode-BC",
+                        "Type": "COLOUR",
+                        "Desc": "QR Code Back-Color",
+                        "Value": "#2F2F2F"
+                    }
+                }
             }
         }
     },

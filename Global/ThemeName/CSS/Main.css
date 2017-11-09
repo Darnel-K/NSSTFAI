@@ -170,19 +170,11 @@ tr.indexhead {
     text-align: left;
 }
 
-th.indexcolicon {
+th.indexcolicon, td.indexcolicon {
     width: 1.4vw;
 }
 
-td.indexcolicon {
-    width: 1.4vw;
-}
-
-th.indexcolname {
-    width: 62.78vw;
-}
-
-td.indexcolname {
+th.indexcolname, td.indexcolname {
     width: 62.78vw;
 }
 
@@ -196,12 +188,7 @@ td.indexcollastmod {
     width: 16.3vw;
 }
 
-th.indexcolsize {
-    text-align: center;
-    width: 5.52vw;
-}
-
-td.indexcolsize {
+th.indexcolsize, td.indexcolsize {
     text-align: center;
     width: 5.52vw;
 }
