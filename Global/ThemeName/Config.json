@@ -225,7 +225,9 @@
                         "ID": "WebkitScrollbar-Width",
                         "Type": "N-PX",
                         "Desc": "WebKit Scrollbar Width",
-                        "Value": 4
+                        "Value": 4,
+                        "Min": 0,
+                        "Max": 20
                     }
                 }
             },
@@ -250,7 +252,9 @@
                         "ID": "WebkitScrollbar-BorderRadius",
                         "Type": "N-PX",
                         "Desc": "WebKit Scrollbar Border Radius",
-                        "Value": 10
+                        "Value": 10,
+                        "Min": 0,
+                        "Max": 10
                     }
                 }
             },

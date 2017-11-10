@@ -278,28 +278,12 @@ tbody tr:hover {
     border-bottom: 1px solid #2F2F2F;
 }
 
-#settings #section {
-    /* Remove */
-    width: 25%;
-    float: left;
-    position: relative;
-    min-height: 100%;
-    overflow: hidden;
-    padding-top: 15px;
-}
-
-#settings #section p {
+.SettingsItem p {
     /* Remove */
     height: 30px;
     margin: 0;
     margin-bottom: 13px;
     overflow: hidden;
-}
-
-#settings #section:nth-child(odd) {
-    /* Remove */
-    padding-left: 30px;
-    width: calc(25% - 30px);
 }
 
 #settings .container {
@@ -313,7 +297,6 @@ tbody tr:hover {
 }
 
 input {
-    width: 60%;
     border: none;
     height: 100%;
     text-align: center;
@@ -362,71 +345,9 @@ tbody tr.even:hover {
     cursor: pointer;
 }
 
-
 /* #reset img {
     width: 100%;
 } */
-
-#audioPlayer {
-    position: absolute;
-    width: 100vw;
-    height: 70px;
-    z-index: 999990;
-    margin: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
-}
-
-#videoPlayer {
-    position: absolute;
-    max-height: 100vh;
-    max-width: 100vw;
-    z-index: 999990;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    background-color: #3F3F3F;
-    display: none;
-}
-
-video {
-    max-height: 100vh;
-    max-width: 100%;
-}
-
-#videoHeader {
-    z-index: 999991;
-    width: 100%;
-    height: 35px;
-    position: absolute;
-    top: 0;
-    background-color: rgba(31, 31, 31, 0.5);
-}
-
-#videoHeader button {
-    z-index: 999991;
-    height: 100%;
-    width: 35px;
-    float: right;
-    padding: 0;
-    border: none;
-    background-color: rgba(31, 31, 31, 0);
-}
-
-#videoHeader p {
-    z-index: 999991;
-    float: left;
-    padding: 5px 0 0 5px;
-    margin: 0;
-}
-
-#videoHUD button img {
-    height: 90%;
-    width: 90%;
-    margin: 5%;
-}
 
 #JSerror p {
     margin: 0;
@@ -584,4 +505,16 @@ tbody tr.even:hover {
 #reset:hover {
     background-color: #2F2F2F;
     color: #FFFFFF
+}
+
+.SettingsItem {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.SettingsItem p,
+input {
+    width: 45%;
+    float: left;
 }
