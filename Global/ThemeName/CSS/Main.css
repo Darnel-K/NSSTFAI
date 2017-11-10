@@ -86,7 +86,7 @@ thead tr {
 
 tbody {
     display: block;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(100vh - 50px - 33px);
     -webkit-overflow-scrolling: touch;
@@ -255,6 +255,7 @@ tr.indexbreakrow hr {
     overflow-x: hidden;
     bottom: 0;
     height: calc(100vh - 50px);
+    -webkit-overflow-scrolling: touch;
 }
 
 #close {

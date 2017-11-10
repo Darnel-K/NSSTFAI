@@ -1,3 +1,5 @@
+var ConfigJSON;
+var DEBUG = true;
 function updateQrCode(link) {
     var options = {
         render: 'image',
@@ -22,6 +24,57 @@ function updateQrCode(link) {
         image: null
     };
     $('#qrcode').empty().qrcode(options);
+}
+function ApplySettings() {
+    $.getJSON("/ThemeName/Config.json").done(function(json) {
+        ConfigJSON = json;
+        if (DEBUG) {console.log("DEBUG >> ApplySettings: Get Config.json Successful");}
+        if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
+            if (DEBUG) {console.log("DEBUG >> ApplySettings: Config Has 'ChangeableStyles' Object");}
+            if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
+                if (DEBUG) {console.log("DEBUG >> ApplySettings: 'ChangeableStyles' Has 'CSS' Object");}
+                var Styles = "";
+                for (var Key in ConfigJSON['ChangeableStyles']['CSS']) {
+                    var HTML_Element = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Element"];
+                    // console.log(HTML_Element);
+                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key]['Styles']) {
+                        var CSSkey = ConfigJSON["ChangeableStyles"]["CSS"][Key]['Styles'][LowerKey];
+                        var ID = CSSkey["ID"];
+                        var Type = CSSkey["Type"];
+                        var Desc = CSSkey["Desc"];
+                        var Value;
+                        switch (Type) {
+                            case "BORDER":
+                                Value = String(CSSkey["Width"]) + "px " + CSSkey["Style"] + " " + CSSkey["HEX"];
+                                break;
+                            case "N-PX":
+                                Value = String(CSSkey["Value"]) + "px";
+                                break;
+                            default:
+                                Value = CSSkey["Value"];
+                                break;
+                        }
+                        Styles += HTML_Element + " {" + LowerKey + ": " + Value + ";}\n";
+                        // $(HTML_Element).css(LowerKey, Value);
+                        if (DEBUG) {console.log("DEBUG >> ApplySettings: Style '" + LowerKey + "' On Element '" + HTML_Element + "' Changed To '" + Value + "'");}
+                    }
+                }
+                $('#s').text(Styles);
+            } else {
+                if (DEBUG) {console.warn("DEBUG >> ApplySettings: 'ChangeableStyles' Does Not Contain 'CSS' Object");}
+            }
+            if (ConfigJSON["ChangeableStyles"].hasOwnProperty("JS")) {
+                if (DEBUG) {console.log("DEBUG >> ApplySettings: 'ChangeableStyles' Has 'JS' Object");}
+
+            } else {
+                if (DEBUG) {console.warn("DEBUG >> ApplySettings: 'ChangeableStyles' Does Not Contain 'JS' Object");}
+            }
+        } else {
+            if (DEBUG) {console.warn("DEBUG >> ApplySettings: Config Does Not Contain 'ChangeableStyles' Object");}
+        }
+    }).fail(function() {
+        if (DEBUG) {console.error("DEBUG >> ApplySettings: Unable To Get Config.json");}
+    });
 }
 function loadSettings() {
     settingsObj = getCookie("indexSettings")
@@ -458,4 +511,8 @@ function init() {
     genBreadCrumb();
     setupTable();
     setupEvents();
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+        $("tbody").css("overflox-y", "scroll");
+        $("#settings").css("overflox-y", "scroll");
+    }
 }

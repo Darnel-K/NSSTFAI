@@ -397,7 +397,7 @@
                 }
             },
             "27": {
-                "Elements": "#settingsicon button:hover img",
+                "Element": "#settingsicon button:hover img",
                 "Styles": {
                     "background-color": {
                         "ID": "SettingsIconHover-BC",
@@ -408,7 +408,7 @@
                 }
             },
             "28": {
-                "Elements": "#save:hover",
+                "Element": "#save:hover",
                 "Styles": {
                     "background-color": {
                         "ID": "SaveButtonHover-BC",
@@ -419,7 +419,7 @@
                 }
             },
             "29": {
-                "Elements": "#reset:hover",
+                "Element": "#reset:hover",
                 "Styles": {
                     "color": {
                         "ID": "ResetButtonHover-FC",
