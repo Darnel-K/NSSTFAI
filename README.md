@@ -35,12 +35,12 @@ Files: /Directory
 
 ## TO-DO:
 * [ ] Add Credits Screen
-* [ ] Rewrite The JS Settings
+* [x] Rewrite The JS Settings
 * [ ] Video Player
 * [ ] Audio Player
 * [ ] Image Viewer
 * [ ] Clean CSS
-* [ ] More Settings
+* [x] More Settings
 * [ ] Pick A Name
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon

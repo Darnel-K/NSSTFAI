@@ -279,10 +279,7 @@ tbody tr:hover {
 }
 
 .SettingsItem p {
-    /* Remove */
-    height: 30px;
     margin: 0;
-    margin-bottom: 13px;
     overflow: hidden;
 }
 
@@ -514,7 +511,18 @@ tbody tr.even:hover {
 }
 
 .SettingsItem p,
-input {
+input, select {
     width: 45%;
     float: left;
+    height: 35px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+    line-height: 35px;
+    border: none;
+    padding: 0;
+    text-align-last: center;
+}
+
+.BorderStyling {
+    width: calc(45% / 3);
 }
