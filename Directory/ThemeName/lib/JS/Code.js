@@ -484,10 +484,6 @@ function SetupSettingsPage() {
         $("#close").hide();
         $("#open").show();
     });
-
-    $("#save").on("click", function() {
-        UpdateAndSaveSettings();
-    });
 }
 
 function SetupOtherEvents() {

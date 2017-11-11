@@ -364,10 +364,16 @@
                 "Element": "#save",
                 "Styles": {
                     "background-color": {
-                        "ID": "SaveButton-BC",
+                        "ID": "SaveText-BC",
                         "Type": "COLOUR",
-                        "Desc": "Save Button Back-Color",
+                        "Desc": "Save Text Back-Color",
                         "Value": "#1F1F1F"
+                    },
+                    "color": {
+                        "ID": "SaveText-FC",
+                        "Type": "COLOUR",
+                        "Desc": "Save Text Fore-Color",
+                        "Value": "#FFFFFF"
                     }
                 }
             },
@@ -400,17 +406,6 @@
                 }
             },
             "28": {
-                "Element": "#save:hover",
-                "Styles": {
-                    "background-color": {
-                        "ID": "SaveButtonHover-BC",
-                        "Type": "COLOUR",
-                        "Desc": "Save Button Hover Back-Color",
-                        "Value": "#2F2F2F"
-                    }
-                }
-            },
-            "29": {
                 "Element": "#reset:hover",
                 "Styles": {
                     "color": {
@@ -427,7 +422,7 @@
                     }
                 }
             },
-            "30": {
+            "29": {
                 "Element": "tbody tr.odd:hover a, tbody tr.odd:hover",
                 "Styles": {
                     "color": {
@@ -438,7 +433,7 @@
                     }
                 }
             },
-            "31": {
+            "30": {
                 "Element": "tbody tr.even:hover a, tbody tr.even:hover",
                 "Styles": {
                     "color": {
@@ -449,7 +444,7 @@
                     }
                 }
             },
-            "32": {
+            "31": {
                 "Element": "thead tr a:hover",
                 "Styles": {
                     "color": {

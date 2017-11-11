@@ -310,20 +310,11 @@ tbody tr.even:hover {
 #save {
     margin-top: 10px;
     margin-right: 10px;
-    width: 50px;
     height: 50px;
     line-height: 50px;
     padding: 0;
     border: none;
     float: right;
-}
-
-#save:hover {
-    cursor: pointer;
-}
-
-#save img {
-    width: 100%;
 }
 
 #reset {
@@ -493,10 +484,6 @@ tbody tr.even:hover {
 
 #settingsicon button:hover img {
     background-color: #3F3F3F;
-}
-
-#save:hover {
-    background-color: #2F2F2F;
 }
 
 #reset:hover {
