@@ -1,5 +1,5 @@
-# Apache-Index-Theme
-A Not So Simple Theme Made For Apache's Index
+# NSSTFAI
+A Not So Simple Theme For Apache's Index
 
 [Demo](http://rs01.kajida.uk/GitHub/Experimental-Code) showing a clone of one of my other repositories, setup globally.
 
@@ -16,8 +16,8 @@ This version is global to every directory on the apache server.
 Files: /Global
 
 1. Download a copy of all the files in the folder "Global".
-2. Copy / upload the folder "ThemeName" from the folder "Global" to a location on your server that is accessible by the apache web server.
-3. Edit lines 5 & 7 of "Theme.conf" changing "[ThemeFilesLocation]" to the location of the "ThemeName" folder.
+2. Copy / upload the folder "NSSTFAI" from the folder "Global" to a location on your server that is accessible by the apache web server.
+3. Edit lines 5 & 7 of "Theme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
 4. Copy / upload "Theme.conf" to your apache web server's "Includes" folder.
 5. Restart the apache web server.
 6. To activate the theme create a ".htaccess" file in the folder that you want indexing and directory listing turned on and put "Options +Indexes" into that file.
@@ -29,9 +29,9 @@ This version is only active on the directory that contains the required files an
 Files: /Directory
 
 1. Download a copy of all the files in the folder "Directory".
-2. Copy / upload the folder "ThemeName" to your domain's root directory
+2. Copy / upload the folder "NSSTFAI" to your domain's root directory
 3. Copy / upload the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also enables on all directories in the same folder). If copying or uploading the ".htaccess" file to the root directory SKIP STEP 4.
-4. In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess ThemeName" into it
+4. In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
 
 ## TO-DO:
 * [ ] Add Credits Screen
@@ -41,10 +41,10 @@ Files: /Directory
 * [ ] Image Viewer
 * [ ] Clean CSS
 * [x] More Settings
-* [ ] Pick A Name
+* [X] Pick A Name
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
-* [ ] Replace All Instances Of "ThemeName" With Chosen Name
+* [X] Replace All Instances Of "ThemeName" With Chosen Name
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
 * [x] Add Setup Instructions For Both Versions

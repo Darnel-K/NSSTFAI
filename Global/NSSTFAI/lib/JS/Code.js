@@ -1,7 +1,7 @@
 var ConfigJSON;
 var Settings = {
     "LocalStorageSettingsName": "IndexSettings",
-    "JsonSettingsFile": "/ThemeName/Config.json",
+    "JsonSettingsFile": "/NSSTFAI/Config.json",
     "QRcode-FC": "#FFFFFF"
 };
 var DEBUG = false;
@@ -114,7 +114,7 @@ function genBreadCrumb() {
 }
 
 function setupTable() {
-    $("table img").attr("onerror", "this.onerror = null; this.src='/ThemeName/Icons/Error.svg'");
+    $("table img").attr("onerror", "this.onerror = null; this.src='/NSSTFAI/Icons/Error.svg'");
     $(".indexbreakrow").remove();
     $("tbody").before("<thead></thead>");
     $("thead").html("<tr class=\"indexhead\">" + $(".indexhead").html() + "</tr>");
@@ -127,7 +127,7 @@ function SetupTableEvents() {
             if(!$(this).hasClass('indexbreakrow')) {
                 if ($(this).find('a').prop('href') == undefined) {
                     qrlink = $(location).prop('href');
-                    iconSRC = "/ThemeName/Icons/Directory.svg";
+                    iconSRC = "/NSSTFAI/Icons/Directory.svg";
                     iconAlt = "[DIR]";
                     text = "Current Directory";
                 } else {
@@ -336,7 +336,7 @@ function init() {
         GetSettingsFromFile(Settings['JsonSettingsFile']);
     }
     qrlink = $(location).prop('href');
-    iconSRC = "/ThemeName/Icons/Directory.svg";
+    iconSRC = "/NSSTFAI/Icons/Directory.svg";
     iconAlt = "[DIR]";
     text = "Current Directory";
     updateQrCode(qrlink);

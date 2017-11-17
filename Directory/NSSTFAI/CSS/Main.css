@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
     font-family: 'MrDeHaviland-Regular';
-    src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/ThemeName/lib/Fonts/MrDeHaviland-Regular.ttf);
+    src: local('MrDeHaviland-Regular'), local('MrDeHaviland-Regular'), url(/NSSTFAI/lib/Fonts/MrDeHaviland-Regular.ttf);
 }
 
 * {
@@ -170,11 +170,13 @@ tr.indexhead {
     text-align: left;
 }
 
-th.indexcolicon, td.indexcolicon {
+th.indexcolicon,
+td.indexcolicon {
     width: 1.4vw;
 }
 
-th.indexcolname, td.indexcolname {
+th.indexcolname,
+td.indexcolname {
     width: 62.78vw;
 }
 
@@ -188,7 +190,8 @@ td.indexcollastmod {
     width: 16.3vw;
 }
 
-th.indexcolsize, td.indexcolsize {
+th.indexcolsize,
+td.indexcolsize {
     text-align: center;
     width: 5.52vw;
 }
@@ -332,6 +335,7 @@ tbody tr.even:hover {
 #reset:hover {
     cursor: pointer;
 }
+
 
 /* #reset img {
     width: 100%;
@@ -498,7 +502,8 @@ tbody tr.even:hover {
 }
 
 .SettingsItem p,
-input, select {
+input,
+select {
     width: 45%;
     float: left;
     height: 35px;
