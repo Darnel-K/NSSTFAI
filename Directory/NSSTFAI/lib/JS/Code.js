@@ -535,6 +535,7 @@ function init() {
         .attr("alt", iconAlt);
     $("#text p").html(text);
     genBreadCrumb();
+    $("title").text(location.href);
     setupTable();
     SetupTableEvents();
     SetupSettingsPage();
