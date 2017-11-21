@@ -330,25 +330,23 @@ function SetMobileSettings() {
 }
 
 function CheckForUpdate() {
-    var RemoteVersion
-    var LocalVersion
     $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json").done(function(json) {
-        RemoteVersion = json;
+        var RemoteVersion = json;
+        $.getJSON("/NSSTFAI/lib/JS/Version.json").done(function(json) {
+            var LocalVersion = json;
+            if (LocalVersion["Version"] < RemoteVersion["Version"]) {
+                if (RemoteVersion["Required"] == true) {
+                    console.error("NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
+                } else {
+                    console.warn("NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
+                }
+            }
+        }).fail(function() {
+            console.error("DEBUG >> CheckForUpdate: Unable To Get Local Version");
+        });
     }).fail(function() {
         console.error("DEBUG >> CheckForUpdate: Unable To Get Remote Version");
     });
-    $.getJSON("/NSSTFAI/lib/JS/Version.json").done(function(json) {
-        LocalVersion = json;
-    }).fail(function() {
-        console.error("DEBUG >> CheckForUpdate: Unable To Get Local Version");
-    });
-    if (LocalVersion["Version"] < RemoteVersion["Version"]) {
-        if (RemoteVersion["Required"] == true) {
-            console.error("NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
-        } else {
-            console.warn("NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
-        }
-    }
 }
 
 function init() {
