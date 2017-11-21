@@ -336,9 +336,9 @@ function CheckForUpdate() {
             var LocalVersion = json;
             if (LocalVersion["Version"] < RemoteVersion["Version"]) {
                 if (RemoteVersion["Required"] == true) {
-                    console.error("NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
+                    console.error("NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
                 } else {
-                    console.warn("NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme !");
+                    console.warn("NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
                 }
             }
         }).fail(function() {
