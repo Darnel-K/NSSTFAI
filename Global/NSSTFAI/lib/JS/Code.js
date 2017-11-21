@@ -344,7 +344,7 @@ function init() {
     $('#icon').find('img').attr('alt', iconAlt);
     $('#text p').html(text);
     genBreadCrumb();
-    $("title").text(location.pathname + " @ " + location.hostname);
+    $("title").text("Index of " + location.pathname + " @ " + location.hostname);
     setupTable();
     SetupTableEvents();
     SetupSettingsPage();
