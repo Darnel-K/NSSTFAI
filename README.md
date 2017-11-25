@@ -52,10 +52,10 @@ Files: /Directory
 
 ## Help:
 
-Left Arrow / Backspace: Goes to the previous directory if available.\n
-Right Arrow: Will enter / open the currently selected directory / file.
-Up Arrow: Navigates the selector up one.
-Down Arrow: Navigates the selector down one.
+* Left Arrow / Backspace: Goes to the previous directory if available.
+* Right Arrow: Will enter / open the currently selected directory / file.
+* Up Arrow: Navigates the selector up one.
+* Down Arrow: Navigates the selector down one.
 
 ## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
