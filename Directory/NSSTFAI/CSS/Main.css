@@ -518,3 +518,9 @@ select {
 .BorderStyling {
     width: calc(45% / 3);
 }
+
+tr.selected {
+    outline: 1px solid #666;
+    outline-style: auto !important;
+    background-color: #3F3F3F;
+}

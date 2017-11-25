@@ -36,6 +36,7 @@ Files: /Directory
 ## TO-DO:
 * [ ] Add Credits Screen
 * [x] Rewrite The JS Settings
+* [x] Add Arrow Key Navigation
 * [ ] Video Player
 * [ ] Audio Player
 * [ ] Image Viewer

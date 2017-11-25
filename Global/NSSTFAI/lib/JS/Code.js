@@ -125,6 +125,8 @@ function SetupTableEvents() {
     $( "tr" ).on("mouseover", function() {
         if(!$(this).hasClass('indexhead')){
             if(!$(this).hasClass('indexbreakrow')) {
+                $("tbody tr").removeClass("selected");
+                $(this).addClass("selected");
                 if ($(this).find('a').prop('href') == undefined) {
                     qrlink = $(location).prop('href');
                     iconSRC = "/NSSTFAI/Icons/Directory.svg";
@@ -311,7 +313,7 @@ function SetupSettingsPage() {
 function SetupOtherEvents() {    
     $(document).on("keydown", function (e) {
         if(! $(event.target).is('input')) {
-            if (e.which === 8) {
+            if (e.which === 8) { // Backspace
                 e.preventDefault();
                 if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
                     $("tbody").find("tr").first().click();
@@ -349,6 +351,46 @@ function CheckForUpdate() {
     });
 }
 
+function SetArrowKeyEvents() {
+    $(document).on("keydown", function (e) {
+        if(! $(event.target).is('input')) {
+            console.log(e.which);
+            if (e.which === 37) { // Left Arrow
+                e.preventDefault();
+                if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
+                    $("tbody").find("tr").first().click();
+                }
+            }
+            if (e.which === 38) { // Up Arrow
+                e.preventDefault();
+                if ($('tbody tr.selected').length) {
+                    $('tbody tr.selected').removeClass("selected").prev().addClass("selected");
+                } else {
+                    $("tbody tr:last-child").addClass("selected");
+                }
+                if ($("tr.selected").position().top < 0 || $("tr.selected").position().top > $("tbody").height()) {
+                    $("tbody").scrollTop($("tr.selected").offset().top - $("tbody").offset().top + $("tbody").scrollTop());
+                }
+            }
+            if (e.which === 39 || e.which === 13) { // Right Arrow
+                e.preventDefault();
+                $("tbody tr.selected").click();
+            }
+            if (e.which === 40) { // Down Arrow
+                e.preventDefault();
+                if ($('tbody tr.selected').length) {
+                    $('tbody tr.selected').removeClass("selected").next().addClass("selected");
+                } else {
+                    $("tbody tr:first-child").addClass("selected");
+                }
+                if ($("tr.selected").position().top < 0 || $("tr.selected").position().top > $("tbody").height()) {
+                    $("tbody").scrollTop($("tr.selected").offset().top - $("tbody").offset().top + $("tbody").scrollTop());
+                }
+            }
+        }
+    });
+}
+
 function init() {
     if (localStorage.getItem(Settings['LocalStorageSettingsName']) != null) {
         GetSettingsFromLocalStorage(Settings['LocalStorageSettingsName']);
@@ -370,5 +412,6 @@ function init() {
     SetupSettingsPage();
     SetupOtherEvents();
     SetMobileSettings();
+    SetArrowKeyEvents();
     CheckForUpdate();
 }
