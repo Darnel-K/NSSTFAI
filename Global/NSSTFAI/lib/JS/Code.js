@@ -1,12 +1,19 @@
 var ConfigJSON;
 var Settings = {
-    "LocalStorageSettingsName": "IndexSettings",
+    "DEBUG": true,
+    "LocalStorageSettingsName": "NSSTFAI",
     "JsonSettingsFile": "/NSSTFAI/Config.json",
-    "QRcode-FC": "#FFFFFF"
+    "QRcode-FC": "#FFFFFF",
+    "QRcode-BC": "#2F2F2F",
+    "QRcode-Link": $(location).prop('href'),
+    "SidebarIconSRC": "/NSSTFAI/Icons/Directory.svg",
+    "SidebarIconAlt": "[DIR]",
+    "SidebarText": "Current Directory",
+    "Config": null,
+    "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
-var DEBUG = false;
 
-function updateQrCode(link) {
+function UpdateQRCode(link) {
     var options = {
         render: 'image',
         minVersion: 1,
@@ -25,20 +32,34 @@ function updateQrCode(link) {
         mPosX: 0.5,
         mPosY: 0.5,
         label: 'no label',
-        fontname: 'sans',
-        fontcolor: '#F00',
+        fontname: 'monospace',
+        fontcolor: '#CCC',
         image: null
     };
     $('#qrcode').empty().qrcode(options);
+    log("UpdateQRCode: QR Code Has Been Changed Based On '" + link + "'");
+}
+
+function log(msg, type = "LOG") {
+    if (Settings['DEBUG']) {
+        type = type.toUpperCase();
+        if (type == "LOG") {
+            console.log("NSSTFAI >> " + msg);
+        } else if (type == "WARN") {
+            console.warn("NSSTFAI >> " + msg);
+        } else if (type == "ERROR") {
+            console.error("NSSTFAI >> " + msg);
+        }
+    }
 }
 
 function GetSettingsFromFile(file) {
     $.getJSON(file).done(function(json) {
-        if (DEBUG) {console.log("DEBUG >> GetSettingsFromFile: Get Config.json Successful");}
+        log("GetSettingsFromFile: Get Config.json Successful");
         ConfigJSON = json;
         ApplySettings(ConfigJSON);
     }).fail(function() {
-        if (DEBUG) {console.error("DEBUG >> GetSettingsFromFile: Unable To Get Config.json");}
+        log("GetSettingsFromFile: Unable To Get Config.json", "ERROR");
     });
 }
 
@@ -75,9 +96,11 @@ function ApplySettings(JSON_OBJ) {
                             break;
                     }
                     Styles += HTML_Element + " {" + LowerKey + ": " + Value + ";}\n";
+                    log("ApplySettings: CSS Key '" + LowerKey + "' With Value '" + Value + "' Set On '" + HTML_Element + "'");
                 }
             }
             $('#s').text(Styles);
+            log("ApplySettings: Finished Applying CSS Styles");
         }
         if (JSON_OBJ["ChangeableStyles"].hasOwnProperty("JS")) {
             for (var Key in JSON_OBJ['ChangeableStyles']['JS']) {
@@ -88,8 +111,10 @@ function ApplySettings(JSON_OBJ) {
                     var Desc = CSSkey["Desc"];
                     var Value = CSSkey["Value"];
                     Settings[ID] = Value;
+                    log("ApplySettings: Setting '" + ID + "' Value Set To '" + Value + "'");
                 }
             }
+            log("ApplySettings: Finished Applying JS Settings");
         }
     }
 }
@@ -98,76 +123,90 @@ function GetSettingsFromLocalStorage(StorageName) {
     settingsObj = localStorage.getItem(StorageName);
     settingsObj = JSON.parse(decodeURIComponent(settingsObj));
     ConfigJSON = settingsObj;
+    log("GetSettingsFromLocalStorage: Settings Grabbed From Local Storage");
     ApplySettings(ConfigJSON);
 }
 
-function genBreadCrumb() {
+function GenBreadCrumb() {
     var breadcrumb = "<div class=\"rcrumbs\" id=\"breadcrumbs\"><ul>";
     var href = document.location.href;
     var s = href.split("/");
     for (var i=2;i<(s.length-1);i++) {
         breadcrumb += "<li><a href=\"" + href.substring(0,href.indexOf("/" + s[i]) + s[i].length + 1) + "/\">" + decodeURIComponent(s[i]) + "</a><span class=\"divider\">></span></li>";
+        log("GenBreadCrumb: Added '" + decodeURIComponent(s[i]) + "' To Breadcrumb");
     }
     breadcrumb+="</ul></div>";
     $( "#topleft" ).append(breadcrumb);
     $("#breadcrumbs").rcrumbs();
+    log("GenBreadCrumb: Breadcrumb Complete");
 }
 
-function setupTable() {
+function SetupTable() {
     $("table img").attr("onerror", "this.onerror = null; this.src='/NSSTFAI/Icons/Error.svg'");
     $(".indexbreakrow").remove();
     $("tbody").before("<thead></thead>");
     $("thead").html("<tr class=\"indexhead\">" + $(".indexhead").html() + "</tr>");
-    $(".indexhead").eq(1).remove()
+    $(".indexhead").eq(1).remove();
+    log("SetupTable: Table Setup Complete");
+}
+
+function SetSideBarInfo() {
+    if ($('tr.selected').find('a').prop('href') == undefined) {
+        Settings['QRcode-Link'] = $(location).prop('href');
+        Settings["SidebarIconSRC"] = "/NSSTFAI/Icons/Directory.svg";
+        Settings["SidebarIconAlt"] = "[DIR]";
+        Settings["SidebarText"] = "Current Directory";
+        log("SetSideBarInfo: Link Not Present");
+    } else {
+        link = $('tr.selected').find('a').prop('href');
+        log("SetSideBarInfo: Link Detected, " + link);
+        var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
+        switch (extension) {
+            case 'png':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'svg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'jpg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'jpeg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'bmp':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'gif':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            default:
+                Settings["SidebarIconSRC"] = $('tr.selected').find('img').attr('src');
+                break;
+        }
+        Settings["QRcode-Link"] = $('tr.selected').find('a').prop('href');
+        Settings["SidebarIconAlt"] = $('tr.selected').find('img').attr('alt');
+        Settings["SidebarText"] = decodeURIComponent($('tr.selected').find('a').text().replace('/','')) + "<br />" + $('tr.selected').find('.indexcollastmod').text() + "<br />" + $('tr.selected').find('.indexcolsize').text();
+        log("SetSideBarInfo: Sidebar Information Updated To, Text='" + Settings["SidebarText"] + "' Image='" + Settings["SidebarIconSRC"] + "' ImageAlt='" + Settings["SidebarIconAlt"] + "'");
+    }
+    UpdateQRCode(Settings["QRcode-Link"]);
+    $('#icon').find('img').attr('src', Settings["SidebarIconSRC"]);
+    $('#icon').find('img').attr('alt', Settings["SidebarIconAlt"]);
+    $("#text p").html(Settings["SidebarText"]);
 }
 
 function SetupTableEvents() {
     $( "tr" ).on("mouseover", function() {
+        log("Mouseover: Mouse Detected Over A Table Row");
         if(!$(this).hasClass('indexhead')){
+            log("Mouseover: Does Not Have Class 'indexhead'");
             if(!$(this).hasClass('indexbreakrow')) {
+                log("Mouseover: Does Not Have Class 'indexbreakrow'");
                 $("tbody tr").removeClass("selected");
                 $(this).addClass("selected");
-                if ($(this).find('a').prop('href') == undefined) {
-                    qrlink = $(location).prop('href');
-                    iconSRC = "/NSSTFAI/Icons/Directory.svg";
-                    iconAlt = "[DIR]";
-                    text = "Current Directory";
-                } else {
-                    link = $(this).find('a').prop('href');
-                    var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
-                    switch (extension) {
-                        case 'png':
-                            iconSRC = link;
-                            break;
-                        case 'svg':
-                            iconSRC = link;
-                            break;
-                        case 'jpg':
-                            iconSRC = link;
-                            break;
-                        case 'jpeg':
-                            iconSRC = link;
-                            break;
-                        case 'bmp':
-                            iconSRC = link;
-                            break;
-                        case 'gif':
-                            iconSRC = link;
-                            break;
-                        default:
-                            iconSRC = $(this).find('img').attr('src');
-                            break;
-                    }
-                    qrlink = $(this).find('a').prop('href');
-                    iconAlt = $(this).find('img').attr('alt');
-                    text = decodeURIComponent($(this).find('a').text().replace('/','')) + "<br />" + $(this).find('.indexcollastmod').text() + "<br />" + $(this).find('.indexcolsize').text();
-                }
+                SetSideBarInfo();
             }
         }
-        updateQrCode(qrlink);
-        $('#icon').find('img').attr('src', iconSRC);
-        $('#icon').find('img').attr('alt', iconAlt);
-        $('#text p').html(text);
     });
 
     $('tbody tr a').on("click", function(e) {
@@ -177,7 +216,7 @@ function SetupTableEvents() {
     $('tbody tr').on("click", function(e) {
         e.preventDefault();
         link = $(this).find('a').prop('href');
-		text = $(this).find('a').text();
+		Settings["SidebarText"] = $(this).find('a').text();
         // var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
         if (link.substr(-1) != "/" && link.substr(-1) != "\\") {
             win = window.open(link, '_blank');
@@ -238,7 +277,6 @@ function SetupSettingsPage() {
         $('#close').show();
         $('#open').hide();
         $("#SettingsContents").html("");
-        BorderStyles = '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>';
         if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
             if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
                 $('#SettingsContents').append("<h2>Styles</h2>");
@@ -255,8 +293,7 @@ function SetupSettingsPage() {
                                 var Width = String(CSSkey["Width"]);
                                 var Style = CSSkey["Style"];
                                 var HEX = CSSkey["HEX"];
-                                // Value = String(CSSkey["Width"]) + "px " + CSSkey["Style"] + " " + CSSkey["HEX"];
-                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + BorderStyles + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
+                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + Settings['BorderStyles'] + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
                                 $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({defaultSelected: true});
                                 break;
                             case "N-PX":
@@ -310,23 +347,13 @@ function SetupSettingsPage() {
     });
 }
 
-function SetupOtherEvents() {    
-    $(document).on("keydown", function (e) {
-        if(! $(event.target).is('input')) {
-            if (e.which === 8) { // Backspace
-                e.preventDefault();
-                ParentDirectory();
-            }
-        }
-    });
-}
-
 function SetMobileSettings() {
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    if (/iPad|iPhone|iPod|Android/.test(navigator.userAgent) && !window.MSStream) {
         $("tbody").css("overflox-y", "scroll");
         $("#settings").css("overflox-y", "scroll");
         $("tr").off("mouseover");
-    }
+        log("MobileCheck: Mobile Device Detected, Applying Mobile CSS");
+    } else {log("MobileCheck: Not A Mobile Device");}
 }
 
 function CheckForUpdate() {
@@ -336,21 +363,22 @@ function CheckForUpdate() {
             var LocalVersion = json;
             if (LocalVersion["Version"] < RemoteVersion["Version"]) {
                 if (RemoteVersion["Required"] == true) {
-                    console.error("NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
+                    log("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
                 } else {
-                    console.warn("NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
+                    log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
                 }
             }
         }).fail(function() {
-            console.error("DEBUG >> CheckForUpdate: Unable To Get Local Version");
+            log("CheckForUpdate: Unable To Get Local Version Data", "ERROR");
         });
     }).fail(function() {
-        console.error("DEBUG >> CheckForUpdate: Unable To Get Remote Version");
+        log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
     });
 }
 
 function ParentDirectory() {
     if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
+        log("ParentDirectory: Going Up A Directory");
         $("tbody").find("tr").first().click();
     }
 }
@@ -359,45 +387,63 @@ function ScrollIfNotVisible(element, parent) {
     try {
         if ($(element).position().top < 0 || $(element).position().top > $(parent).height()) {
             $(parent).scrollTop($(element).offset().top - $(parent).offset().top + $(parent).scrollTop());
+            log("ScrollIfNotVisible: Scrolled To Item With Class '.selected'");
         }
     } catch (e) {}
 }
 
-function SetArrowKeyEvents() {
+function SetupKeydownEvents() {
     $(document).on("keydown", function (e) {
         if(! $(event.target).is('input')) {
-            if (e.which === 37) { // Left Arrow
+            if (e.which === 37 || e.which === 8) { // Left Arrow || Backspace
                 e.preventDefault();
                 ParentDirectory();
             }
             if (e.which === 38) { // Up Arrow
                 e.preventDefault();
                 if ($('tbody tr.selected').length) {
-                    $('tbody tr.selected').removeClass("selected").prev().addClass("selected");
+                    if ($('tbody tr.selected').prev().length) {
+                        $('tbody tr.selected').removeClass("selected").prev().addClass("selected");
+                    } else {
+                        $("tr.selected").removeClass("selected");
+                        $("tbody tr:last-child").addClass("selected");
+                    }
                 } else {
                     $("tbody tr:last-child").addClass("selected");
                 }
+                log("Keydown: Moved Up One");
                 ScrollIfNotVisible("tr.selected", "tbody");
+                SetSideBarInfo();
             }
-            if (e.which === 39 || e.which === 13) { // Right Arrow
+            if (e.which === 39 || e.which === 13) { // Right Arrow || Enter
                 e.preventDefault();
+                log("Keydown: Opening / Entering Selected File Or Directory")
                 $("tbody tr.selected").click();
             }
             if (e.which === 40) { // Down Arrow
                 e.preventDefault();
                 if ($('tbody tr.selected').length) {
-                    $('tbody tr.selected').removeClass("selected").next().addClass("selected");
+                    if ($('tbody tr.selected').next().length) {
+                        $('tbody tr.selected').removeClass("selected").next().addClass("selected");
+                    } else {
+                        $("tr.selected").removeClass("selected");
+                        $("tbody tr:first-child").addClass("selected");
+                    }
                 } else {
                     $("tbody tr:first-child").addClass("selected");
                 }
+                log("Keydown: Moved Down One");
                 ScrollIfNotVisible("tr.selected", "tbody");
+                SetSideBarInfo();
             }
         }
     });
 }
 
 function SetupAllEvents() {
-
+    SetupTableEvents();
+    SetupSettingsPage();
+    SetupKeydownEvents();
 }
 
 function init() {
@@ -406,21 +452,11 @@ function init() {
     } else {
         GetSettingsFromFile(Settings['JsonSettingsFile']);
     }
-    qrlink = $(location).prop('href');
-    iconSRC = "/NSSTFAI/Icons/Directory.svg";
-    iconAlt = "[DIR]";
-    text = "Current Directory";
-    updateQrCode(qrlink);
-    $('#icon').find('img').attr('src', iconSRC);
-    $('#icon').find('img').attr('alt', iconAlt);
-    $('#text p').html(text);
-    genBreadCrumb();
+    SetSideBarInfo();
+    GenBreadCrumb();
     $("title").text("Index of " + location.pathname + " @ " + location.hostname);
-    setupTable();
-    SetupTableEvents();
-    SetupSettingsPage();
-    SetupOtherEvents();
+    SetupTable();
     SetMobileSettings();
-    SetArrowKeyEvents();
+    SetupAllEvents();
     CheckForUpdate();
 }

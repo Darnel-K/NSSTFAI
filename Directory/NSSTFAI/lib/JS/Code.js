@@ -1,20 +1,27 @@
 var ConfigJSON;
 var Settings = {
-    LocalStorageSettingsName: "IndexSettings",
-    JsonSettingsFile: "/NSSTFAI/Config.json",
-    "QRcode-FC": "#FFFFFF"
+    "DEBUG": true,
+    "LocalStorageSettingsName": "NSSTFAI",
+    "JsonSettingsFile": "/NSSTFAI/Config.json",
+    "QRcode-FC": "#FFFFFF",
+    "QRcode-BC": "#2F2F2F",
+    "QRcode-Link": $(location).prop('href'),
+    "SidebarIconSRC": "/NSSTFAI/Icons/Directory.svg",
+    "SidebarIconAlt": "[DIR]",
+    "SidebarText": "Current Directory",
+    "Config": null,
+    "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
-var DEBUG = false;
 
-function updateQrCode(link) {
+function UpdateQRCode(link) {
     var options = {
-        render: "image",
+        render: 'image',
         minVersion: 1,
         maxVersion: 40,
-        ecLevel: "H",
+        ecLevel: 'H',
         left: 0,
         top: 0,
-        size: $("#qrcode").width(),
+        size: $('#qrcode').width(),
         fill: Settings["QRcode-FC"],
         background: Settings["QRcode-BC"],
         text: link,
@@ -24,62 +31,53 @@ function updateQrCode(link) {
         mSize: 0.1,
         mPosX: 0.5,
         mPosY: 0.5,
-        label: "no label",
-        fontname: "sans",
-        fontcolor: "#F00",
+        label: 'no label',
+        fontname: 'monospace',
+        fontcolor: '#CCC',
         image: null
     };
-    $("#qrcode")
-        .empty()
-        .qrcode(options);
+    $('#qrcode').empty().qrcode(options);
+    log("UpdateQRCode: QR Code Has Been Changed Based On '" + link + "'");
+}
+
+function log(msg, type = "LOG") {
+    if (Settings['DEBUG']) {
+        type = type.toUpperCase();
+        if (type == "LOG") {
+            console.log("NSSTFAI >> " + msg);
+        } else if (type == "WARN") {
+            console.warn("NSSTFAI >> " + msg);
+        } else if (type == "ERROR") {
+            console.error("NSSTFAI >> " + msg);
+        }
+    }
 }
 
 function GetSettingsFromFile(file) {
-    $.getJSON(file)
-        .done(function(json) {
-            if (DEBUG) {
-                console.log(
-                    "DEBUG >> GetSettingsFromFile: Get Config.json Successful"
-                );
-            }
-            ConfigJSON = json;
-            ApplySettings(ConfigJSON);
-        })
-        .fail(function() {
-            if (DEBUG) {
-                console.error(
-                    "DEBUG >> GetSettingsFromFile: Unable To Get Config.json"
-                );
-            }
-        });
+    $.getJSON(file).done(function (json) {
+        log("GetSettingsFromFile: Get Config.json Successful");
+        ConfigJSON = json;
+        ApplySettings(ConfigJSON);
+    }).fail(function () {
+        log("GetSettingsFromFile: Unable To Get Config.json", "ERROR");
+    });
 }
 
 function ApplySettings(JSON_OBJ) {
     if (JSON_OBJ.hasOwnProperty("ChangeableStyles")) {
         if (JSON_OBJ["ChangeableStyles"].hasOwnProperty("CSS")) {
             var Styles = "";
-            for (var Key in JSON_OBJ["ChangeableStyles"]["CSS"]) {
-                var HTML_Element =
-                    JSON_OBJ["ChangeableStyles"]["CSS"][Key]["Element"];
-                for (var LowerKey in JSON_OBJ["ChangeableStyles"]["CSS"][Key][
-                    "Styles"
-                ]) {
-                    var CSSkey =
-                        JSON_OBJ["ChangeableStyles"]["CSS"][Key]["Styles"][
-                            LowerKey
-                        ];
+            for (var Key in JSON_OBJ['ChangeableStyles']['CSS']) {
+                var HTML_Element = JSON_OBJ["ChangeableStyles"]["CSS"][Key]["Element"];
+                for (var LowerKey in JSON_OBJ["ChangeableStyles"]["CSS"][Key]['Styles']) {
+                    var CSSkey = JSON_OBJ["ChangeableStyles"]["CSS"][Key]['Styles'][LowerKey];
                     var ID = CSSkey["ID"];
                     var Type = CSSkey["Type"];
                     var Desc = CSSkey["Desc"];
                     var Value;
                     switch (Type) {
                         case "BORDER":
-                            Value =
-                                String(CSSkey["Width"]) +
-                                "px " +
-                                CSSkey["Style"] +
-                                " " +
-                                CSSkey["HEX"];
+                            Value = String(CSSkey["Width"]) + "px " + CSSkey["Style"] + " " + CSSkey["HEX"];
                             break;
                         case "N-PX":
                             Value = String(CSSkey["Value"]) + "px";
@@ -97,28 +95,26 @@ function ApplySettings(JSON_OBJ) {
                             Value = CSSkey["Value"];
                             break;
                     }
-                    Styles +=
-                        HTML_Element + " {" + LowerKey + ": " + Value + ";}\n";
+                    Styles += HTML_Element + " {" + LowerKey + ": " + Value + ";}\n";
+                    log("ApplySettings: CSS Key '" + LowerKey + "' With Value '" + Value + "' Set On '" + HTML_Element + "'");
                 }
             }
-            $("#s").text(Styles);
+            $('#s').text(Styles);
+            log("ApplySettings: Finished Applying CSS Styles");
         }
         if (JSON_OBJ["ChangeableStyles"].hasOwnProperty("JS")) {
-            for (var Key in JSON_OBJ["ChangeableStyles"]["JS"]) {
-                for (var LowerKey in JSON_OBJ["ChangeableStyles"]["JS"][Key][
-                    "Styles"
-                ]) {
-                    var CSSkey =
-                        JSON_OBJ["ChangeableStyles"]["JS"][Key]["Styles"][
-                            LowerKey
-                        ];
+            for (var Key in JSON_OBJ['ChangeableStyles']['JS']) {
+                for (var LowerKey in JSON_OBJ["ChangeableStyles"]["JS"][Key]['Styles']) {
+                    var CSSkey = JSON_OBJ["ChangeableStyles"]["JS"][Key]['Styles'][LowerKey];
                     var ID = CSSkey["ID"];
                     var Type = CSSkey["Type"];
                     var Desc = CSSkey["Desc"];
                     var Value = CSSkey["Value"];
                     Settings[ID] = Value;
+                    log("ApplySettings: Setting '" + ID + "' Value Set To '" + Value + "'");
                 }
             }
+            log("ApplySettings: Finished Applying JS Settings");
         }
     }
 }
@@ -127,137 +123,103 @@ function GetSettingsFromLocalStorage(StorageName) {
     settingsObj = localStorage.getItem(StorageName);
     settingsObj = JSON.parse(decodeURIComponent(settingsObj));
     ConfigJSON = settingsObj;
+    log("GetSettingsFromLocalStorage: Settings Grabbed From Local Storage");
     ApplySettings(ConfigJSON);
 }
 
-function genBreadCrumb() {
-    var breadcrumb = '<div class="rcrumbs" id="breadcrumbs"><ul>';
+function GenBreadCrumb() {
+    var breadcrumb = "<div class=\"rcrumbs\" id=\"breadcrumbs\"><ul>";
     var href = document.location.href;
     var s = href.split("/");
-    for (var i = 2; i < s.length - 1; i++) {
-        breadcrumb +=
-            '<li><a href="' +
-            href.substring(0, href.indexOf("/" + s[i]) + s[i].length + 1) +
-            '/">' +
-            decodeURIComponent(s[i]) +
-            '</a><span class="divider">></span></li>';
+    for (var i = 2; i < (s.length - 1); i++) {
+        breadcrumb += "<li><a href=\"" + href.substring(0, href.indexOf("/" + s[i]) + s[i].length + 1) + "/\">" + decodeURIComponent(s[i]) + "</a><span class=\"divider\">></span></li>";
+        log("GenBreadCrumb: Added '" + decodeURIComponent(s[i]) + "' To Breadcrumb");
     }
     breadcrumb += "</ul></div>";
     $("#topleft").append(breadcrumb);
     $("#breadcrumbs").rcrumbs();
+    log("GenBreadCrumb: Breadcrumb Complete");
 }
 
-function setupTable() {
-    $("table img").attr(
-        "onerror",
-        "this.onerror = null; this.src='/NSSTFAI/Icons/Error.svg'"
-    );
+function SetupTable() {
+    $("table img").attr("onerror", "this.onerror = null; this.src='/NSSTFAI/Icons/Error.svg'");
     $(".indexbreakrow").remove();
     $("tbody").before("<thead></thead>");
-    $("thead").html(
-        '<tr class="indexhead">' + $(".indexhead").html() + "</tr>"
-    );
-    $(".indexhead")
-        .eq(1)
-        .remove();
+    $("thead").html("<tr class=\"indexhead\">" + $(".indexhead").html() + "</tr>");
+    $(".indexhead").eq(1).remove();
+    log("SetupTable: Table Setup Complete");
+}
+
+function SetSideBarInfo() {
+    if ($('tr.selected').find('a').prop('href') == undefined) {
+        Settings['QRcode-Link'] = $(location).prop('href');
+        Settings["SidebarIconSRC"] = "/NSSTFAI/Icons/Directory.svg";
+        Settings["SidebarIconAlt"] = "[DIR]";
+        Settings["SidebarText"] = "Current Directory";
+        log("SetSideBarInfo: Link Not Present");
+    } else {
+        link = $('tr.selected').find('a').prop('href');
+        log("SetSideBarInfo: Link Detected, " + link);
+        var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
+        switch (extension) {
+            case 'png':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'svg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'jpg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'jpeg':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'bmp':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'gif':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            default:
+                Settings["SidebarIconSRC"] = $('tr.selected').find('img').attr('src');
+                break;
+        }
+        Settings["QRcode-Link"] = $('tr.selected').find('a').prop('href');
+        Settings["SidebarIconAlt"] = $('tr.selected').find('img').attr('alt');
+        Settings["SidebarText"] = decodeURIComponent($('tr.selected').find('a').text().replace('/', '')) + "<br />" + $('tr.selected').find('.indexcollastmod').text() + "<br />" + $('tr.selected').find('.indexcolsize').text();
+        log("SetSideBarInfo: Sidebar Information Updated To, Text='" + Settings["SidebarText"] + "' Image='" + Settings["SidebarIconSRC"] + "' ImageAlt='" + Settings["SidebarIconAlt"] + "'");
+    }
+    UpdateQRCode(Settings["QRcode-Link"]);
+    $('#icon').find('img').attr('src', Settings["SidebarIconSRC"]);
+    $('#icon').find('img').attr('alt', Settings["SidebarIconAlt"]);
+    $("#text p").html(Settings["SidebarText"]);
 }
 
 function SetupTableEvents() {
-    $("tr").on("mouseover", function() {
-        if (!$(this).hasClass("indexhead")) {
-            if (!$(this).hasClass("indexbreakrow")) {
+    $("tr").on("mouseover", function () {
+        log("Mouseover: Mouse Detected Over A Table Row");
+        if (!$(this).hasClass('indexhead')) {
+            log("Mouseover: Does Not Have Class 'indexhead'");
+            if (!$(this).hasClass('indexbreakrow')) {
+                log("Mouseover: Does Not Have Class 'indexbreakrow'");
                 $("tbody tr").removeClass("selected");
                 $(this).addClass("selected");
-                if (
-                    $(this)
-                        .find("a")
-                        .prop("href") == undefined
-                ) {
-                    qrlink = $(location).prop("href");
-                    iconSRC = "/NSSTFAI/Icons/Directory.svg";
-                    iconAlt = "[DIR]";
-                    text = "Current Directory";
-                } else {
-                    link = $(this)
-                        .find("a")
-                        .prop("href");
-                    var extension = link
-                        .substr(link.lastIndexOf(".") + 1)
-                        .toLowerCase();
-                    switch (extension) {
-                        case "png":
-                            iconSRC = link;
-                            break;
-                        case "svg":
-                            iconSRC = link;
-                            break;
-                        case "jpg":
-                            iconSRC = link;
-                            break;
-                        case "jpeg":
-                            iconSRC = link;
-                            break;
-                        case "bmp":
-                            iconSRC = link;
-                            break;
-                        case "gif":
-                            iconSRC = link;
-                            break;
-                        default:
-                            iconSRC = $(this)
-                                .find("img")
-                                .attr("src");
-                            break;
-                    }
-                    qrlink = $(this)
-                        .find("a")
-                        .prop("href");
-                    iconAlt = $(this)
-                        .find("img")
-                        .attr("alt");
-                    text =
-                        decodeURIComponent(
-                            $(this)
-                                .find("a")
-                                .text()
-                                .replace("/", "")
-                        ) +
-                        "<br />" +
-                        $(this)
-                            .find(".indexcollastmod")
-                            .text() +
-                        "<br />" +
-                        $(this)
-                            .find(".indexcolsize")
-                            .text();
-                }
+                SetSideBarInfo();
             }
         }
-        updateQrCode(qrlink);
-        $("#icon")
-            .find("img")
-            .attr("src", iconSRC);
-        $("#icon")
-            .find("img")
-            .attr("alt", iconAlt);
-        $("#text p").html(text);
     });
 
-    $("tbody tr a").on("click", function(e) {
+    $('tbody tr a').on("click", function (e) {
         e.preventDefault();
     });
 
-    $("tbody tr").on("click", function(e) {
+    $('tbody tr').on("click", function (e) {
         e.preventDefault();
-        link = $(this)
-            .find("a")
-            .prop("href");
-        text = $(this)
-            .find("a")
-            .text();
+        link = $(this).find('a').prop('href');
+        Settings["SidebarText"] = $(this).find('a').text();
         // var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
         if (link.substr(-1) != "/" && link.substr(-1) != "\\") {
-            win = window.open(link, "_blank");
+            win = window.open(link, '_blank');
             win.focus();
         } else {
             window.location.href = link;
@@ -269,15 +231,9 @@ function UpdateAndSaveSettings() {
     if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
         if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
             for (var Key in ConfigJSON["ChangeableStyles"]["CSS"]) {
-                var HTML_Element =
-                    ConfigJSON["ChangeableStyles"]["CSS"][Key]["Element"];
-                for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                    "Styles"
-                ]) {
-                    var CSSkey =
-                        ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][
-                            LowerKey
-                        ];
+                var HTML_Element = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Element"];
+                for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"]) {
+                    var CSSkey = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
                     var ID = CSSkey["ID"];
                     var Type = CSSkey["Type"];
                     var Value;
@@ -287,21 +243,13 @@ function UpdateAndSaveSettings() {
                             var ChosenStyle = $("#" + ID + "-S").val();
                             var HEX = $("#" + ID + "-H").val();
                             // Value = String(Width) + "px " + ChosenStyle + " " + HEX;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                                "Styles"
-                            ][LowerKey]["Width"] = Width;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                                "Styles"
-                            ][LowerKey]["Style"] = ChosenStyle;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                                "Styles"
-                            ][LowerKey]["HEX"] = HEX;
+                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Width"] = Width;
+                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Style"] = ChosenStyle;
+                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["HEX"] = HEX;
                             break;
                         default:
                             Value = $("#" + ID).val();
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                                "Styles"
-                            ][LowerKey]["Value"] = Value;
+                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Value"] = Value;
                             break;
                     }
                 }
@@ -309,52 +257,33 @@ function UpdateAndSaveSettings() {
         }
         if (ConfigJSON["ChangeableStyles"].hasOwnProperty("JS")) {
             for (var Key in ConfigJSON["ChangeableStyles"]["JS"]) {
-                for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][Key][
-                    "Styles"
-                ]) {
-                    var CSSkey =
-                        ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][
-                            LowerKey
-                        ];
+                for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"]) {
+                    var CSSkey = ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
                     var ID = CSSkey["ID"];
                     var Value = $("#" + ID).val();
                     Settings[ID] = Value;
-                    ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][
-                        LowerKey
-                    ]["Value"] = Value;
+                    ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey]["Value"] = Value;
                 }
             }
         }
     }
-    localStorage.setItem(
-        Settings["LocalStorageSettingsName"],
-        encodeURIComponent(JSON.stringify(ConfigJSON))
-    );
+    localStorage.setItem(Settings["LocalStorageSettingsName"], encodeURIComponent(JSON.stringify(ConfigJSON)));
     GetSettingsFromLocalStorage(Settings["LocalStorageSettingsName"]);
 }
 
 function SetupSettingsPage() {
-    $("#open").on("click", function() {
+    $("#open").on("click", function () {
         $("#settings").show();
-        $("#close").show();
-        $("#open").hide();
+        $('#close').show();
+        $('#open').hide();
         $("#SettingsContents").html("");
-        BorderStyles =
-            '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>';
         if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
             if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
-                $("#SettingsContents").append("<h2>Styles</h2>");
-                $("#SettingsContents").append(
-                    '<div class="container StylesSettings"></div>'
-                );
+                $('#SettingsContents').append("<h2>Styles</h2>");
+                $('#SettingsContents').append("<div class=\"container StylesSettings\"></div>");
                 for (var Key in ConfigJSON["ChangeableStyles"]["CSS"]) {
-                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][
-                        Key
-                    ]["Styles"]) {
-                        var CSSkey =
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key][
-                                "Styles"
-                            ][LowerKey];
+                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"]) {
+                        var CSSkey = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
                         var ID = CSSkey["ID"];
                         var Type = CSSkey["Type"];
                         var Desc = CSSkey["Desc"];
@@ -364,65 +293,18 @@ function SetupSettingsPage() {
                                 var Width = String(CSSkey["Width"]);
                                 var Style = CSSkey["Style"];
                                 var HEX = CSSkey["HEX"];
-                                // Value = String(CSSkey["Width"]) + "px " + CSSkey["Style"] + " " + CSSkey["HEX"];
-                                $(".StylesSettings").append(
-                                    '<div class="SettingsItem"><p>' +
-                                        Desc +
-                                        '</p><input type="number" id="' +
-                                        ID +
-                                        "-W" +
-                                        '" class="BorderStyling" value="' +
-                                        Width +
-                                        '"><select id="' +
-                                        ID +
-                                        "-S" +
-                                        '" class="BorderStyling">' +
-                                        BorderStyles +
-                                        '</select><input id="' +
-                                        ID +
-                                        "-H" +
-                                        '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' +
-                                        HEX +
-                                        '"></div>'
-                                );
-                                $(
-                                    "#" +
-                                        ID +
-                                        "-S" +
-                                        ' option[value="' +
-                                        Style +
-                                        '"]'
-                                ).prop({ defaultSelected: true });
+                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + Settings['BorderStyles'] + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
+                                $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({ defaultSelected: true });
                                 break;
                             case "N-PX":
                                 var Min = String(CSSkey["Min"]);
                                 var Max = String(CSSkey["Max"]);
                                 Value = String(CSSkey["Value"]);
-                                $(".StylesSettings").append(
-                                    '<div class="SettingsItem"><p>' +
-                                        Desc +
-                                        '</p><input type="number" id="' +
-                                        ID +
-                                        '" value="' +
-                                        Value +
-                                        '" min="' +
-                                        Min +
-                                        '" max="' +
-                                        Max +
-                                        '"></div>'
-                                );
+                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '" value="' + Value + '" min="' + Min + '" max="' + Max + '"></div>');
                                 break;
                             default:
                                 Value = CSSkey["Value"];
-                                $(".StylesSettings").append(
-                                    '<div class="SettingsItem"><p>' +
-                                        Desc +
-                                        '</p><input id="' +
-                                        ID +
-                                        '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value="' +
-                                        Value +
-                                        '"></div>'
-                                );
+                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
                                 break;
                         }
                     }
@@ -430,229 +312,151 @@ function SetupSettingsPage() {
             }
             if (ConfigJSON["ChangeableStyles"].hasOwnProperty("JS")) {
                 $("#SettingsContents").append("<h2>JS</h2>");
-                $("#SettingsContents").append(
-                    '<div class="container JS_Settings"></div>'
-                );
+                $("#SettingsContents").append('<div class="container JS_Settings"></div>');
                 for (var Key in ConfigJSON["ChangeableStyles"]["JS"]) {
-                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][
-                        Key
-                    ]["Styles"]) {
-                        var CSSkey =
-                            ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][
-                                LowerKey
-                            ];
+                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"]) {
+                        var CSSkey = ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
                         var ID = CSSkey["ID"];
                         var Type = CSSkey["Type"];
                         var Desc = CSSkey["Desc"];
                         var Value = CSSkey["Value"];
                         if (Type == "COLOUR") {
-                            $(".JS_Settings").append(
-                                '<div class="SettingsItem"><p>' +
-                                    Desc +
-                                    '</p><input id="' +
-                                    ID +
-                                    '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value="' +
-                                    Value +
-                                    '"></div>'
-                            );
+                            $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
                         } else {
-                            $(".JS_Settings").append(
-                                '<div class="SettingsItem"><p>' +
-                                    Desc +
-                                    '</p><input id="' +
-                                    ID +
-                                    '" type="text" value="' +
-                                    Value +
-                                    '"></div>'
-                            );
+                            $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" type="text" value="' + Value + '"></div>');
                         }
                     }
                 }
             }
         }
         jscolor.installByClassName("jscolor");
-        $("input, select").on("change", function() {
+        $("input, select").on("change", function () {
             UpdateAndSaveSettings();
         });
     });
 
-    $("#reset").on("click", function() {
-        localStorage.removeItem(Settings["LocalStorageSettingsName"]);
+    $("#reset").on("click", function () {
+        localStorage.removeItem(Settings['LocalStorageSettingsName']);
         window.location.href = location.href;
     });
 
-    $("#close").on("click", function() {
+    $("#close").on("click", function () {
         $("#settings").hide();
-        $("#close").hide();
-        $("#open").show();
-    });
-}
-
-function SetupOtherEvents() {
-    $(document).on("keydown", function(e) {
-        if (!$(event.target).is("input")) {
-            if (e.which === 8) {
-                // Backspace
-                e.preventDefault();
-                if (
-                    $("tbody")
-                        .find(".indexcolname")
-                        .find("a")
-                        .html()
-                        .toLowerCase() == "parent directory"
-                ) {
-                    $("tbody")
-                        .find("tr")
-                        .first()
-                        .click();
-                }
-            }
-        }
+        $('#close').hide();
+        $('#open').show();
     });
 }
 
 function SetMobileSettings() {
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    if (/iPad|iPhone|iPod|Android/.test(navigator.userAgent) && !window.MSStream) {
         $("tbody").css("overflox-y", "scroll");
         $("#settings").css("overflox-y", "scroll");
         $("tr").off("mouseover");
-    }
+        log("MobileCheck: Mobile Device Detected, Applying Mobile CSS");
+    } else { log("MobileCheck: Not A Mobile Device"); }
 }
 
 function CheckForUpdate() {
-    $.getJSON(
-        "https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json"
-    )
-        .done(function(json) {
-            var RemoteVersion = json;
-            $.getJSON("/NSSTFAI/lib/JS/Version.json")
-                .done(function(json) {
-                    var LocalVersion = json;
-                    if (LocalVersion["Version"] < RemoteVersion["Version"]) {
-                        if (RemoteVersion["Required"] == true) {
-                            console.error(
-                                "NSSTFAI: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme"
-                            );
-                        } else {
-                            console.warn(
-                                "NSSTFAI: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme"
-                            );
-                        }
-                    }
-                })
-                .fail(function() {
-                    console.error(
-                        "DEBUG >> CheckForUpdate: Unable To Get Local Version"
-                    );
-                });
-        })
-        .fail(function() {
-            console.error(
-                "DEBUG >> CheckForUpdate: Unable To Get Remote Version"
-            );
-        });
-}
-
-function SetArrowKeyEvents() {
-    $(document).on("keydown", function(e) {
-        if (!$(event.target).is("input")) {
-            console.log(e.which);
-            if (e.which === 37) {
-                // Left Arrow
-                e.preventDefault();
-                if (
-                    $("tbody")
-                        .find(".indexcolname")
-                        .find("a")
-                        .html()
-                        .toLowerCase() == "parent directory"
-                ) {
-                    $("tbody")
-                        .find("tr")
-                        .first()
-                        .click();
+    $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json").done(function (json) {
+        var RemoteVersion = json;
+        $.getJSON("/NSSTFAI/lib/JS/Version.json").done(function (json) {
+            var LocalVersion = json;
+            if (LocalVersion["Version"] < RemoteVersion["Version"]) {
+                if (RemoteVersion["Required"] == true) {
+                    log("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
+                } else {
+                    log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
                 }
             }
-            if (e.which === 38) {
-                // Up Arrow
+        }).fail(function () {
+            log("CheckForUpdate: Unable To Get Local Version Data", "ERROR");
+        });
+    }).fail(function () {
+        log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
+    });
+}
+
+function ParentDirectory() {
+    if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
+        log("ParentDirectory: Going Up A Directory");
+        $("tbody").find("tr").first().click();
+    }
+}
+
+function ScrollIfNotVisible(element, parent) {
+    try {
+        if ($(element).position().top < 0 || $(element).position().top > $(parent).height()) {
+            $(parent).scrollTop($(element).offset().top - $(parent).offset().top + $(parent).scrollTop());
+            log("ScrollIfNotVisible: Scrolled To Item With Class '.selected'");
+        }
+    } catch (e) { }
+}
+
+function SetupKeydownEvents() {
+    $(document).on("keydown", function (e) {
+        if (!$(event.target).is('input')) {
+            if (e.which === 37 || e.which === 8) { // Left Arrow || Backspace
                 e.preventDefault();
-                if ($("tbody tr.selected").length) {
-                    $("tbody tr.selected")
-                        .removeClass("selected")
-                        .prev()
-                        .addClass("selected");
+                ParentDirectory();
+            }
+            if (e.which === 38) { // Up Arrow
+                e.preventDefault();
+                if ($('tbody tr.selected').length) {
+                    if ($('tbody tr.selected').prev().length) {
+                        $('tbody tr.selected').removeClass("selected").prev().addClass("selected");
+                    } else {
+                        $("tr.selected").removeClass("selected");
+                        $("tbody tr:last-child").addClass("selected");
+                    }
                 } else {
                     $("tbody tr:last-child").addClass("selected");
                 }
-                if (
-                    $("tr.selected").position().top < 0 ||
-                    $("tr.selected").position().top > $("tbody").height()
-                ) {
-                    $("tbody").scrollTop(
-                        $("tr.selected").offset().top -
-                            $("tbody").offset().top +
-                            $("tbody").scrollTop()
-                    );
-                }
+                log("Keydown: Moved Up One");
+                ScrollIfNotVisible("tr.selected", "tbody");
+                SetSideBarInfo();
             }
-            if (e.which === 39 || e.which === 13) {
-                // Right Arrow
+            if (e.which === 39 || e.which === 13) { // Right Arrow || Enter
                 e.preventDefault();
+                log("Keydown: Opening / Entering Selected File Or Directory")
                 $("tbody tr.selected").click();
             }
-            if (e.which === 40) {
-                // Down Arrow
+            if (e.which === 40) { // Down Arrow
                 e.preventDefault();
-                if ($("tbody tr.selected").length) {
-                    $("tbody tr.selected")
-                        .removeClass("selected")
-                        .next()
-                        .addClass("selected");
+                if ($('tbody tr.selected').length) {
+                    if ($('tbody tr.selected').next().length) {
+                        $('tbody tr.selected').removeClass("selected").next().addClass("selected");
+                    } else {
+                        $("tr.selected").removeClass("selected");
+                        $("tbody tr:first-child").addClass("selected");
+                    }
                 } else {
                     $("tbody tr:first-child").addClass("selected");
                 }
-                if (
-                    $("tr.selected").position().top < 0 ||
-                    $("tr.selected").position().top > $("tbody").height()
-                ) {
-                    $("tbody").scrollTop(
-                        $("tr.selected").offset().top -
-                            $("tbody").offset().top +
-                            $("tbody").scrollTop()
-                    );
-                }
+                log("Keydown: Moved Down One");
+                ScrollIfNotVisible("tr.selected", "tbody");
+                SetSideBarInfo();
             }
         }
     });
 }
 
-function init() {
-    if (localStorage.getItem(Settings["LocalStorageSettingsName"]) != null) {
-        GetSettingsFromLocalStorage(Settings["LocalStorageSettingsName"]);
-    } else {
-        GetSettingsFromFile(Settings["JsonSettingsFile"]);
-    }
-    qrlink = $(location).prop("href");
-    iconSRC = "/NSSTFAI/Icons/Directory.svg";
-    iconAlt = "[DIR]";
-    text = "Current Directory";
-    updateQrCode(qrlink);
-    $("#icon")
-        .find("img")
-        .attr("src", iconSRC);
-    $("#icon")
-        .find("img")
-        .attr("alt", iconAlt);
-    $("#text p").html(text);
-    genBreadCrumb();
-    $("title").text(
-        "Index of " + location.pathname + " @ " + location.hostname
-    );
-    setupTable();
+function SetupAllEvents() {
     SetupTableEvents();
     SetupSettingsPage();
-    SetupOtherEvents();
+    SetupKeydownEvents();
+}
+
+function init() {
+    if (localStorage.getItem(Settings['LocalStorageSettingsName']) != null) {
+        GetSettingsFromLocalStorage(Settings['LocalStorageSettingsName']);
+    } else {
+        GetSettingsFromFile(Settings['JsonSettingsFile']);
+    }
+    SetSideBarInfo();
+    GenBreadCrumb();
+    $("title").text("Index of " + location.pathname + " @ " + location.hostname);
+    SetupTable();
     SetMobileSettings();
-    SetArrowKeyEvents();
+    SetupAllEvents();
     CheckForUpdate();
 }
