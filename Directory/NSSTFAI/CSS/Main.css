@@ -258,10 +258,6 @@ tr.indexbreakrow hr {
     -webkit-overflow-scrolling: touch;
 }
 
-#close {
-    display: none;
-}
-
 tbody tr:hover {
     cursor: pointer;
 }

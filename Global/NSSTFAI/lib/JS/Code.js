@@ -1,6 +1,5 @@
-var ConfigJSON;
 var Settings = {
-    "DEBUG": true,
+    "DEBUG": false,
     "LocalStorageSettingsName": "NSSTFAI",
     "JsonSettingsFile": "/NSSTFAI/Config.json",
     "QRcode-FC": "#FFFFFF",
@@ -10,6 +9,7 @@ var Settings = {
     "SidebarIconAlt": "[DIR]",
     "SidebarText": "Current Directory",
     "Config": null,
+    "SettingsOpen": false,
     "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
 
@@ -56,8 +56,8 @@ function log(msg, type = "LOG") {
 function GetSettingsFromFile(file) {
     $.getJSON(file).done(function(json) {
         log("GetSettingsFromFile: Get Config.json Successful");
-        ConfigJSON = json;
-        ApplySettings(ConfigJSON);
+        Settings["Config"] = json;
+        ApplySettings(Settings["Config"]);
     }).fail(function() {
         log("GetSettingsFromFile: Unable To Get Config.json", "ERROR");
     });
@@ -122,9 +122,9 @@ function ApplySettings(JSON_OBJ) {
 function GetSettingsFromLocalStorage(StorageName) {
     settingsObj = localStorage.getItem(StorageName);
     settingsObj = JSON.parse(decodeURIComponent(settingsObj));
-    ConfigJSON = settingsObj;
+    Settings["Config"] = settingsObj;
     log("GetSettingsFromLocalStorage: Settings Grabbed From Local Storage");
-    ApplySettings(ConfigJSON);
+    ApplySettings(Settings["Config"]);
 }
 
 function GenBreadCrumb() {
@@ -228,12 +228,12 @@ function SetupTableEvents() {
 }
 
 function UpdateAndSaveSettings() {
-    if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
-        if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
-            for (var Key in ConfigJSON["ChangeableStyles"]["CSS"]) {
-                var HTML_Element = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Element"];
-                for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"]) {
-                    var CSSkey = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
+    if (Settings["Config"].hasOwnProperty("ChangeableStyles")) {
+        if (Settings["Config"]["ChangeableStyles"].hasOwnProperty("CSS")) {
+            for (var Key in Settings["Config"]["ChangeableStyles"]["CSS"]) {
+                var HTML_Element = Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Element"];
+                for (var LowerKey in Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"]) {
+                    var CSSkey = Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
                     var ID = CSSkey["ID"];
                     var Type = CSSkey["Type"];
                     var Value;
@@ -242,108 +242,121 @@ function UpdateAndSaveSettings() {
                             var Width = $("#" + ID + "-W").val();
                             var ChosenStyle = $("#" + ID + "-S").val();
                             var HEX = $("#" + ID + "-H").val();
-                            // Value = String(Width) + "px " + ChosenStyle + " " + HEX;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Width"] = Width;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Style"] = ChosenStyle;
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["HEX"] = HEX;
+                            Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Width"] = Width;
+                            Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Style"] = ChosenStyle;
+                            Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["HEX"] = HEX;
+                            log("UpdateAndSaveSettings: Key '" + ID + "' With Value '" + Width + "px " + ChosenStyle + " " + HEX + "' Saved");
                             break;
                         default:
                             Value = $("#" + ID).val();
-                            ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Value"] = Value;
+                            Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Value"] = Value;
+                            log("UpdateAndSaveSettings: Key '" + ID + "' With Value '" + Value + "' Saved");
                             break;
                     }
                 }
             }
         }
-        if (ConfigJSON["ChangeableStyles"].hasOwnProperty("JS")) {
-            for (var Key in ConfigJSON["ChangeableStyles"]["JS"]) {
-                for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"]) {
-                    var CSSkey = ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
+        if (Settings["Config"]["ChangeableStyles"].hasOwnProperty("JS")) {
+            for (var Key in Settings["Config"]["ChangeableStyles"]["JS"]) {
+                for (var LowerKey in Settings["Config"]["ChangeableStyles"]["JS"][Key]["Styles"]) {
+                    var CSSkey = Settings["Config"]["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
                     var ID = CSSkey["ID"];
                     var Value = $("#" + ID).val();
                     Settings[ID] = Value;
-                    ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey]["Value"] = Value;
+                    Settings["Config"]["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey]["Value"] = Value;
+                    log("UpdateAndSaveSettings: Key '" + ID + "' With Value '" + Value + "' Saved");
                 }
             }
         }
     }
-    localStorage.setItem(Settings["LocalStorageSettingsName"], encodeURIComponent(JSON.stringify(ConfigJSON)));
+    localStorage.setItem(Settings["LocalStorageSettingsName"], encodeURIComponent(JSON.stringify(Settings["Config"])));
     GetSettingsFromLocalStorage(Settings["LocalStorageSettingsName"]);
 }
 
+function SetupSettingsEvents() {
+    $("#SettingsButton").on("click", function() {
+        if (!Settings['SettingsOpen']) { // Open
+            $(this).find("img").attr("src", "/NSSTFAI/Icons/Close.svg")
+            Settings['SettingsOpen'] = true;
+            $("#settings").show();
+            log("SetupSettingsPage: Settings Page Opened");
+            SetupSettingsPage();
+        } else { // Closed
+            $(this).find("img").attr("src", "/NSSTFAI/Icons/Settings.svg")
+            Settings['SettingsOpen'] = false;
+            $( "#settings" ).hide();
+            log("SetupSettingsPage: Settings Page Closed");
+        }
+    });
+
+    $("#reset").on("click", function () {
+        localStorage.removeItem(Settings['LocalStorageSettingsName']);
+        log("SetupSettingsPage: Reset Button Pushed");
+        window.location.href = location.href;
+    });
+}
+
 function SetupSettingsPage() {
-    $( "#open" ).on("click", function() {
-        $( "#settings" ).show();
-        $('#close').show();
-        $('#open').hide();
-        $("#SettingsContents").html("");
-        if (ConfigJSON.hasOwnProperty("ChangeableStyles")) {
-            if (ConfigJSON["ChangeableStyles"].hasOwnProperty("CSS")) {
-                $('#SettingsContents').append("<h2>Styles</h2>");
-                $('#SettingsContents').append("<div class=\"container StylesSettings\"></div>");
-                for (var Key in ConfigJSON["ChangeableStyles"]["CSS"]) {
-                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"]) {
-                        var CSSkey = ConfigJSON["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
-                        var ID = CSSkey["ID"];
-                        var Type = CSSkey["Type"];
-                        var Desc = CSSkey["Desc"];
-                        var Value;
-                        switch (Type) {
-                            case "BORDER":
-                                var Width = String(CSSkey["Width"]);
-                                var Style = CSSkey["Style"];
-                                var HEX = CSSkey["HEX"];
-                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + Settings['BorderStyles'] + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
-                                $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({defaultSelected: true});
-                                break;
-                            case "N-PX":
-                                var Min = String(CSSkey["Min"]);
-                                var Max = String(CSSkey["Max"]);
-                                Value = String(CSSkey["Value"]);
-                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '" value="' + Value + '" min="' + Min + '" max="' + Max + '"></div>');
-                                break;
-                            default:
+    $("#SettingsContents").html("");
+    if (Settings["Config"].hasOwnProperty("ChangeableStyles")) {
+        if (Settings["Config"]["ChangeableStyles"].hasOwnProperty("CSS")) {
+            $('#SettingsContents').append("<h2>Styles</h2>");
+            $('#SettingsContents').append("<div class=\"container StylesSettings\"></div>");
+            for (var Key in Settings["Config"]["ChangeableStyles"]["CSS"]) {
+                for (var LowerKey in Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"]) {
+                    var CSSkey = Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey];
+                    var ID = CSSkey["ID"];
+                    var Type = CSSkey["Type"];
+                    var Desc = CSSkey["Desc"];
+                    var Value;
+                    switch (Type) {
+                        case "BORDER":
+                            var Width = String(CSSkey["Width"]);
+                            var Style = CSSkey["Style"];
+                            var HEX = CSSkey["HEX"];
+                            $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + Settings['BorderStyles'] + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
+                            log("SetupSettingsPage: Added Item '" + ID + "' With Current Value Of '" + Width + "px " + Style + " #" + HEX);
+                            $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({defaultSelected: true});
+                            break;
+                        case "N-PX":
+                            var Min = String(CSSkey["Min"]);
+                            var Max = String(CSSkey["Max"]);
+                            Value = String(CSSkey["Value"]);
+                            $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '" value="' + Value + '" min="' + Min + '" max="' + Max + '"></div>');
+                            log("SetupSettingsPage: Added Item '" + ID + "' With Current Value Of '" + Value + "'");
+                            break;
+                        default:
                             Value = CSSkey["Value"];
-                                $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
-                                break;
-                        }
-                    }
-                }
-            }
-            if (ConfigJSON["ChangeableStyles"].hasOwnProperty("JS")) {
-                $("#SettingsContents").append("<h2>JS</h2>");
-                $("#SettingsContents").append('<div class="container JS_Settings"></div>');
-                for (var Key in ConfigJSON["ChangeableStyles"]["JS"]) {
-                    for (var LowerKey in ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"]) {
-                        var CSSkey = ConfigJSON["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
-                        var ID = CSSkey["ID"];
-                        var Type = CSSkey["Type"];
-                        var Desc = CSSkey["Desc"];
-                        var Value = CSSkey["Value"];
-                        if (Type == "COLOUR") {
-                            $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
-                        } else {
-                            $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" type="text" value="' + Value + '"></div>');
-                        }
+                            $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
+                            log("SetupSettingsPage: Added Item '" + ID + "' With Current Value Of '" + Value + "'");
+                            break;
                     }
                 }
             }
         }
-        jscolor.installByClassName("jscolor");
-        $("input, select").on("change", function() {
-            UpdateAndSaveSettings();
-        });
-    });
-
-    $( "#reset" ).on("click", function() {
-        localStorage.removeItem(Settings['LocalStorageSettingsName']);
-        window.location.href = location.href;
-    });
-
-    $( "#close" ).on("click", function() {
-        $( "#settings" ).hide();
-        $('#close').hide();
-        $('#open').show();
+        if (Settings["Config"]["ChangeableStyles"].hasOwnProperty("JS")) {
+            $("#SettingsContents").append("<h2>JS</h2>");
+            $("#SettingsContents").append('<div class="container JS_Settings"></div>');
+            for (var Key in Settings["Config"]["ChangeableStyles"]["JS"]) {
+                for (var LowerKey in Settings["Config"]["ChangeableStyles"]["JS"][Key]["Styles"]) {
+                    var CSSkey = Settings["Config"]["ChangeableStyles"]["JS"][Key]["Styles"][LowerKey];
+                    var ID = CSSkey["ID"];
+                    var Type = CSSkey["Type"];
+                    var Desc = CSSkey["Desc"];
+                    var Value = CSSkey["Value"];
+                    if (Type == "COLOUR") {
+                        $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true}" value=\"' + Value + '\"></div>');
+                    } else {
+                        $(".JS_Settings").append('<div class="SettingsItem"><p>' + Desc + '</p><input id="' + ID + '" type="text" value="' + Value + '"></div>');
+                    }
+                    log("SetupSettingsPage: Added Item '" + ID + "' With Current Value Of '" + Value + "'");
+                }
+            }
+        }
+    }
+    jscolor.installByClassName("jscolor");
+    $("input, select").on("change", function() {
+        UpdateAndSaveSettings();
     });
 }
 
@@ -436,17 +449,23 @@ function SetupKeydownEvents() {
                 ScrollIfNotVisible("tr.selected", "tbody");
                 SetSideBarInfo();
             }
+            if (e.which === 83) { // S Key
+                e.preventDefault();
+                log("Keydown: Opening Settings Page")
+                $("#SettingsButton").click();
+            }
         }
     });
 }
 
 function SetupAllEvents() {
     SetupTableEvents();
-    SetupSettingsPage();
+    SetupSettingsEvents();
     SetupKeydownEvents();
 }
 
 function init() {
+    $("title").text("Index of " + location.pathname + " @ " + location.hostname);
     if (localStorage.getItem(Settings['LocalStorageSettingsName']) != null) {
         GetSettingsFromLocalStorage(Settings['LocalStorageSettingsName']);
     } else {
@@ -454,7 +473,6 @@ function init() {
     }
     SetSideBarInfo();
     GenBreadCrumb();
-    $("title").text("Index of " + location.pathname + " @ " + location.hostname);
     SetupTable();
     SetMobileSettings();
     SetupAllEvents();
