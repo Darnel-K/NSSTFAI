@@ -41,7 +41,8 @@ Files: /Directory
 * [ ] Audio Player
 * [ ] Image Viewer
 * [ ] Clean CSS
-* [x] More Settings
+* [x] Rewrite Settings Screen HTML & JS
+* [x] Implement Console Logging Into The JS
 * [X] Pick A Name
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
@@ -56,6 +57,7 @@ Files: /Directory
 * Right Arrow: Will enter / open the currently selected directory / file.
 * Up Arrow: Navigates the selector up one.
 * Down Arrow: Navigates the selector down one.
+* S Key: Toggles Settings Screen
 
 ## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
