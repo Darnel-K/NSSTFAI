@@ -50,6 +50,13 @@ Files: /Directory
 * [x] Create htaccess Directory Version
 * [x] Add Setup Instructions For Both Versions
 
+## Help:
+
+Left Arrow / Backspace: Goes to the previous directory if available
+Right Arrow: Will enter / open the currently selected directory / file
+Up Arrow: Navigates the selector up one
+Down Arrow: Navigates the selector down one
+
 ## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
 * [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)

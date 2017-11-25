@@ -315,9 +315,7 @@ function SetupOtherEvents() {
         if(! $(event.target).is('input')) {
             if (e.which === 8) { // Backspace
                 e.preventDefault();
-                if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
-                    $("tbody").find("tr").first().click();
-                }
+                ParentDirectory();
             }
         }
     });
@@ -351,15 +349,26 @@ function CheckForUpdate() {
     });
 }
 
+function ParentDirectory() {
+    if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
+        $("tbody").find("tr").first().click();
+    }
+}
+
+function ScrollIfNotVisible(element, parent) {
+    try {
+        if ($(element).position().top < 0 || $(element).position().top > $(parent).height()) {
+            $(parent).scrollTop($(element).offset().top - $(parent).offset().top + $(parent).scrollTop());
+        }
+    } catch (e) {}
+}
+
 function SetArrowKeyEvents() {
     $(document).on("keydown", function (e) {
         if(! $(event.target).is('input')) {
-            console.log(e.which);
             if (e.which === 37) { // Left Arrow
                 e.preventDefault();
-                if ($("tbody").find('.indexcolname').find('a').html().toLowerCase() == "parent directory") {
-                    $("tbody").find("tr").first().click();
-                }
+                ParentDirectory();
             }
             if (e.which === 38) { // Up Arrow
                 e.preventDefault();
@@ -368,9 +377,7 @@ function SetArrowKeyEvents() {
                 } else {
                     $("tbody tr:last-child").addClass("selected");
                 }
-                if ($("tr.selected").position().top < 0 || $("tr.selected").position().top > $("tbody").height()) {
-                    $("tbody").scrollTop($("tr.selected").offset().top - $("tbody").offset().top + $("tbody").scrollTop());
-                }
+                ScrollIfNotVisible("tr.selected", "tbody");
             }
             if (e.which === 39 || e.which === 13) { // Right Arrow
                 e.preventDefault();
@@ -383,12 +390,14 @@ function SetArrowKeyEvents() {
                 } else {
                     $("tbody tr:first-child").addClass("selected");
                 }
-                if ($("tr.selected").position().top < 0 || $("tr.selected").position().top > $("tbody").height()) {
-                    $("tbody").scrollTop($("tr.selected").offset().top - $("tbody").offset().top + $("tbody").scrollTop());
-                }
+                ScrollIfNotVisible("tr.selected", "tbody");
             }
         }
     });
+}
+
+function SetupAllEvents() {
+
 }
 
 function init() {
