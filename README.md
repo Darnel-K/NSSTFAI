@@ -35,17 +35,20 @@ Files: /Directory
 
 ## TO-DO:
 * [ ] Add Credits Screen
-* [x] Rewrite The JS Settings
-* [x] Add Arrow Key Navigation
 * [ ] Video Player
 * [ ] Audio Player
 * [ ] Image Viewer
 * [ ] Clean CSS
+* [ ] Create Unix .sh Installer
+* [ ] Create Windows .bat Installer
+* [ ] Add Help Screen
+* [ ] Acquire Logo For Theme
+* [ ] Logo Favicon
 * [x] Rewrite Settings Screen HTML & JS
 * [x] Implement Console Logging Into The JS
 * [X] Pick A Name
-* [ ] Acquire Logo For Theme
-* [ ] Logo Favicon
+* [x] Rewrite The JS Settings
+* [x] Add Arrow Key Navigation
 * [X] Replace All Instances Of "ThemeName" With Chosen Name
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
