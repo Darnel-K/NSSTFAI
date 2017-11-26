@@ -33,6 +33,14 @@ Files: /Directory
 3. Copy / upload the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also enables on all directories in the same folder). If copying or uploading the ".htaccess" file to the root directory SKIP STEP 4.
 4. In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
 
+## Help:
+
+* Left Arrow / Backspace: Goes to the previous directory if available.
+* Right Arrow: Will enter / open the currently selected directory / file.
+* Up Arrow: Navigates the selector up one.
+* Down Arrow: Navigates the selector down one.
+* S Key: Toggles Settings Screen
+
 ## TO-DO:
 * [ ] Add Credits Screen
 * [ ] Video Player
@@ -53,14 +61,6 @@ Files: /Directory
 * [x] Upload Files To GitHub
 * [x] Create htaccess Directory Version
 * [x] Add Setup Instructions For Both Versions
-
-## Help:
-
-* Left Arrow / Backspace: Goes to the previous directory if available.
-* Right Arrow: Will enter / open the currently selected directory / file.
-* Up Arrow: Navigates the selector up one.
-* Down Arrow: Navigates the selector down one.
-* S Key: Toggles Settings Screen
 
 ## Resources Used:
 * [jscolor Color Picker](http://jscolor.com/)
