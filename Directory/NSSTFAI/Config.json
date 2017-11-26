@@ -464,13 +464,13 @@
                         "Desc": "Selected Row Outline",
                         "Width": 1,
                         "Style": "solid",
-                        "HEX": "#666666"
+                        "HEX": "#111111"
                     },
                     "background-color": {
                         "ID": "SelectedClass-BC",
                         "Type": "COLOUR",
                         "Desc": "Selected Row Background Color",
-                        "Value": "#3F3F3F"
+                        "Value": "#6F6F6F"
                     }
                 }
             }

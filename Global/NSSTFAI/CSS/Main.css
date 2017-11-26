@@ -511,7 +511,7 @@ input, select {
 }
 
 tr.selected {
-    outline: 1px solid #666;
+    outline: 1px solid #111;
     outline-style: auto !important;
-    background-color: #3F3F3F;
+    background-color: #6F6F6F;
 }
