@@ -474,7 +474,7 @@ function init() {
     SetSideBarInfo();
     GenBreadCrumb();
     SetupTable();
-    SetMobileSettings();
     SetupAllEvents();
+    SetMobileSettings();
     CheckForUpdate();
 }
