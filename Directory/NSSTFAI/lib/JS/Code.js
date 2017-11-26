@@ -276,15 +276,15 @@ function UpdateAndSaveSettings() {
 function SetupSettingsEvents() {
     $("#SettingsButton").on("click", function () {
         if (!Settings['SettingsOpen']) { // Open
+            $("#settings").show();
+            SetupSettingsPage();
             $(this).find("img").attr("src", "/NSSTFAI/Icons/Close.svg")
             Settings['SettingsOpen'] = true;
-            $("#settings").show();
             log("SetupSettingsPage: Settings Page Opened");
-            SetupSettingsPage();
         } else { // Closed
+            $("#settings").hide();
             $(this).find("img").attr("src", "/NSSTFAI/Icons/Settings.svg")
             Settings['SettingsOpen'] = false;
-            $("#settings").hide();
             log("SetupSettingsPage: Settings Page Closed");
         }
     });
