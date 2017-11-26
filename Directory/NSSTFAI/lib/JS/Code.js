@@ -247,6 +247,12 @@ function UpdateAndSaveSettings() {
                             Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["HEX"] = HEX;
                             log("UpdateAndSaveSettings: Key '" + ID + "' With Value '" + Width + "px " + ChosenStyle + " " + HEX + "' Saved");
                             break;
+                        case "COLOUR":
+                            Value = $("#" + ID).val();
+                            if (!Value.startsWith("#")) { Value = "#" + Value; }
+                            Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Value"] = Value;
+                            log("UpdateAndSaveSettings: Key '" + ID + "' With Value '" + Value + "' Saved");
+                            break;
                         default:
                             Value = $("#" + ID).val();
                             Settings["Config"]["ChangeableStyles"]["CSS"][Key]["Styles"][LowerKey]["Value"] = Value;
