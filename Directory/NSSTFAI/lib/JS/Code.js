@@ -398,7 +398,7 @@ function ParentDirectory() {
 
 function ScrollIfNotVisible(element, parent) {
     try {
-        if ($(element).position().top < 0 || $(element).position().top > $(parent).height()) {
+        if ($(element).position().top < 5 || $(element).position().top > $(parent).height()) {
             $(parent).scrollTop($(element).offset().top - $(parent).offset().top + $(parent).scrollTop());
             log("ScrollIfNotVisible: Scrolled To Item With Class '.selected'");
         }
