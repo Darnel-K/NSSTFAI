@@ -52,6 +52,7 @@ Files: /Directory
 * [ ] Add Help Screen
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
+* [ ] Redo The Update Check Code
 * [x] Rewrite Settings Screen HTML & JS
 * [x] Implement Console Logging Into The JS
 * [X] Pick A Name
