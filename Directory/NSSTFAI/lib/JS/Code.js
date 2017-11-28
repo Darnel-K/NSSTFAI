@@ -10,6 +10,7 @@ var Settings = {
     "SidebarText": "Current Directory",
     "Config": null,
     "SettingsOpen": false,
+    "Version": "04EA94625A6CAA99C65507CBD0C053CF92319A93",
     "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
 
@@ -378,18 +379,13 @@ function SetMobileSettings() {
 function CheckForUpdate() {
     $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json").done(function (json) {
         var RemoteVersion = json;
-        $.getJSON("/NSSTFAI/lib/JS/Version.json").done(function (json) {
-            var LocalVersion = json;
-            if (LocalVersion["Version"] < RemoteVersion["Version"]) {
-                if (RemoteVersion["Required"] == true) {
-                    log("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
-                } else {
-                    log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
-                }
+        if (Settings["Version"] != RemoteVersion["Version"]) {
+            if (RemoteVersion["Required"] == true) {
+                log("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
+            } else {
+                log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
             }
-        }).fail(function () {
-            log("CheckForUpdate: Unable To Get Local Version Data", "ERROR");
-        });
+        }
     }).fail(function () {
         log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
     });
