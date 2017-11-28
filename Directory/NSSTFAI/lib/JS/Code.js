@@ -386,7 +386,7 @@ function CheckForUpdate() {
                 log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
             }
         } else {
-            log("No Update Is Available")
+            log("Update: No Updates Available")
         }
     }).fail(function () {
         log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
