@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'MrDeHaviland-Regular';
+  src: local("MrDeHaviland-Regular"), local("MrDeHaviland-Regular"), url(/NSSTFAI/lib/Fonts/MrDeHaviland-Regular.ttf);
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+* {
+  text-decoration: none;
+  font-family: monospace;
+  font-size: medium;
+  overflow: hidden;
+}
+
+#wrapper {
+  position: absolute;
+  width: 86vw;
+  float: left;
+  top: 50px;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: 0;
+  height: calc(100vh - 50px);
+}
+
+#wrapper table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#wrapper table .indexbreakrow {
+  display: none;
+}
+
+#wrapper table .indexcolicon {
+  width: 1.4vw;
+}
+
+#wrapper table .indexcolname {
+  width: 62.78vw;
+}
+
+#wrapper table .indexcollastmod {
+  text-align: center;
+  width: 16.3vw;
+}
+
+#wrapper table .indexcolsize {
+  text-align: center;
+  width: 5.52vw;
+}
+
+#wrapper table .indexhead {
+  text-align: left;
+  border-bottom: 1px solid #2f2f2f;
+  background-color: #1f1f1f;
+}
+
+#wrapper table .indexhead a {
+  color: #FFFFFF;
+}
+
+#wrapper table thead {
+  height: 31px;
+}
+
+#wrapper table thead tr {
+  display: block;
+  position: relative;
+}
+
+#wrapper table tbody {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 50px - 33px);
+  -webkit-overflow-scrolling: touch;
+}
+
+#wrapper table tbody .odd {
+  color: #FFFFFF;
+  background-color: #4f4f4f;
+}
+
+#wrapper table tbody .even {
+  color: #FFFFFF;
+  background-color: #1f1f1f;
+}
+
+#wrapper table tbody .selected {
+  outline: 1px solid #111;
+  outline-style: auto !important;
+  background-color: #6F6F6F;
+}
+
+#wrapper table tbody tr {
+  color: #FFFFFF;
+}
+
+#wrapper table tbody tr:hover {
+  cursor: pointer;
+  -webkit-transition: background-color .20s ease;
+  -o-transition: background-color .20s ease;
+  transition: background-color .20s ease;
+  color: #FFFFFF;
+  background-color: #3f3f3f;
+}
+ 
+
+ /*# sourceMappingURL= Main.css.map */

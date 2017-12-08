@@ -53,7 +53,7 @@ Files: /Directory
 * [ ] Add Help Screen
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
-* [ ] Add Google Analytics Support
+* [ ] Create Separate Layout For Landscape And Portrait
 * [x] Add Optional Table Header / Footer
 * [x] Redo The Update Check Code
 * [x] Rewrite Settings Screen HTML & JS

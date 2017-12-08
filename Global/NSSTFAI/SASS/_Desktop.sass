@@ -1,0 +1,83 @@
+@import '_Vars.sass'
+
+*
+    text-decoration: none;
+    font-family: monospace;
+    font-size: medium;
+    overflow: hidden;
+
+#wrapper
+    position: absolute;
+    width: $WrapperWidth;
+    float: left;
+    top: $TopBarHeight;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    height: $WrapperHeight;
+
+    table 
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        .indexbreakrow
+            display: none
+
+        .indexcolicon
+            width: 1.4vw;
+
+        .indexcolname
+            width: 62.78vw;
+
+        .indexcollastmod
+            text-align: center;
+            width: 16.3vw;
+
+        .indexcolsize
+            text-align: center;
+            width: 5.52vw;
+
+        .indexhead
+            text-align: left;
+            border-bottom: 1px solid #2f2f2f;
+            background-color: #1f1f1f;
+
+            a
+                color: #FFFFFF;
+
+        thead
+            height: 31px;
+
+            tr
+                display: block;
+                position: relative;
+
+        tbody
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: calc(100vh - 50px - 33px);
+            -webkit-overflow-scrolling: touch;
+
+            .odd
+                color: #FFFFFF;
+                background-color: #4f4f4f;
+
+            .even
+                color: #FFFFFF;
+                background-color: #1f1f1f;
+
+            .selected
+                outline: 1px solid #111;
+                outline-style: auto !important;
+                background-color: #6F6F6F;
+
+            tr
+                color: #FFFFFF;
+
+            tr:hover
+                cursor: pointer;
+                transition: background-color .20s ease;
+                color: #FFFFFF;
+                background-color: #3f3f3f;
