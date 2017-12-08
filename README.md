@@ -47,6 +47,7 @@ Files: /Directory
 * [ ] Audio Player
 * [ ] Image Viewer
 * [ ] Clean CSS
+* [ ] Convert CSS To SASS
 * [ ] Create Unix .sh Installer
 * [ ] Create Windows .bat Installer
 * [ ] Add Help Screen
