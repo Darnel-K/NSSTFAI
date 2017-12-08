@@ -6,6 +6,10 @@
     font-size: medium;
     overflow: hidden;
 
+body
+    color: #FFFFFF;
+    background-color: #1F1F1F;
+
 #wrapper
     position: absolute;
     width: $WrapperWidth;
@@ -20,6 +24,7 @@
     table 
         table-layout: fixed;
         border-collapse: collapse;
+        width: 100%;
 
         .indexbreakrow
             display: none
@@ -81,3 +86,260 @@
                 transition: background-color .20s ease;
                 color: #FFFFFF;
                 background-color: #3f3f3f;
+
+#infodiv
+    position: absolute;
+    width: 14vw;
+    float: left;
+    top: 51px;
+    right: 0;
+    overflow-y: auto;
+    bottom: 0;
+    height: calc(100vh - 51px);
+    background-color: #2f2f2f;
+
+    #credits
+        width: 100%;
+        height: 2vw;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 2vw;
+        background-color: #2f2f2f;
+
+        a
+            color: #4F4F4F;
+
+        a:hover
+            color: #6f6f6f;
+
+    #infodivcontent
+        min-height: calc(100% - 2vw);
+
+        #icon
+            width: 12vw;
+            height: 12vw;
+            margin: 1vw auto;
+            color: #FFFFFF;
+            background-color: #2F2F2F;
+
+        #text
+            width: 12vw;
+            min-height: 3vw;
+            margin: 1vw auto;
+            color: #FFFFFF;
+            background-color: #2F2F2F;
+
+            p
+                word-wrap: break-word;
+                text-align: center;
+                vertical-align: middle;
+                width: 100%;
+                height: 100%;
+                line-height: 20px;
+
+        #qrcode
+            width: 12vw;
+            height: 12vw;
+            margin: 1vw auto;
+            display: block;
+
+#top
+    width: 100vw;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    #topleft
+        width: calc(86vw - 1px);
+        height: 50px;
+        line-height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #2f2f2f;
+        border-right: 1px solid #1f1f1f;
+
+        #breadcrumb, .rcrumbs
+            width: calc(86vw - 51px);
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            top: 0;
+            left: 50px;
+
+            *
+                color: #6f6f6f;
+
+            a
+                font-size: x-large;
+
+            a:hover
+                color: #4f4f4f;
+
+            .divider
+                padding: 0 5px;
+                font-size: x-large;
+                color: #cccccc;
+
+            > ul
+                padding: 0;
+                padding-left: 10px;
+                list-style: none;
+                margin: 0;
+                line-height: 50px;
+                height: 100%;
+
+                > li
+                    overflow: hidden;
+                    display: none;
+
+                > li.show
+                    display: inline-block;
+
+                > li.ellipsis
+                    text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    overflow: hidden;
+
+        #settingsicon
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            button
+                width: 100%;
+                height: 100%;
+                line-height: 50px;
+                padding: 0;
+                border: none;
+
+                img
+                    width: 100%;
+                    background-color: #2f2f2f;
+
+            button:hover
+                cursor: pointer;
+
+                img
+                    background-color: #3F3F3F;
+        
+        #JSerror
+            width: calc(86vw - 1px);
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            p
+                margin: 0;
+                text-align: center;
+                color: #FF0000;
+                font-size: medium;
+
+    #topright
+        width: 14vw;
+        height: 50px;
+        line-height: 50px;
+        position: absolute;
+        left: 86vw;
+        right: 0;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #2f2f2f;
+        color: #6f6f6f;
+
+        p
+            font-family: MrDeHaviland-Regular;
+            margin: 0;
+            font-size: xx-large;
+
+#settings
+    display: none;
+    position: absolute;
+    width: 86vw;
+    float: left;
+    top: 50px;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    height: calc(100vh - 50px);
+    -webkit-overflow-scrolling: touch;
+    background-color: #1f1f1f;
+    color: #6f6f6f;
+
+    h2
+        font-size: xx-large;
+        margin: 0;
+        height: 69px;
+        line-height: 69px;
+        padding-left: 30px;
+        overflow: hidden;
+        border-bottom: 1px solid #2F2F2F;
+
+        #save
+            margin-top: 10px;
+            margin-right: 10px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+            border: none;
+            float: right;
+            background-color: #1F1F1F;
+
+        #reset
+            margin-top: 10px;
+            margin-right: 10px;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+            border: none;
+            float: right;
+            font-size: large;
+            background-color: #1F1F1F;
+            color: #FFFFFF;
+
+        #reset:hover
+            cursor: pointer;
+            background-color: #2F2F2F;
+            color: #FFFFFF
+
+    .container
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .SettingsItem
+            width: 50%;
+            float: left;
+            text-align: center;
+
+            p
+                margin: 0;
+                overflow: hidden;
+
+            input
+                border: none;
+                height: 100%;
+                text-align: center;
+
+            .BorderStyling
+                width: calc(45% / 3);
+
+            p, input, select
+                width: 45%;
+                float: left;
+                height: 35px;
+                margin-bottom: 20px;
+                vertical-align: middle;
+                line-height: 35px;
+                border: none;
+                padding: 0;
+                text-align-last: center;
