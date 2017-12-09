@@ -2,3 +2,48 @@
 @media screen and (max-width: $Mobile)
     #infodiv
         display: none;
+
+    #settings
+        width: 100vw;
+
+    #top
+
+        #topleft
+            border-right: none !important;
+            width: 100%;
+
+        #topright
+            display: none;
+
+    #wrapper
+        width: 100vw;
+
+@media screen and (max-width: $Mobile) and (orientation: Landscape)
+    #wrapper
+        table
+            .indexcolicon
+                width: 30px;
+
+            .indexcolsize
+                width: 8%;
+
+            .indexcollastmod
+                width: 20%;
+
+            .indexcolname
+                width: calc(72% - 30px);
+
+@media screen and (max-width: $Mobile) and (orientation: Portrait)
+    #wrapper
+        table
+            .indexcolicon
+                width: 30px;
+
+            .indexcolsize
+                width: 12%;
+
+            .indexcollastmod
+                width: 35%;
+
+            .indexcolname
+                width: calc(53% - 30px);

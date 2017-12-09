@@ -381,9 +381,9 @@ function CheckForUpdate() {
         var RemoteVersion = json;
         if (Settings["Version"] != RemoteVersion["Version"]) {
             if (RemoteVersion["Required"] == true) {
-                log("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
+                console.warn("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
             } else {
-                log("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme", "WARN");
+                console.warn("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
             }
         } else {
             log("Update: No Updates Available")

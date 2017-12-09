@@ -30,10 +30,10 @@ body
             display: none
 
         .indexcolicon
-            width: 1.5%;
+            width: 30px;
 
         .indexcolname
-            width: 80.5%;
+            width: calc(82% - 30px);
 
         .indexcollastmod
             text-align: center;
@@ -117,14 +117,14 @@ body
         min-height: calc(100% - 2vw);
 
         #icon
-            width: calc(#{$RightBarWidth} - 2vw);
-            height: calc(#{$RightBarWidth} - 2vw);
+            width: calc(100% - 2vw);
+            height: calc(100% - 2vw);
             margin: 1vw auto;
             color: #FFFFFF;
             background-color: #2F2F2F;
 
         #text
-            width: calc(#{$RightBarWidth} - 2vw);
+            width: calc(100% - 2vw);
             min-height: 3vw;
             margin: 1vw auto;
             color: #FFFFFF;
@@ -139,7 +139,7 @@ body
                 line-height: 20px;
 
         #qrcode
-            width: calc(#{$RightBarWidth} - 2vw);
+            width: calc(100% - 2vw);
             height: calc(#{$RightBarWidth} - 2vw);
             margin: 1vw auto;
             display: block;
@@ -164,7 +164,7 @@ body
         border-right: 1px solid #1f1f1f;
 
         #breadcrumb, .rcrumbs
-            width: calc(#{$WrapperWidth} - 51px);
+            width: calc(100% - 51px);
             height: $TopBarHeight;
             line-height: $TopBarHeight;
             position: absolute;
@@ -231,7 +231,7 @@ body
                     background-color: #3F3F3F;
         
         #JSerror
-            width: calc(#{$WrapperWidth} - 1px);
+            width: calc(100% - 1px);
             height: $TopBarHeight;
             line-height: $TopBarHeight;
             position: absolute;

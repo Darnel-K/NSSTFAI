@@ -53,9 +53,9 @@ Files: /Directory
 * [ ] Add Help Screen
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
-* [ ] Create Separate Layout For Desktop & Mobile
+* [x] Create Separate Layout For Desktop & Mobile
 * [ ] Disable Some Features On Small Screens
-* [ ] Make Responsive
+* [x] Make Responsive
 * [ ] Add Optional Table Header / Footer
 * [x] Redo The Update Check Code
 * [x] Rewrite Settings Screen HTML & JS

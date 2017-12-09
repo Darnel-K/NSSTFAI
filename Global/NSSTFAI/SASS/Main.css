@@ -64,11 +64,11 @@ body {
 }
 
 #wrapper table .indexcolicon {
-  width: 1.5%;
+  width: 30px;
 }
 
 #wrapper table .indexcolname {
-  width: 80.5%;
+  width: calc(82% - 30px);
 }
 
 #wrapper table .indexcollastmod {
@@ -172,15 +172,15 @@ body {
 }
 
 #infodiv #infodivcontent #icon {
-  width: calc(calc(100vw - 86vw) - 2vw);
-  height: calc(calc(100vw - 86vw) - 2vw);
+  width: calc(100% - 2vw);
+  height: calc(100% - 2vw);
   margin: 1vw auto;
   color: #FFFFFF;
   background-color: #2F2F2F;
 }
 
 #infodiv #infodivcontent #text {
-  width: calc(calc(100vw - 86vw) - 2vw);
+  width: calc(100% - 2vw);
   min-height: 3vw;
   margin: 1vw auto;
   color: #FFFFFF;
@@ -197,7 +197,7 @@ body {
 }
 
 #infodiv #infodivcontent #qrcode {
-  width: calc(calc(100vw - 86vw) - 2vw);
+  width: calc(100% - 2vw);
   height: calc(calc(100vw - 86vw) - 2vw);
   margin: 1vw auto;
   display: block;
@@ -225,7 +225,7 @@ body {
 }
 
 #top #topleft #breadcrumb, #top #topleft .rcrumbs {
-  width: calc(86vw - 51px);
+  width: calc(100% - 51px);
   height: 50px;
   line-height: 50px;
   position: absolute;
@@ -306,7 +306,7 @@ body {
 }
 
 #top #topleft #JSerror {
-  width: calc(86vw - 1px);
+  width: calc(100% - 1px);
   height: 50px;
   line-height: 50px;
   position: absolute;
@@ -439,6 +439,49 @@ body {
 @media screen and (max-width: 770px) {
   #infodiv {
     display: none;
+  }
+  #settings {
+    width: 100vw;
+  }
+  #top #topleft {
+    border-right: none !important;
+    width: 100%;
+  }
+  #top #topright {
+    display: none;
+  }
+  #wrapper {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 770px) and (orientation: Landscape) {
+  #wrapper table .indexcolicon {
+    width: 30px;
+  }
+  #wrapper table .indexcolsize {
+    width: 8%;
+  }
+  #wrapper table .indexcollastmod {
+    width: 20%;
+  }
+  #wrapper table .indexcolname {
+    width: calc(72% - 30px);
+  }
+}
+
+@media screen and (max-width: 770px) and (orientation: Portrait) {
+  #wrapper table .indexcolicon {
+    width: 30px;
+  }
+  #wrapper table .indexcolsize {
+    width: 12%;
+  }
+  #wrapper table .indexcollastmod {
+    width: 35%;
+  }
+  #wrapper table .indexcolname {
+    width: calc(53% - 30px);
   }
 }
  
