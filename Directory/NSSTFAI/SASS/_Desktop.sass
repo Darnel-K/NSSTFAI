@@ -14,7 +14,7 @@ body
     position: absolute;
     width: $WrapperWidth;
     float: left;
-    top: $TopBarHeight;
+    top: calc(#{$TopBarHeight} + 1px);
     left: 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -55,15 +55,13 @@ body
             width: 100%;
 
         thead
-            height: 31px;
+            // height: 31px;
             width: 100%;
 
             tr
-                // display: block;
                 position: relative;
 
         tbody
-            // display: block;
             width: 100%;
             overflow-y: auto;
             overflow-x: hidden;
@@ -92,13 +90,13 @@ body
 
 #infodiv
     position: absolute;
-    width: 14vw;
+    width: $RightBarWidth;
     float: left;
-    top: 51px;
+    top: calc(#{$TopBarHeight} + 1px);
     right: 0;
     overflow-y: auto;
     bottom: 0;
-    height: calc(100vh - 51px);
+    height: $WrapperHeight;
     background-color: #2f2f2f;
 
     #credits
@@ -119,14 +117,14 @@ body
         min-height: calc(100% - 2vw);
 
         #icon
-            width: 12vw;
-            height: 12vw;
+            width: calc(#{$RightBarWidth} - 2vw);
+            height: calc(#{$RightBarWidth} - 2vw);
             margin: 1vw auto;
             color: #FFFFFF;
             background-color: #2F2F2F;
 
         #text
-            width: 12vw;
+            width: calc(#{$RightBarWidth} - 2vw);
             min-height: 3vw;
             margin: 1vw auto;
             color: #FFFFFF;
@@ -141,23 +139,24 @@ body
                 line-height: 20px;
 
         #qrcode
-            width: 12vw;
-            height: 12vw;
+            width: calc(#{$RightBarWidth} - 2vw);
+            height: calc(#{$RightBarWidth} - 2vw);
             margin: 1vw auto;
             display: block;
 
 #top
     width: 100vw;
-    height: 50px;
-    line-height: 50px;
+    height: $TopBarHeight;
+    line-height: $TopBarHeight;
+    border-bottom: 1px solid #1F1F1F;
     position: absolute;
     top: 0;
     left: 0;
 
     #topleft
-        width: calc(86vw - 1px);
-        height: 50px;
-        line-height: 50px;
+        width: calc(#{$WrapperWidth} - 1px);
+        height: $TopBarHeight;
+        line-height: $TopBarHeight;
         position: absolute;
         top: 0;
         left: 0;
@@ -165,12 +164,12 @@ body
         border-right: 1px solid #1f1f1f;
 
         #breadcrumb, .rcrumbs
-            width: calc(86vw - 51px);
-            height: 50px;
-            line-height: 50px;
+            width: calc(#{$WrapperWidth} - 51px);
+            height: $TopBarHeight;
+            line-height: $TopBarHeight;
             position: absolute;
             top: 0;
-            left: 50px;
+            left: $TopBarHeight;
 
             *
                 color: #6f6f6f;
@@ -191,7 +190,7 @@ body
                 padding-left: 10px;
                 list-style: none;
                 margin: 0;
-                line-height: 50px;
+                line-height: $TopBarHeight;
                 height: 100%;
 
                 > li
@@ -207,9 +206,9 @@ body
                     overflow: hidden;
 
         #settingsicon
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
+            width: $TopBarHeight;
+            height: $TopBarHeight;
+            line-height: $TopBarHeight;
             position: absolute;
             top: 0;
             left: 0;
@@ -217,7 +216,7 @@ body
             button
                 width: 100%;
                 height: 100%;
-                line-height: 50px;
+                line-height: $TopBarHeight;
                 padding: 0;
                 border: none;
 
@@ -232,9 +231,9 @@ body
                     background-color: #3F3F3F;
         
         #JSerror
-            width: calc(86vw - 1px);
-            height: 50px;
-            line-height: 50px;
+            width: calc(#{$WrapperWidth} - 1px);
+            height: $TopBarHeight;
+            line-height: $TopBarHeight;
             position: absolute;
             top: 0;
             left: 0;
@@ -246,11 +245,11 @@ body
                 font-size: medium;
 
     #topright
-        width: 14vw;
-        height: 50px;
-        line-height: 50px;
+        width: $RightBarWidth;
+        height: $TopBarHeight;
+        line-height: $TopBarHeight;
         position: absolute;
-        left: 86vw;
+        left: $WrapperWidth;
         right: 0;
         text-align: center;
         vertical-align: middle;
@@ -265,14 +264,14 @@ body
 #settings
     display: none;
     position: absolute;
-    width: 86vw;
+    width: $WrapperWidth;
     float: left;
-    top: 50px;
+    top: $TopBarHeight;
     left: 0;
     overflow-y: auto;
     overflow-x: hidden;
     bottom: 0;
-    height: calc(100vh - 50px);
+    height: $WrapperHeight;
     -webkit-overflow-scrolling: touch;
     background-color: #1f1f1f;
     color: #6f6f6f;

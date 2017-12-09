@@ -473,6 +473,19 @@
                         "Value": "#6F6F6F"
                     }
                 }
+            },
+            "33": {
+                "Element": "#top",
+                "Styles": {
+                    "border-bottom": {
+                        "ID": "TopBar-BottomBorder",
+                        "Type": "BORDER",
+                        "Desc": "Top Bar Bottom Border",
+                        "Width": 1,
+                        "Style": "solid",
+                        "HEX": "#1F1F1F"
+                    }
+                }
             }
         },
         "JS": {

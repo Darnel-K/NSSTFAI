@@ -45,12 +45,12 @@ body {
   position: absolute;
   width: 86vw;
   float: left;
-  top: 50px;
+  top: calc(50px + 1px);
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 51px);
 }
 
 #wrapper table {
@@ -96,7 +96,6 @@ body {
 }
 
 #wrapper table thead {
-  height: 31px;
   width: 100%;
 }
 
@@ -141,9 +140,9 @@ body {
 
 #infodiv {
   position: absolute;
-  width: 14vw;
+  width: calc(100vw - 86vw);
   float: left;
-  top: 51px;
+  top: calc(50px + 1px);
   right: 0;
   overflow-y: auto;
   bottom: 0;
@@ -173,15 +172,15 @@ body {
 }
 
 #infodiv #infodivcontent #icon {
-  width: 12vw;
-  height: 12vw;
+  width: calc(calc(100vw - 86vw) - 2vw);
+  height: calc(calc(100vw - 86vw) - 2vw);
   margin: 1vw auto;
   color: #FFFFFF;
   background-color: #2F2F2F;
 }
 
 #infodiv #infodivcontent #text {
-  width: 12vw;
+  width: calc(calc(100vw - 86vw) - 2vw);
   min-height: 3vw;
   margin: 1vw auto;
   color: #FFFFFF;
@@ -198,8 +197,8 @@ body {
 }
 
 #infodiv #infodivcontent #qrcode {
-  width: 12vw;
-  height: 12vw;
+  width: calc(calc(100vw - 86vw) - 2vw);
+  height: calc(calc(100vw - 86vw) - 2vw);
   margin: 1vw auto;
   display: block;
 }
@@ -208,6 +207,7 @@ body {
   width: 100vw;
   height: 50px;
   line-height: 50px;
+  border-bottom: 1px solid #1F1F1F;
   position: absolute;
   top: 0;
   left: 0;
@@ -322,7 +322,7 @@ body {
 }
 
 #top #topright {
-  width: 14vw;
+  width: calc(100vw - 86vw);
   height: 50px;
   line-height: 50px;
   position: absolute;
@@ -350,7 +350,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 51px);
   -webkit-overflow-scrolling: touch;
   background-color: #1f1f1f;
   color: #6f6f6f;
@@ -434,6 +434,12 @@ body {
   border: none;
   padding: 0;
   text-align-last: center;
+}
+
+@media screen and (max-width: 770px) {
+  #infodiv {
+    display: none;
+  }
 }
  
 
