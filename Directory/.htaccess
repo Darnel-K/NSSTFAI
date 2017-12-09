@@ -32,7 +32,7 @@ IndexIgnore .htaccess NSSTFAI
 
 HeaderName /NSSTFAI/lib/HTML/HEADER.html
 ReadmeName /NSSTFAI/lib/HTML/FOOTER.html
-IndexStyleSheet /NSSTFAI/CSS/Main.css
+IndexStyleSheet /NSSTFAI/SASS/Main.min.css
 
 #                    #
 # ICONS BY EXTENSION #

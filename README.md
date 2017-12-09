@@ -46,14 +46,14 @@ Files: /Directory
 * [ ] Video Player
 * [ ] Audio Player
 * [ ] Image Viewer
-* [ ] Clean CSS
-* [ ] Convert CSS To SASS
+* [x] Clean CSS
+* [x] Convert CSS To SASS
 * [ ] Create Unix .sh Installer
 * [ ] Create Windows .bat Installer
 * [ ] Add Help Screen
 * [ ] Acquire Logo For Theme
 * [ ] Logo Favicon
-* [ ] Create Separate Layout For Landscape And Portrait
+* [ ] Create Separate Layout For Desktop & Mobile
 * [x] Add Optional Table Header / Footer
 * [x] Redo The Update Check Code
 * [x] Rewrite Settings Screen HTML & JS
