@@ -64,21 +64,21 @@ body {
 }
 
 #wrapper table .indexcolicon {
-  width: 1.4vw;
+  width: 1.5%;
 }
 
 #wrapper table .indexcolname {
-  width: 62.78vw;
+  width: 80.5%;
 }
 
 #wrapper table .indexcollastmod {
   text-align: center;
-  width: 16.3vw;
+  width: 12%;
 }
 
 #wrapper table .indexcolsize {
   text-align: center;
-  width: 5.52vw;
+  width: 6%;
 }
 
 #wrapper table .indexhead {
@@ -91,17 +91,21 @@ body {
   color: #FFFFFF;
 }
 
+#wrapper table tr {
+  width: 100%;
+}
+
 #wrapper table thead {
   height: 31px;
+  width: 100%;
 }
 
 #wrapper table thead tr {
-  display: block;
   position: relative;
 }
 
 #wrapper table tbody {
-  display: block;
+  width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: calc(100vh - 50px - 33px);
