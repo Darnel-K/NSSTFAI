@@ -10,7 +10,7 @@ var Settings = {
     "SidebarText": "Current Directory",
     "Config": null,
     "SettingsOpen": false,
-    "Version": "04EA94625A6CAA99C65507CBD0C053CF92319A93",
+    "Version": "B9E29F077A1EF6E1A11FA55C01177406A4D2FC1F",
     "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
 
@@ -55,11 +55,11 @@ function log(msg, type = "LOG") {
 }
 
 function GetSettingsFromFile(file) {
-    $.getJSON(file).done(function (json) {
+    $.getJSON(file).done(function(json) {
         log("GetSettingsFromFile: Get Config.json Successful");
         Settings["Config"] = json;
         ApplySettings(Settings["Config"]);
-    }).fail(function () {
+    }).fail(function() {
         log("GetSettingsFromFile: Unable To Get Config.json", "ERROR");
     });
 }
@@ -132,12 +132,12 @@ function GenBreadCrumb() {
     var breadcrumb = "<div class=\"rcrumbs\" id=\"breadcrumbs\"><ul>";
     var href = document.location.href;
     var s = href.split("/");
-    for (var i = 2; i < (s.length - 1); i++) {
-        breadcrumb += "<li><a href=\"" + href.substring(0, href.indexOf("/" + s[i]) + s[i].length + 1) + "/\">" + decodeURIComponent(s[i]) + "</a><span class=\"divider\">></span></li>";
+    for (var i=2;i<(s.length-1);i++) {
+        breadcrumb += "<li><a href=\"" + href.substring(0,href.indexOf("/" + s[i]) + s[i].length + 1) + "/\">" + decodeURIComponent(s[i]) + "</a><span class=\"divider\">></span></li>";
         log("GenBreadCrumb: Added '" + decodeURIComponent(s[i]) + "' To Breadcrumb");
     }
-    breadcrumb += "</ul></div>";
-    $("#topleft").append(breadcrumb);
+    breadcrumb+="</ul></div>";
+    $( "#topleft" ).append(breadcrumb);
     $("#breadcrumbs").rcrumbs();
     log("GenBreadCrumb: Breadcrumb Complete");
 }
@@ -187,7 +187,7 @@ function SetSideBarInfo() {
         }
         Settings["QRcode-Link"] = $('tr.selected').find('a').prop('href');
         Settings["SidebarIconAlt"] = $('tr.selected').find('img').attr('alt');
-        Settings["SidebarText"] = decodeURIComponent($('tr.selected').find('a').text().replace('/', '')) + "<br />" + $('tr.selected').find('.indexcollastmod').text() + "<br />" + $('tr.selected').find('.indexcolsize').text();
+        Settings["SidebarText"] = decodeURIComponent($('tr.selected').find('a').text().replace('/','')) + "<br />" + $('tr.selected').find('.indexcollastmod').text() + "<br />" + $('tr.selected').find('.indexcolsize').text();
         log("SetSideBarInfo: Sidebar Information Updated To, Text='" + Settings["SidebarText"] + "' Image='" + Settings["SidebarIconSRC"] + "' ImageAlt='" + Settings["SidebarIconAlt"] + "'");
     }
     UpdateQRCode(Settings["QRcode-Link"]);
@@ -197,11 +197,11 @@ function SetSideBarInfo() {
 }
 
 function SetupTableEvents() {
-    $("tr").on("mouseover", function () {
+    $( "tr" ).on("mouseover", function() {
         log("Mouseover: Mouse Detected Over A Table Row");
-        if (!$(this).hasClass('indexhead')) {
+        if(!$(this).hasClass('indexhead')){
             log("Mouseover: Does Not Have Class 'indexhead'");
-            if (!$(this).hasClass('indexbreakrow')) {
+            if(!$(this).hasClass('indexbreakrow')) {
                 log("Mouseover: Does Not Have Class 'indexbreakrow'");
                 $("tbody tr").removeClass("selected");
                 $(this).addClass("selected");
@@ -210,14 +210,14 @@ function SetupTableEvents() {
         }
     });
 
-    $('tbody tr a').on("click", function (e) {
+    $('tbody tr a').on("click", function(e) {
         e.preventDefault();
     });
 
-    $('tbody tr').on("click", function (e) {
+    $('tbody tr').on("click", function(e) {
         e.preventDefault();
         link = $(this).find('a').prop('href');
-        Settings["SidebarText"] = $(this).find('a').text();
+		Settings["SidebarText"] = $(this).find('a').text();
         // var extension = link.substr((link.lastIndexOf('.') + 1)).toLowerCase();
         if (link.substr(-1) != "/" && link.substr(-1) != "\\") {
             win = window.open(link, '_blank');
@@ -281,7 +281,7 @@ function UpdateAndSaveSettings() {
 }
 
 function SetupSettingsEvents() {
-    $("#SettingsButton").on("click", function () {
+    $("#SettingsButton").on("click", function() {
         if (!Settings['SettingsOpen']) { // Open
             $("#settings").show();
             SetupSettingsPage();
@@ -323,7 +323,7 @@ function SetupSettingsPage() {
                             var HEX = CSSkey["HEX"];
                             $(".StylesSettings").append('<div class="SettingsItem"><p>' + Desc + '</p><input type="number" id="' + ID + '-W' + '" class="BorderStyling" value="' + Width + '"><select id="' + ID + '-S' + '" class="BorderStyling">' + Settings['BorderStyles'] + '</select><input id="' + ID + '-H' + '" class="jscolor {onFineChange:\'UpdateAndSaveSettings()\', hash: true} BorderStyling" value="' + HEX + '"></div>');
                             log("SetupSettingsPage: Added Item '" + ID + "' With Current Value Of '" + Width + "px " + Style + " #" + HEX);
-                            $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({ defaultSelected: true });
+                            $('#' + ID + '-S' + ' option[value="' + Style + '"]').prop({defaultSelected: true});
                             break;
                         case "N-PX":
                             var Min = String(CSSkey["Min"]);
@@ -362,7 +362,7 @@ function SetupSettingsPage() {
         }
     }
     jscolor.installByClassName("jscolor");
-    $("input, select").on("change", function () {
+    $("input, select").on("change", function() {
         UpdateAndSaveSettings();
     });
 }
@@ -373,11 +373,11 @@ function SetMobileSettings() {
         $("#settings").css("overflox-y", "scroll");
         $("tr").off("mouseover");
         log("MobileCheck: Mobile Device Detected, Applying Mobile CSS");
-    } else { log("MobileCheck: Not A Mobile Device"); }
+    } else {log("MobileCheck: Not A Mobile Device");}
 }
 
 function CheckForUpdate() {
-    $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json").done(function (json) {
+    $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json").done(function(json) {
         var RemoteVersion = json;
         if (Settings["Version"] != RemoteVersion["Version"]) {
             if (RemoteVersion["Required"] == true) {
@@ -388,7 +388,7 @@ function CheckForUpdate() {
         } else {
             log("Update: No Updates Available")
         }
-    }).fail(function () {
+    }).fail(function() {
         log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
     });
 }
@@ -406,12 +406,12 @@ function ScrollIfNotVisible(element, parent) {
             $(parent).scrollTop($(element).offset().top - $(parent).offset().top + $(parent).scrollTop());
             log("ScrollIfNotVisible: Scrolled To Item With Class '.selected'");
         }
-    } catch (e) { }
+    } catch (e) {}
 }
 
 function SetupKeydownEvents() {
     $(document).on("keydown", function (e) {
-        if (!$(event.target).is('input')) {
+        if(! $(event.target).is('input')) {
             if (e.which === 37 || e.which === 8) { // Left Arrow || Backspace
                 e.preventDefault();
                 ParentDirectory();

@@ -345,7 +345,7 @@ body {
   position: absolute;
   width: 86vw;
   float: left;
-  top: 50px;
+  top: calc(50px + 1px);
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;

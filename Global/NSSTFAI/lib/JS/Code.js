@@ -10,7 +10,7 @@ var Settings = {
     "SidebarText": "Current Directory",
     "Config": null,
     "SettingsOpen": false,
-    "Version": "04EA94625A6CAA99C65507CBD0C053CF92319A93",
+    "Version": "B9E29F077A1EF6E1A11FA55C01177406A4D2FC1F",
     "BorderStyles": '<option value="solid">Solid</option><option value="dotted">Dotted</option><option value="dashed">Dashed</option><option value="double">Double</option><option value="groove">Groove</option><option value="ridge">Ridge</option><option value="inset">Inset</option><option value="outset">Outset</option><option value="none">None</option>'
 };
 
