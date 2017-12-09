@@ -19,7 +19,7 @@
                 }
             },
             "1": {
-                "Element": "#icon",
+                "Element": "#infodiv #infodivcontent #icon",
                 "Styles": {
                     "color": {
                         "ID": "SidebarIcon-FC",
@@ -36,7 +36,7 @@
                 }
             },
             "2": {
-                "Element": "#text",
+                "Element": "#infodiv #infodivcontent #text",
                 "Styles": {
                     "color": {
                         "ID": "SidebarText-FC",
@@ -53,7 +53,7 @@
                 }
             },
             "3": {
-                "Element": "#credits",
+                "Element": "#infodiv #credits",
                 "Styles": {
                     "background-color": {
                         "ID": "CreditsButton-BC",
@@ -64,7 +64,7 @@
                 }
             },
             "4": {
-                "Element": "#credits a",
+                "Element": "#infodiv #credits a",
                 "Styles": {
                     "color": {
                         "ID": "CreditsButton-FC",
@@ -86,7 +86,7 @@
                 }
             },
             "6": {
-                "Element": "#topleft",
+                "Element": "#top #topleft",
                 "Styles": {
                     "background-color": {
                         "ID": "TopBarLeft-BC",
@@ -105,7 +105,7 @@
                 }
             },
             "7": {
-                "Element": "#settingsicon button img",
+                "Element": "#top #topleft #settingsicon button img",
                 "Styles": {
                     "background-color": {
                         "ID": "SettingsIcon-BC",
@@ -116,7 +116,7 @@
                 }
             },
             "8": {
-                "Element": "#topright",
+                "Element": "#top #topright",
                 "Styles": {
                     "background-color": {
                         "ID": "TopBarRight-BC",
@@ -133,7 +133,7 @@
                 }
             },
             "9": {
-                "Element": "tr.indexhead a",
+                "Element": "#wrapper table .indexhead a",
                 "Styles": {
                     "color": {
                         "ID": "TableHeaderLink-FC",
@@ -144,7 +144,7 @@
                 }
             },
             "10": {
-                "Element": "tr.indexhead",
+                "Element": "#wrapper table .indexhead",
                 "Styles": {
                     "border-bottom": {
                         "ID": "TableHeader-BB",
@@ -163,7 +163,7 @@
                 }
             },
             "11": {
-                "Element": "tr.odd",
+                "Element": "#wrapper table tbody .odd",
                 "Styles": {
                     "color": {
                         "ID": "TableRowOdd-FC",
@@ -180,7 +180,7 @@
                 }
             },
             "12": {
-                "Element": "tr.even",
+                "Element": "#wrapper table tbody .even",
                 "Styles": {
                     "color": {
                         "ID": "TableRowEven-FC",
@@ -197,7 +197,7 @@
                 }
             },
             "13": {
-                "Element": "tr.odd a",
+                "Element": "#wrapper table tbody .odd a",
                 "Styles": {
                     "color": {
                         "ID": "TableRowOddLink-FC",
@@ -208,7 +208,7 @@
                 }
             },
             "14": {
-                "Element": "tr.even a",
+                "Element": "#wrapper table tbody .even a",
                 "Styles": {
                     "color": {
                         "ID": "TableRowEvenLink-FC",
@@ -278,7 +278,7 @@
                 }
             },
             "18": {
-                "Element": ".rcrumbs *",
+                "Element": "#top #topleft .rcrumbs *",
                 "Styles": {
                     "color": {
                         "ID": "Breadcrumb-FC",
@@ -289,7 +289,7 @@
                 }
             },
             "19": {
-                "Element": ".rcrumbs .divider",
+                "Element": "#top #topleft .rcrumbs .divider",
                 "Styles": {
                     "color": {
                         "ID": "BreadcrumbDivider-FC",
@@ -317,7 +317,7 @@
                 }
             },
             "21": {
-                "Element": "tbody tr.odd:hover",
+                "Element": "#wrapper table tbody .odd:hover",
                 "Styles": {
                     "background-color": {
                         "ID": "TableRowOddHover-BC",
@@ -328,7 +328,7 @@
                 }
             },
             "22": {
-                "Element": "tbody tr.even:hover",
+                "Element": "#wrapper table tbody .even:hover",
                 "Styles": {
                     "background-color": {
                         "ID": "TableRowEvenHover-BC",
@@ -339,7 +339,7 @@
                 }
             },
             "23": {
-                "Element": ".rcrumbs a:hover",
+                "Element": "#top #topleft .rcrumbs a:hover",
                 "Styles": {
                     "color": {
                         "ID": "BreadcrumbHover-FC",
@@ -350,7 +350,7 @@
                 }
             },
             "24": {
-                "Element": "#credits a:hover",
+                "Element": "#infodiv #credits a:hover",
                 "Styles": {
                     "color": {
                         "ID": "CreditsButtonHover-FC",
@@ -361,7 +361,7 @@
                 }
             },
             "25": {
-                "Element": "#save",
+                "Element": "#settings h2 #save",
                 "Styles": {
                     "background-color": {
                         "ID": "SaveText-BC",
@@ -378,7 +378,7 @@
                 }
             },
             "26": {
-                "Element": "#reset",
+                "Element": "#settings h2 #reset",
                 "Styles": {
                     "color": {
                         "ID": "ResetButton-FC",
@@ -395,7 +395,7 @@
                 }
             },
             "27": {
-                "Element": "#settingsicon button:hover img",
+                "Element": "#top #topleft #settingsicon button:hover img",
                 "Styles": {
                     "background-color": {
                         "ID": "SettingsIconHover-BC",
@@ -406,7 +406,7 @@
                 }
             },
             "28": {
-                "Element": "#reset:hover",
+                "Element": "#settings h2 #reset:hover",
                 "Styles": {
                     "color": {
                         "ID": "ResetButtonHover-FC",
@@ -423,7 +423,7 @@
                 }
             },
             "29": {
-                "Element": "tbody tr.odd:hover a, tbody tr.odd:hover",
+                "Element": "#wrapper table tbody .odd:hover a, #wrapper table tbody .odd:hover",
                 "Styles": {
                     "color": {
                         "ID": "TableRowOddHover-FC",
@@ -434,7 +434,7 @@
                 }
             },
             "30": {
-                "Element": "tbody tr.even:hover a, tbody tr.even:hover",
+                "Element": "#wrapper table tbody .even:hover a, #wrapper table tbody .even:hover",
                 "Styles": {
                     "color": {
                         "ID": "TableRowEvenHover-FC",
@@ -445,7 +445,7 @@
                 }
             },
             "31": {
-                "Element": "thead tr a:hover",
+                "Element": "#wrapper table thead tr a:hover",
                 "Styles": {
                     "color": {
                         "ID": "TableHeadHover-FC",
@@ -456,7 +456,7 @@
                 }
             },
             "32": {
-                "Element": "tr.selected",
+                "Element": "#wrapper table tbody .selected",
                 "Styles": {
                     "outline": {
                         "ID": "SelectedClass-Outline",
