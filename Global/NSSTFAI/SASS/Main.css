@@ -64,11 +64,7 @@ body {
 }
 
 #wrapper table .indexcolicon {
-  width: 30px;
-}
-
-#wrapper table .indexcolname {
-  width: calc(82% - 30px);
+  width: 26px;
 }
 
 #wrapper table .indexcollastmod {
@@ -457,7 +453,7 @@ body {
 
 @media screen and (max-width: 770px) and (orientation: Landscape) {
   #wrapper table .indexcolicon {
-    width: 30px;
+    width: 26px;
   }
   #wrapper table .indexcolsize {
     width: 8%;
@@ -465,23 +461,17 @@ body {
   #wrapper table .indexcollastmod {
     width: 20%;
   }
-  #wrapper table .indexcolname {
-    width: calc(72% - 30px);
-  }
 }
 
 @media screen and (max-width: 770px) and (orientation: Portrait) {
   #wrapper table .indexcolicon {
-    width: 30px;
+    width: 26px;
   }
   #wrapper table .indexcolsize {
     width: 12%;
   }
   #wrapper table .indexcollastmod {
     width: 35%;
-  }
-  #wrapper table .indexcolname {
-    width: calc(53% - 30px);
   }
 }
  
