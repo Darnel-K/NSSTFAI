@@ -50,7 +50,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  height: calc(100vh - 51px);
+  height: calc(100vh - 50px - 1px);
 }
 
 #wrapper table {
@@ -146,7 +146,7 @@ body {
   right: 0;
   overflow-y: auto;
   bottom: 0;
-  height: calc(100vh - 51px);
+  height: calc(100vh - 50px - 1px);
   background-color: #2f2f2f;
 }
 
@@ -350,7 +350,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  height: calc(100vh - 51px);
+  height: calc(100vh - 50px - 1px);
   -webkit-overflow-scrolling: touch;
   background-color: #1f1f1f;
   color: #6f6f6f;
