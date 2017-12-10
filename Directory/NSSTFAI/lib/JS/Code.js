@@ -372,6 +372,7 @@ function SetMobileSettings() {
         $("tbody").css("overflox-y", "scroll");
         $("#settings").css("overflox-y", "scroll");
         $("tr").off("mouseover");
+        $(document).off("keydown");
         log("MobileCheck: Mobile Device Detected, Applying Mobile CSS");
     } else {log("MobileCheck: Not A Mobile Device");}
 }
