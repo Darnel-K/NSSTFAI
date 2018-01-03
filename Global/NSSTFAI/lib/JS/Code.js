@@ -226,6 +226,22 @@ function SetupTableEvents() {
             window.location.href = link;
         }
     });
+
+    $('tbody tr a').on("mousedown", function(e) {
+        if (e.button == 1 || 4) {
+            e.preventDefault();
+        }
+    });
+
+    $('tbody tr').on("mousedown", function(e) {
+        if (e.button == 1 || 4) {
+            e.preventDefault();
+            link = $(this).find('a').prop('href');
+            Settings["SidebarText"] = $(this).find('a').text();
+            win = window.open(link, '_blank');
+            win.focus();
+        }
+    });
 }
 
 function UpdateAndSaveSettings() {
