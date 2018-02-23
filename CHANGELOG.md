@@ -7,7 +7,7 @@ Versioning numbers defined as MAJOR.MINOR.PATCH-BUILD
 ## [1.0.0-0] - 2018-02-23
 ### Added
 - Dynamic QR code
-- Logging
+- Console Logging
 - Default server side global settings file
 - Dynamically changing settings gui
 - Dynamic breadcrumb
@@ -20,8 +20,13 @@ Versioning numbers defined as MAJOR.MINOR.PATCH-BUILD
 - Desktop styles
 - Mobile compatibility
 - Update check
-- Up / Down arrow key scrolling
+- Arrow key navigation
 - Dynamic page title
+- Separate layout for desktop & mobile
+- Auto disable some features on smaller screens
 
 ### Changed
 - Readme Update
+- Cleaned up CSS
+- Switched to SASS
+- Settings screen HTML & JS
