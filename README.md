@@ -1,6 +1,8 @@
 # NSSTFAI
 A Not So Simple Theme For Apache's Index
 
+[View Changelog](CHANGELOG.md)
+
 [Demo](http://rs01.kajida.uk/GitHub/Experimental-Code) showing a clone of one of my other repositories, setup globally.
 
 This theme now has a name however if you have any other ideas please, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
