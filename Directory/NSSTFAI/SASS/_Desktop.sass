@@ -1,344 +1,344 @@
 @import '_Vars.sass'
 
 *
-    text-decoration: none;
-    font-family: $DefaultFont;
-    font-size: medium;
-    overflow: hidden;
+    text-decoration: none
+    font-family: $DefaultFont
+    font-size: medium
+    overflow: hidden
 
 body
-    color: #FFFFFF;
-    background-color: #1F1F1F;
+    color: #FFFFFF
+    background-color: #1F1F1F
 
 #wrapper
-    position: absolute;
-    width: $WrapperWidth;
-    float: left;
-    top: calc(#{$TopBarHeight} + 1px);
-    left: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    bottom: 0;
-    height: $WrapperHeight;
+    position: absolute
+    width: $WrapperWidth
+    float: left
+    top: calc(#{$TopBarHeight} + 1px)
+    left: 0
+    overflow-y: auto
+    overflow-x: hidden
+    bottom: 0
+    height: $WrapperHeight
 
     table 
-        table-layout: fixed;
-        border-collapse: collapse;
-        width: 100%;
+        table-layout: fixed
+        border-collapse: collapse
+        width: 100%
 
         .indexbreakrow
             display: none
 
         .indexcolicon
-            width: 26px;
+            width: 26px
 
         .indexcollastmod
-            text-align: center;
-            width: 12%;
+            text-align: center
+            width: 12%
 
         .indexcolsize
-            text-align: center;
-            width: 6%;
+            text-align: center
+            width: 6%
 
         .indexhead
-            text-align: left;
-            border-bottom: 1px solid #2f2f2f;
-            background-color: #1f1f1f;
+            text-align: left
+            border-bottom: 1px solid #2f2f2f
+            background-color: #1f1f1f
 
             a
-                color: #FFFFFF;
+                color: #FFFFFF
 
         tr
-            width: 100%;
+            width: 100%
 
         thead
-            // height: 31px;
-            width: 100%;
+            // height: 31px
+            width: 100%
 
             tr
-                position: relative;
+                position: relative
 
         tbody
-            width: 100%;
-            overflow-y: auto;
-            overflow-x: hidden;
-            max-height: calc(100vh - 50px - 33px);
-            -webkit-overflow-scrolling: touch;
+            width: 100%
+            overflow-y: auto
+            overflow-x: hidden
+            max-height: calc(100vh - 50px - 33px)
+            -webkit-overflow-scrolling: touch
 
             .odd
-                background-color: #4f4f4f;
+                background-color: #4f4f4f
 
             .even
-                background-color: #1f1f1f;
+                background-color: #1f1f1f
 
             .selected
-                outline: 1px solid #111;
-                outline-style: auto !important;
-                background-color: #6F6F6F;
+                outline: 1px solid #111
+                outline-style: auto !important
+                background-color: #6F6F6F
 
             tr, tr a
-                color: #FFFFFF;
+                color: #FFFFFF
 
             tr:hover
-                cursor: pointer;
-                transition: background-color .20s ease;
-                color: #FFFFFF;
-                background-color: #3f3f3f;
+                cursor: pointer
+                transition: background-color .20s ease
+                color: #FFFFFF
+                background-color: #3f3f3f
 
 #infodiv
-    position: absolute;
-    width: $RightBarWidth;
-    float: left;
-    top: calc(#{$TopBarHeight} + 1px);
-    right: 0;
-    overflow-y: auto;
-    bottom: 0;
-    height: $WrapperHeight;
-    background-color: #2f2f2f;
+    position: absolute
+    width: $RightBarWidth
+    float: left
+    top: calc(#{$TopBarHeight} + 1px)
+    right: 0
+    overflow-y: auto
+    bottom: 0
+    height: $WrapperHeight
+    background-color: #2f2f2f
 
     #credits
-        width: 100%;
-        height: 2vw;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 2vw;
-        background-color: #2f2f2f;
+        width: 100%
+        height: 2vw
+        text-align: center
+        vertical-align: middle
+        line-height: 2vw
+        background-color: #2f2f2f
 
         a
-            color: #4F4F4F;
+            color: #4F4F4F
 
         a:hover
-            color: #6f6f6f;
+            color: #6f6f6f
 
     #infodivcontent
-        min-height: calc(100% - 2vw);
+        min-height: calc(100% - 2vw)
 
         #icon
-            width: calc(100% - 2vw);
-            height: calc(100% - 2vw);
-            margin: 1vw auto;
-            color: #FFFFFF;
-            background-color: #2F2F2F;
+            width: calc(100% - 2vw)
+            height: calc(100% - 2vw)
+            margin: 1vw auto
+            color: #FFFFFF
+            background-color: #2F2F2F
 
         #text
-            width: calc(100% - 2vw);
-            min-height: 3vw;
-            margin: 1vw auto;
-            color: #FFFFFF;
-            background-color: #2F2F2F;
+            width: calc(100% - 2vw)
+            min-height: 3vw
+            margin: 1vw auto
+            color: #FFFFFF
+            background-color: #2F2F2F
 
             p
-                word-wrap: break-word;
-                text-align: center;
-                vertical-align: middle;
-                width: 100%;
-                height: 100%;
-                line-height: 20px;
+                word-wrap: break-word
+                text-align: center
+                vertical-align: middle
+                width: 100%
+                height: 100%
+                line-height: 20px
 
         #qrcode
-            width: calc(100% - 2vw);
-            height: calc(#{$RightBarWidth} - 2vw);
-            margin: 1vw auto;
-            display: block;
+            width: calc(100% - 2vw)
+            height: calc(#{$RightBarWidth} - 2vw)
+            margin: 1vw auto
+            display: block
 
 #top
-    width: 100vw;
-    height: $TopBarHeight;
-    line-height: $TopBarHeight;
-    border-bottom: 1px solid #1F1F1F;
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 100vw
+    height: $TopBarHeight
+    line-height: $TopBarHeight
+    border-bottom: 1px solid #1F1F1F
+    position: absolute
+    top: 0
+    left: 0
 
     #topleft
-        width: calc(#{$WrapperWidth} - 1px);
-        height: $TopBarHeight;
-        line-height: $TopBarHeight;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #2f2f2f;
-        border-right: 1px solid #1f1f1f;
+        width: calc(#{$WrapperWidth} - 1px)
+        height: $TopBarHeight
+        line-height: $TopBarHeight
+        position: absolute
+        top: 0
+        left: 0
+        background-color: #2f2f2f
+        border-right: 1px solid #1f1f1f
 
         #breadcrumb, .rcrumbs
-            width: calc(100% - 51px);
-            height: $TopBarHeight;
-            line-height: $TopBarHeight;
-            position: absolute;
-            top: 0;
-            left: $TopBarHeight;
+            width: calc(100% - 51px)
+            height: $TopBarHeight
+            line-height: $TopBarHeight
+            position: absolute
+            top: 0
+            left: $TopBarHeight
 
             *
-                color: #6f6f6f;
+                color: #6f6f6f
 
             a
-                font-size: x-large;
+                font-size: x-large
 
             a:hover
-                color: #4f4f4f;
+                color: #4f4f4f
 
             .divider
-                padding: 0 5px;
-                font-size: x-large;
-                color: #cccccc;
+                padding: 0 5px
+                font-size: x-large
+                color: #cccccc
 
             > ul
-                padding: 0;
-                padding-left: 10px;
-                list-style: none;
-                margin: 0;
-                line-height: $TopBarHeight;
-                height: 100%;
+                padding: 0
+                padding-left: 10px
+                list-style: none
+                margin: 0
+                line-height: $TopBarHeight
+                height: 100%
 
                 > li
-                    overflow: hidden;
-                    display: none;
+                    overflow: hidden
+                    display: none
 
                 > li.show
-                    display: inline-block;
+                    display: inline-block
 
                 > li.ellipsis
-                    text-overflow: ellipsis;
-                    -o-text-overflow: ellipsis;
-                    overflow: hidden;
+                    text-overflow: ellipsis
+                    -o-text-overflow: ellipsis
+                    overflow: hidden
 
         #settingsicon
-            width: $TopBarHeight;
-            height: $TopBarHeight;
-            line-height: $TopBarHeight;
-            position: absolute;
-            top: 0;
-            left: 0;
+            width: $TopBarHeight
+            height: $TopBarHeight
+            line-height: $TopBarHeight
+            position: absolute
+            top: 0
+            left: 0
 
             button
-                width: 100%;
-                height: 100%;
-                line-height: $TopBarHeight;
-                padding: 0;
-                border: none;
+                width: 100%
+                height: 100%
+                line-height: $TopBarHeight
+                padding: 0
+                border: none
 
                 img
-                    width: 100%;
-                    background-color: #2f2f2f;
+                    width: 100%
+                    background-color: #2f2f2f
 
             button:hover
-                cursor: pointer;
+                cursor: pointer
 
                 img
-                    background-color: #3F3F3F;
+                    background-color: #3F3F3F
         
         #JSerror
-            width: calc(100% - 1px);
-            height: $TopBarHeight;
-            line-height: $TopBarHeight;
-            position: absolute;
-            top: 0;
-            left: 0;
+            width: calc(100% - 1px)
+            height: $TopBarHeight
+            line-height: $TopBarHeight
+            position: absolute
+            top: 0
+            left: 0
 
             p
-                margin: 0;
-                text-align: center;
-                color: #FF0000;
-                font-size: medium;
+                margin: 0
+                text-align: center
+                color: #FF0000
+                font-size: medium
 
     #topright
-        width: $RightBarWidth;
-        height: $TopBarHeight;
-        line-height: $TopBarHeight;
-        position: absolute;
-        left: $WrapperWidth;
-        right: 0;
-        text-align: center;
-        vertical-align: middle;
-        background-color: #2f2f2f;
-        color: #6f6f6f;
+        width: $RightBarWidth
+        height: $TopBarHeight
+        line-height: $TopBarHeight
+        position: absolute
+        left: $WrapperWidth
+        right: 0
+        text-align: center
+        vertical-align: middle
+        background-color: #2f2f2f
+        color: #6f6f6f
 
         p
-            font-family: MrDeHaviland-Regular;
-            margin: 0;
-            font-size: xx-large;
+            font-family: MrDeHaviland-Regular
+            margin: 0
+            font-size: xx-large
 
 #settings
-    display: none;
-    position: absolute;
-    width: $WrapperWidth;
-    float: left;
-    top: calc(#{$TopBarHeight} + 1px);
-    left: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    bottom: 0;
-    height: $WrapperHeight;
-    -webkit-overflow-scrolling: touch;
-    background-color: #1f1f1f;
-    color: #6f6f6f;
+    display: none
+    position: absolute
+    width: $WrapperWidth
+    float: left
+    top: calc(#{$TopBarHeight} + 1px)
+    left: 0
+    overflow-y: auto
+    overflow-x: hidden
+    bottom: 0
+    height: $WrapperHeight
+    -webkit-overflow-scrolling: touch
+    background-color: #1f1f1f
+    color: #6f6f6f
 
     h2
-        font-size: xx-large;
-        margin: 0;
-        height: 69px;
-        line-height: 69px;
-        padding-left: 30px;
-        overflow: hidden;
-        border-bottom: 1px solid #2F2F2F;
+        font-size: xx-large
+        margin: 0
+        height: 69px
+        line-height: 69px
+        padding-left: 30px
+        overflow: hidden
+        border-bottom: 1px solid #2F2F2F
 
         #save
-            margin-top: 10px;
-            margin-right: 10px;
-            height: 50px;
-            line-height: 50px;
-            padding: 0;
-            border: none;
-            float: right;
-            background-color: #1F1F1F;
+            margin-top: 10px
+            margin-right: 10px
+            height: 50px
+            line-height: 50px
+            padding: 0
+            border: none
+            float: right
+            background-color: #1F1F1F
 
         #reset
-            margin-top: 10px;
-            margin-right: 10px;
-            width: 100px;
-            height: 50px;
-            line-height: 50px;
-            padding: 0;
-            border: none;
-            float: right;
-            font-size: large;
-            background-color: #1F1F1F;
-            color: #FFFFFF;
+            margin-top: 10px
+            margin-right: 10px
+            width: 100px
+            height: 50px
+            line-height: 50px
+            padding: 0
+            border: none
+            float: right
+            font-size: large
+            background-color: #1F1F1F
+            color: #FFFFFF
 
         #reset:hover
-            cursor: pointer;
-            background-color: #2F2F2F;
+            cursor: pointer
+            background-color: #2F2F2F
             color: #FFFFFF
 
     .container
-        width: 100%;
-        position: relative;
-        overflow: hidden;
+        width: 100%
+        position: relative
+        overflow: hidden
 
         .SettingsItem
-            width: 50%;
-            float: left;
-            text-align: center;
+            width: 50%
+            float: left
+            text-align: center
 
             p
-                margin: 0;
-                overflow: hidden;
+                margin: 0
+                overflow: hidden
 
             input
-                border: none;
-                height: 100%;
-                text-align: center;
+                border: none
+                height: 100%
+                text-align: center
 
             .BorderStyling
-                width: calc(45% / 3);
+                width: calc(45% / 3)
 
             p, input, select
-                width: 45%;
-                float: left;
-                height: 35px;
-                margin-bottom: 20px;
-                vertical-align: middle;
-                line-height: 35px;
-                border: none;
-                padding: 0;
-                text-align-last: center;
+                width: 45%
+                float: left
+                height: 35px
+                margin-bottom: 20px
+                vertical-align: middle
+                line-height: 35px
+                border: none
+                padding: 0
+                text-align-last: center
