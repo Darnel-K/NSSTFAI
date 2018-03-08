@@ -15,13 +15,15 @@
 
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888888;
   border: thin solid #808080;
-  border-radius: 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -45,11 +47,13 @@ body {
   position: absolute;
   width: 86vw;
   float: left;
+  top: -webkit-calc(50px + 1px);
   top: calc(50px + 1px);
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
+  height: -webkit-calc(100vh - 50px - 1px);
   height: calc(100vh - 50px - 1px);
 }
 
@@ -103,6 +107,7 @@ body {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  max-height: -webkit-calc(100vh - 50px - 33px);
   max-height: calc(100vh - 50px - 33px);
   -webkit-overflow-scrolling: touch;
 }
@@ -136,12 +141,15 @@ body {
 
 #infodiv {
   position: absolute;
+  width: -webkit-calc(100vw - 86vw);
   width: calc(100vw - 86vw);
   float: left;
+  top: -webkit-calc(50px + 1px);
   top: calc(50px + 1px);
   right: 0;
   overflow-y: auto;
   bottom: 0;
+  height: -webkit-calc(100vh - 50px - 1px);
   height: calc(100vh - 50px - 1px);
   background-color: #2f2f2f;
 }
@@ -164,11 +172,14 @@ body {
 }
 
 #infodiv #infodivcontent {
+  min-height: -webkit-calc(100% - 2vw);
   min-height: calc(100% - 2vw);
 }
 
 #infodiv #infodivcontent #icon {
+  width: -webkit-calc(100% - 2vw);
   width: calc(100% - 2vw);
+  height: -webkit-calc(100% - 2vw);
   height: calc(100% - 2vw);
   margin: 1vw auto;
   color: #FFFFFF;
@@ -176,6 +187,7 @@ body {
 }
 
 #infodiv #infodivcontent #text {
+  width: -webkit-calc(100% - 2vw);
   width: calc(100% - 2vw);
   min-height: 3vw;
   margin: 1vw auto;
@@ -193,7 +205,9 @@ body {
 }
 
 #infodiv #infodivcontent #qrcode {
+  width: -webkit-calc(100% - 2vw);
   width: calc(100% - 2vw);
+  height: -webkit-calc(calc(100vw - 86vw) - 2vw);
   height: calc(calc(100vw - 86vw) - 2vw);
   margin: 1vw auto;
   display: block;
@@ -210,6 +224,7 @@ body {
 }
 
 #top #topleft {
+  width: -webkit-calc(86vw - 1px);
   width: calc(86vw - 1px);
   height: 50px;
   line-height: 50px;
@@ -221,6 +236,7 @@ body {
 }
 
 #top #topleft #breadcrumb, #top #topleft .rcrumbs {
+  width: -webkit-calc(100% - 51px);
   width: calc(100% - 51px);
   height: 50px;
   line-height: 50px;
@@ -302,6 +318,7 @@ body {
 }
 
 #top #topleft #JSerror {
+  width: -webkit-calc(100% - 1px);
   width: calc(100% - 1px);
   height: 50px;
   line-height: 50px;
@@ -318,6 +335,7 @@ body {
 }
 
 #top #topright {
+  width: -webkit-calc(100vw - 86vw);
   width: calc(100vw - 86vw);
   height: 50px;
   line-height: 50px;
@@ -341,11 +359,13 @@ body {
   position: absolute;
   width: 86vw;
   float: left;
+  top: -webkit-calc(50px + 1px);
   top: calc(50px + 1px);
   left: 0;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
+  height: -webkit-calc(100vh - 50px - 1px);
   height: calc(100vh - 50px - 1px);
   -webkit-overflow-scrolling: touch;
   background-color: #1f1f1f;
@@ -417,6 +437,7 @@ body {
 }
 
 #settings .container .SettingsItem .BorderStyling {
+  width: -webkit-calc(45% / 3);
   width: calc(45% / 3);
 }
 
@@ -429,7 +450,8 @@ body {
   line-height: 35px;
   border: none;
   padding: 0;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
 }
 
 @media screen and (max-width: 770px) {
