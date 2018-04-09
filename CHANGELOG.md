@@ -2,9 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).<br>
-Versioning numbers defined as MAJOR.MINOR.PATCH-BUILD
+Versioning numbers defined as MAJOR.MINOR.PATCH
 
-## [1.0.0-0] - 2018-02-23
+## [1.1.0] - 2018-04-09
+### Added
+- Image icon for .tbn & .metathumb extension
+- Display .tbn & .metathumb files in sidebar on hover
+
+## [1.0.0] - 2018-02-23
 ### Added
 - Dynamic QR code
 - Console Logging
