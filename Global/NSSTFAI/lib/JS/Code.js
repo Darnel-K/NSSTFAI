@@ -181,6 +181,12 @@ function SetSideBarInfo() {
             case 'gif':
                 Settings["SidebarIconSRC"] = link;
                 break;
+            case 'tbn':
+                Settings["SidebarIconSRC"] = link;
+                break;
+            case 'metathumb':
+                Settings["SidebarIconSRC"] = link;
+                break;
             default:
                 Settings["SidebarIconSRC"] = $('tr.selected').find('img').attr('src');
                 break;
