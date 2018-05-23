@@ -79,6 +79,7 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [x] Upload Files To GitHub
 *   [x] Create htaccess Directory Version
 *   [x] Add Setup Instructions For Both Versions
+*   [x] Cleanup Files & Remove Duplicates
 
 ## Resources Used:
 
