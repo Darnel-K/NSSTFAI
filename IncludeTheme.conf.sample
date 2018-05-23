@@ -1,0 +1,9 @@
+Alias /NSSTFAI /[ThemeFilesLocation]/NSSTFAI
+
+<Directory "/[ThemeFilesLocation]/NSSTFAI">
+    Options FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+Include [ThemeConfLocation]

@@ -10,38 +10,38 @@ This theme now has a name however if you have any other ideas please, leave your
 
 - [NSSTFAI](#nsstfai)
     - [Installation Instructions:](#installation-instructions)
-            - [To Install The Global Version (Requires Access To The Host System And Web Server)](#to-install-the-global-version-requires-access-to-the-host-system-and-web-server)
-            - [To Install The .htaccess version](#to-install-the-htaccess-version)
+        - [Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)](#method-1---installing-the-global-version-requires-access-to-the-host-system-and-web-server)
+        - [Method 2 - Installing The .htaccess version](#method-2---installing-the-htaccess-version)
     - [Help:](#help)
     - [TO-DO:](#to-do)
     - [Resources Used:](#resources-used)
 
 ## Installation Instructions:
 
-Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.
+Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.<br>
 
-#### To Install The Global Version (Requires Access To The Host System And Web Server)
+### Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)
 
-    This version is global to every directory on the apache server.
+**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
 
-    Files: /Global
+    This version will set this theme as the default for every directory in which indexing is active.
 
-    1.  Download a copy of all the files in the folder "Global".
-    2.  Copy / upload the folder "NSSTFAI" from the folder "Global" to a location on your server that is accessible by the apache web server.
-    3.  Edit lines 5 & 7 of "Theme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
-    4.  Copy / upload "Theme.conf" to your apache web server's "Includes" folder.
-    5.  Restart the apache web server.
-    6.  To activate the theme create a ".htaccess" file in the folder that you want indexing and directory listing turned on and put "Options +Indexes" into that file.
+    1.  Clone this repository to a directory inside the ServerRoot.
+    2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
+    3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
+    4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the  ServerRoot.
+    5.  Copy "IncludeTheme.conf" to the apache includes directory.
+    6.  Restart / Reload the apache server
+    7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
 
-#### To Install The .htaccess version
+### Method 2 - Installing The .htaccess version
 
     This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
 
-    Files: /Directory
 
-    1.  Download a copy of all the files in the folder "Directory".
-    2.  Copy / upload the folder "NSSTFAI" to your domain's root directory
-    3.  Copy / upload the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also enables on all directories in the same folder). If copying or uploading the ".htaccess" file to the root directory SKIP STEP 4.
+    1.  Download a copy of the folder "NSSTFAI" and the file ".htaccess".
+    2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
+    3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies on all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
     4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
 
 ## Help:
