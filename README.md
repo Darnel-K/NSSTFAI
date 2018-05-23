@@ -41,7 +41,7 @@ Both versions require "AllowOverride All" activated on the web server for the di
 
     1.  Download a copy of the folder "NSSTFAI" and the file ".htaccess".
     2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
-    3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies on all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
+    3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies to all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
     4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
 
 ## Help:
@@ -80,6 +80,10 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [x] Create htaccess Directory Version
 *   [x] Add Setup Instructions For Both Versions
 *   [x] Cleanup Files & Remove Duplicates
+
+## Styles:
+
+*   [Dark (Default), Branch = MASTER](/Darnel-K/NSSTFAI/tree/master)
 
 ## Resources Used:
 
