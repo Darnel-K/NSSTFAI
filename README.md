@@ -83,7 +83,7 @@ Both versions require "AllowOverride All" activated on the web server for the di
 
 ## Styles:
 
-*   [Dark (Default), Branch = MASTER](/Darnel-K/NSSTFAI/tree/master)
+*   [Dark (Default), Branch: MASTER](/Darnel-K/NSSTFAI/tree/master)
 
 ## Resources Used:
 
