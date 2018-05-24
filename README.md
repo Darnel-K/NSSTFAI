@@ -12,6 +12,7 @@ This theme now has a name however if you have any other ideas please, leave your
     - [Installation Instructions:](#installation-instructions)
         - [Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)](#method-1---installing-the-global-version-requires-access-to-the-host-system-and-web-server)
         - [Method 2 - Installing The .htaccess version](#method-2---installing-the-htaccess-version)
+    - [Variations:](#variations)
     - [Help:](#help)
     - [TO-DO:](#to-do)
     - [Resources Used:](#resources-used)
@@ -24,15 +25,15 @@ Both versions require "AllowOverride All" activated on the web server for the di
 
 **You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
 
-    This version will set this theme as the default for every directory in which indexing is active.
-
-    1.  Clone this repository to a directory inside the ServerRoot.
-    2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
-    3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
-    4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the  ServerRoot.
-    5.  Copy "IncludeTheme.conf" to the apache includes directory.
-    6.  Restart / Reload the apache server
-    7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
+> This version will set this theme as the default for every directory in which indexing is active.
+>
+> 1.  Clone this repository to a directory inside the ServerRoot.
+> 2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
+> 3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
+> 4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the ServerRoot.
+> 5.  Copy "IncludeTheme.conf" to the apache includes directory.
+> 6.  Restart / Reload the apache server
+> 7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
 
 ### Method 2 - Installing The .htaccess version
 
@@ -42,6 +43,10 @@ Both versions require "AllowOverride All" activated on the web server for the di
     2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
     3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies to all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
     4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
+
+## Variations:
+
+*   [Dark (Default), Branch: MASTER](//github.com/Darnel-K/NSSTFAI/tree/master)
 
 ## Help:
 
@@ -79,10 +84,6 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [x] Create htaccess Directory Version
 *   [x] Add Setup Instructions For Both Versions
 *   [x] Cleanup Files & Remove Duplicates
-
-## Styles:
-
-*   [Dark (Default), Branch: MASTER](//github.com/Darnel-K/NSSTFAI/tree/master)
 
 ## Resources Used:
 
