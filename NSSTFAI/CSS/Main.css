@@ -207,7 +207,7 @@ body {
 #infodiv #infodivcontent #qrcode {
   width: -webkit-calc(100% - 2vw);
   width: calc(100% - 2vw);
-  height: -webkit-calc(calc(100vw - 86vw) - 2vw);
+  height: -webkit-calc(-webkit-calc(100vw - 86vw) - 2vw);
   height: calc(calc(100vw - 86vw) - 2vw);
   margin: 1vw auto;
   display: block;
