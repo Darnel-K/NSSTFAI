@@ -24,6 +24,7 @@ IndexOptions +ScanHTMLTitles
 IndexOptions +Charset=UTF-8
 IndexOrderDefault Ascending Name
 
+IndexIgnoreReset ON
 IndexIgnore .htaccess NSSTFAI.conf .git*
 
 #             #
