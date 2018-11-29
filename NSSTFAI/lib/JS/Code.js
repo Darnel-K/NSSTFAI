@@ -238,25 +238,6 @@ function SetMobileSettings() {
     }
 }
 
-function CheckForUpdate() {
-    $.getJSON("https://raw.githubusercontent.com/Darnel-K/Apache-Index-Theme/master/version.json")
-        .done(function(json) {
-            var RemoteVersion = json;
-            if (Settings["Version"] != RemoteVersion["Version"]) {
-                if (RemoteVersion["Required"] == true) {
-                    console.warn("Update: An Important Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
-                } else {
-                    console.warn("Update: An Update Is Available For Download At https://github.com/Darnel-K/Apache-Index-Theme");
-                }
-            } else {
-                log("Update: No Updates Available");
-            }
-        })
-        .fail(function() {
-            log("CheckForUpdate: Unable To Get Remote Version Data", "ERROR");
-        });
-}
-
 function ParentDirectory() {
     if (
         $("tbody")
@@ -359,5 +340,4 @@ function init() {
     SetupTable();
     SetupAllEvents();
     SetMobileSettings();
-    CheckForUpdate();
 }
