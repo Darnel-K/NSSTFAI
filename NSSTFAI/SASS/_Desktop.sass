@@ -21,7 +21,7 @@ body
     bottom: 0
     height: $WrapperHeight
 
-    table 
+    table
         table-layout: fixed
         border-collapse: collapse
         width: 100%
@@ -166,7 +166,6 @@ body
             line-height: $TopBarHeight
             position: absolute
             top: 0
-            left: $TopBarHeight
 
             *
                 color: #6f6f6f
@@ -202,31 +201,8 @@ body
                     -o-text-overflow: ellipsis
                     overflow: hidden
 
-        #settingsicon
-            width: $TopBarHeight
-            height: $TopBarHeight
-            line-height: $TopBarHeight
-            position: absolute
-            top: 0
-            left: 0
 
-            button
-                width: 100%
-                height: 100%
-                line-height: $TopBarHeight
-                padding: 0
-                border: none
 
-                img
-                    width: 100%
-                    background-color: #2f2f2f
-
-            button:hover
-                cursor: pointer
-
-                img
-                    background-color: #3F3F3F
-        
         #JSerror
             width: calc(100% - 1px)
             height: $TopBarHeight
@@ -257,88 +233,3 @@ body
             font-family: MrDeHaviland-Regular
             margin: 0
             font-size: xx-large
-
-#settings
-    display: none
-    position: absolute
-    width: $WrapperWidth
-    float: left
-    top: calc(#{$TopBarHeight} + 1px)
-    left: 0
-    overflow-y: auto
-    overflow-x: hidden
-    bottom: 0
-    height: $WrapperHeight
-    -webkit-overflow-scrolling: touch
-    background-color: #1f1f1f
-    color: #6f6f6f
-
-    h2
-        font-size: xx-large
-        margin: 0
-        height: 69px
-        line-height: 69px
-        padding-left: 30px
-        overflow: hidden
-        border-bottom: 1px solid #2F2F2F
-
-        #save
-            margin-top: 10px
-            margin-right: 10px
-            height: 50px
-            line-height: 50px
-            padding: 0
-            border: none
-            float: right
-            background-color: #1F1F1F
-
-        #reset
-            margin-top: 10px
-            margin-right: 10px
-            width: 100px
-            height: 50px
-            line-height: 50px
-            padding: 0
-            border: none
-            float: right
-            font-size: large
-            background-color: #1F1F1F
-            color: #FFFFFF
-
-        #reset:hover
-            cursor: pointer
-            background-color: #2F2F2F
-            color: #FFFFFF
-
-    .container
-        width: 100%
-        position: relative
-        overflow: hidden
-
-        .SettingsItem
-            width: 50%
-            float: left
-            text-align: center
-
-            p
-                margin: 0
-                overflow: hidden
-
-            input
-                border: none
-                height: 100%
-                text-align: center
-
-            .BorderStyling
-                width: calc(45% / 3)
-
-            p, input, select
-                width: 45%
-                float: left
-                height: 35px
-                margin-bottom: 20px
-                vertical-align: middle
-                line-height: 35px
-                border: none
-                padding: 0
-                text-align-last: center
