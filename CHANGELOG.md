@@ -7,6 +7,10 @@ Versioning numbers defined as MAJOR.MINOR.PATCH
 
 ## [1.1.0] - 2018-11-29
 
+### Added
+
+-   IndexIgnore Directive: NSSTFAI.conf .git\*
+
 ### Removed
 
 -   Readme - To-Do List

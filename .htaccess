@@ -24,7 +24,7 @@ IndexOptions +ScanHTMLTitles
 IndexOptions +Charset=UTF-8
 IndexOrderDefault Ascending Name
 
-IndexIgnore .htaccess NSSTFAI
+IndexIgnore .htaccess NSSTFAI.conf .git*
 
 #             #
 # THEME FILES #
