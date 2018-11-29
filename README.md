@@ -14,7 +14,6 @@ This theme now has a name however if you have any other ideas please, leave your
         - [Method 2 - Installing The .htaccess version](#method-2---installing-the-htaccess-version)
     - [Variations:](#variations)
     - [Help:](#help)
-    - [TO-DO:](#to-do)
     - [Resources Used:](#resources-used)
 
 ## Installation Instructions:
@@ -46,49 +45,20 @@ Both versions require "AllowOverride All" activated on the web server for the di
 
 ## Variations:
 
-*   [Dark (Default), Branch: MASTER](//github.com/Darnel-K/NSSTFAI/tree/master)
+-   [Dark (Default), Branch: MASTER](//github.com/Darnel-K/NSSTFAI/tree/master)
 
 ## Help:
 
-*   Left Arrow / Backspace: Goes to the previous directory if available.
-*   Right Arrow: Will enter / open the currently selected directory / file.
-*   Up Arrow: Navigates the selector up one.
-*   Down Arrow: Navigates the selector down one.
-*   S Key: Toggles Settings Screen
-
-## TO-DO:
-
-*   [ ] Add Credits Screen
-*   [ ] Video Player
-*   [ ] Audio Player
-*   [ ] Image Viewer
-*   [x] Clean CSS
-*   [x] Convert CSS To SASS
-*   [ ] Create Unix .sh Installer
-*   [ ] Create Windows .bat Installer
-*   [ ] Add Help Screen
-*   [ ] Acquire Logo For Theme
-*   [ ] Logo Favicon
-*   [x] Create Separate Layout For Desktop & Mobile
-*   [x] Disable Some Features On Small Screens
-*   [x] Make Responsive
-*   [ ] Add Optional Table Header / Footer
-*   [x] Redo The Update Check Code
-*   [x] Rewrite Settings Screen HTML & JS
-*   [x] Implement Console Logging Into The JS
-*   [x] Pick A Name
-*   [x] Rewrite The JS Settings
-*   [x] Add Arrow Key Navigation
-*   [x] Replace All Instances Of "ThemeName" With Chosen Name
-*   [x] Upload Files To GitHub
-*   [x] Create htaccess Directory Version
-*   [x] Add Setup Instructions For Both Versions
-*   [x] Cleanup Files & Remove Duplicates
+-   Left Arrow / Backspace: Goes to the previous directory if available.
+-   Right Arrow: Will enter / open the currently selected directory / file.
+-   Up Arrow: Navigates the selector up one.
+-   Down Arrow: Navigates the selector down one.
+-   S Key: Toggles Settings Screen
 
 ## Resources Used:
 
-*   [jscolor Color Picker](http://jscolor.com/)
-*   [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)
-*   [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
-*   [jQuery](https://jquery.com/)
-*   [Icons Used From Icons8](https://icons8.com/)
+-   [jscolor Color Picker](http://jscolor.com/)
+-   [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)
+-   [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
+-   [jQuery](https://jquery.com/)
+-   [Icons Used From Icons8](https://icons8.com/)
