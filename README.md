@@ -1,5 +1,9 @@
 # NSSTFAI
 
+> [!IMPORTANT]
+> This project is no longer in development, no further changes will be made to this repository.
+> Use at your own risk.
+
 A Not So Simple Theme For Apache's Index
 
 [View Changelog](CHANGELOG.md)
